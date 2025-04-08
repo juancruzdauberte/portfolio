@@ -4,12 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        customBlue: "#e5e5e5",
+        customWhite: "#f1f0fd",
         customDark: "#1C1C1C",
-        customMenu: "#D1E6E8",
       },
     },
   },
-  plugins: ["lineClamp"],
+  plugins: [],
   darkMode: "class",
 };

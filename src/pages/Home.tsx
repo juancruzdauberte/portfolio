@@ -20,7 +20,7 @@ export const Home = () => {
       <div className="">
         <p className="">
           Analista en Informática y Desarrollador Web. Creo soluciones
-          tecnológicas a los desafios o problemas que se propongan
+          tecnológicas a los desafios o problemas que se propongan.
         </p>
       </div>
       <div className="flex flex-col sm:flex-row  gap-4">

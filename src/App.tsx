@@ -5,6 +5,7 @@ import { Navbar } from "./layout/Navbar";
 import { Experience } from "./pages/Experience";
 import { Home } from "./pages/Home";
 import { Projects } from "./pages/Projects";
+import { AboutMe } from "./pages/AboutMe";
 
 function App() {
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -20,12 +21,10 @@ function App() {
 
   return (
     <ThemeProvider>
-      <section className="min-h-screen flex flex-col text-black bg-customBlue dark:text-white dark:bg-customDark transition-colors duration-300">
+      <section className="min-h-screen flex flex-col text-black dark:text-white bg-customWhite dark:bg-customDark transition-colors duration-300">
         <header
-          className={`fixed top-0 w-full z-50 p-4  transition-colors duration-300 ${
-            scrolled
-              ? "bg-white/10 dark:bg-black/10 backdrop-blur-md"
-              : "bg-customBlue dark:bg-customDark"
+          className={`fixed top-0 w-full z-50 p-4  transition-colors ${
+            scrolled && "bg-white/0 dark:bg-black/0 backdrop-blur-md"
           }`}
         >
           <Navbar />
@@ -34,6 +33,7 @@ function App() {
           <Home />
           <Experience />
           <Projects />
+          <AboutMe />
         </main>
         <footer className="flex justify-center items-center">
           <Footer />
