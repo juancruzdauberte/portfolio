@@ -4,14 +4,18 @@ export const Experience = () => {
   return (
     <section id="experiencia" className="w-full max-w-4xl flex flex-col">
       <section className="flex items-center gap-2">
-        <LiaSuitcaseSolid className="text-2xl" />
-        <h3 className="text-xl font-semibold">Experiencia laboral</h3>
+        <LiaSuitcaseSolid className="text-3xl md:text-4xl text-blue-950 dark:text-blue-600" />
+        <h3 className="text-2xl md:text-3xl font-bold text-blue-950 dark:text-blue-600">
+          Experiencia laboral
+        </h3>
       </section>
 
       <section className="flex flex-col gap-32 mt-10 mx-4">
         <section className="flex flex-col gap-8">
           <div className="flex flex-col gap-2">
-            <h4 className="">Reformam Network 2010 SL - Habitium MDF</h4>
+            <h4 className="text-xl md:text-2xl font-semibold">
+              Reformam Network 2010 SL - Habitium MDF
+            </h4>
             <span>Marzo 2024 - Diciembre 2024</span>
           </div>
           <div className="flex flex-col gap-2">
@@ -36,7 +40,9 @@ export const Experience = () => {
         </section>
         <section className="flex flex-col gap-8">
           <div className="flex flex-col gap-2">
-            <h4 className="">Call Center - Siderman Law</h4>
+            <h5 className="text-xl md:text-2xl font-semibold">
+              Call Center - Siderman Law
+            </h5>
             <span>Febrero 2025 - Actualmente</span>
           </div>
           <div className="flex flex-col gap-2">

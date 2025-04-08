@@ -21,9 +21,9 @@ function App() {
 
   return (
     <ThemeProvider>
-      <section className="min-h-screen flex flex-col text-black dark:text-white bg-customWhite dark:bg-customDark transition-colors duration-300">
+      <section className="min-h-screen flex flex-col text-md md:text-xl text-black dark:text-white bg-customWhite dark:bg-customDark transition-colors duration-300">
         <header
-          className={`fixed top-0 w-full z-50 p-4  transition-colors ${
+          className={`fixed top-0 w-full z-40 p-3  transition-colors ${
             scrolled && "bg-white/0 dark:bg-black/0 backdrop-blur-md"
           }`}
         >

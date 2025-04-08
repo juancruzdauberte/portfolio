@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <section className="flex py-8 items-center">
       <section>
-        <span className="">© Juan Cruz Dauberte</span>
+        <span className="font-bold md:text-2xl">© Juan Cruz Dauberte</span>
       </section>
 
       <section className="absolute flex gap-1 md:gap-2 right-1 md:right-4">
@@ -13,7 +13,7 @@ export const Footer = () => {
           href="https://www.linkedin.com/in/juancruzdauberte/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center border border-black rounded-full py-1 px-1 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white transition"
+          className="flex items-center justify-center border border-black rounded-full p-1 md:p-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white transition"
         >
           <FaLinkedin />
         </a>
@@ -21,7 +21,7 @@ export const Footer = () => {
           href="https://github.com/juancruzdauberte"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center border border-black rounded-full py-1 px-1 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white transition"
+          className="flex items-center justify-center border border-black rounded-full p-1 md:p-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white transition"
         >
           <FaGithub />
         </a>
@@ -29,7 +29,7 @@ export const Footer = () => {
           href="https://github.com/juancruzdauberte"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center border border-black rounded-full py-1 px-1 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white transition"
+          className="flex items-center justify-center border border-black rounded-full p-1 md:p-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white transition"
         >
           <TbMailShare />
         </a>
