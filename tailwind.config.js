@@ -6,6 +6,10 @@ export default {
       colors: {
         customWhite: "#f1f0fd",
         customDark: "#030712",
+        tailwind: "#00ACC1",
+        typescript: "#0D61A9",
+        react: "#53C1DE",
+        supabase: "#71C674",
       },
     },
   },

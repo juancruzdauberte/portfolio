@@ -9,7 +9,6 @@ import { AboutMe } from "./pages/AboutMe";
 
 function App() {
   const [scrolled, setScrolled] = useState<boolean>(false);
-  console.log(scrolled);
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
