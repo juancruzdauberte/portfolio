@@ -82,7 +82,7 @@ export const Navbar = () => {
       <div className="flex gap-2 md:gap-4 ml-auto">
         <button
           onClick={toggleDarkMode}
-          className="border border-black rounded-full p-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white transition"
+          className="border border-black rounded-full p-1 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white transition"
         >
           {darkMode ? (
             <MdOutlineLightMode className="text-xl" />

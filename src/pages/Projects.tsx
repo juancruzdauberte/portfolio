@@ -14,7 +14,7 @@ export const Projects = () => {
         </h3>
       </section>
 
-      <section>
+      <section className="flex flex-col items-center gap-10 ms-4 sm:items-start md:flex-row md:gap-16">
         <ProjectCard
           description="   E-commerce realizada para una persona de mi entorno. Aún falta la
           implementación de métodos de pago. El software está implementado para
