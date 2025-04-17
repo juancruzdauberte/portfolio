@@ -1,5 +1,6 @@
 import { FiUser } from "react-icons/fi";
 import Cv from "../../public/download/Curriculum Vitae Juan Cruz Dauberte.pdf";
+import { PiFilePdf } from "react-icons/pi";
 
 export const AboutMe = () => {
   return (
@@ -11,13 +12,16 @@ export const AboutMe = () => {
         </h3>
       </section>
       <section className="">
-        <a
-          href={Cv}
-          download={"Curriculum Vitae Juan Cruz Dauberte"}
-          className="border rounded-full border-black px-4 py-1  hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white"
-        >
-          Descargar Cv
-        </a>
+        <div>
+          <a
+            href={Cv}
+            download={"Curriculum Vitae Juan Cruz Dauberte"}
+            className="flex items-center gap-1 border rounded-full border-black p-0.5 w-40 md:w-48 justify-center  hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white"
+          >
+            <PiFilePdf size={25} />
+            Descargar Cv
+          </a>
+        </div>
       </section>
     </section>
   );

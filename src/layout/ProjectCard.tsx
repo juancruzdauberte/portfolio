@@ -19,7 +19,13 @@ export const ProjectCard = ({
   technologies,
 }: cardProyect) => {
   return (
-    <section className="group flex flex-col justify-center w-[280px] md:w-[300px] rounded-sm overflow-hidden shadow-lg transition hover:shadow-xl bg-white dark:bg-neutral-900">
+    <section className="group flex flex-col justify-center w-[280px] md:w-[300px] rounded-sm overflow-hidden shadow-lg transition hover:shadow-xl bg-white dark:bg-slate-700">
+      <div className="flex justify-end dark:bg-white w-full">
+        <span className="w-20 text-sm text-center top-0 rounded-full border px-1 m-1 border-yellow-400 bg-yellow-50 text-yellow-400">
+          En curso
+        </span>
+      </div>
+
       <div className="w-full">
         <img
           className="h-48 w-full object-cover"

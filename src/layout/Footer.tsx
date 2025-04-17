@@ -3,12 +3,12 @@ import { TbMailShare } from "react-icons/tb";
 
 export const Footer = () => {
   return (
-    <section className="flex py-8 items-center">
+    <section className="flex flex-col gap-5 py-8 items-center">
       <section>
         <span className="font-bold md:text-2xl">© Juan Cruz Dauberte</span>
       </section>
 
-      <section className="absolute flex gap-1 md:gap-2 right-1 md:right-4">
+      <section className="flex gap-1 md:gap-2 right-1 md:right-4">
         <a
           href="https://www.linkedin.com/in/juancruzdauberte/"
           target="_blank"
