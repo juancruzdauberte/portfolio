@@ -20,8 +20,22 @@ export const Projects = () => {
           implementación de métodos de pago. El software está implementado para
           la venta de productos fabricados en macramé y cerámica."
           title="Tierra de nudos"
-          img="/public/tierraDeNudos.jpg"
+          img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1745010629/Screenshot_2_l01new.jpg"
           codeUrl="https://github.com/juancruzdauberte/Tierra-de-Nudos"
+          previewUrl="https://tierra-de-nudos.vercel.app/"
+          technologies={[
+            <FaReact className="text-react" />,
+            <SiTypescript className="text-typescript" />,
+            <RiSupabaseFill className="text-supabase" />,
+            <RiTailwindCssFill className="text-tailwind" />,
+            <SiReactquery className="text-red-400" />,
+          ]}
+        />
+        <ProjectCard
+          description="Sitio web basado en el libro Habitos Átomicos de James Clear. La aplicación permite registrar tus hábitos y chequear si los has cumplido o no. Aún se encuentra en desarrollo."
+          title="Habits Record"
+          img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1745010998/Screenshot_1_equkwa.jpg"
+          codeUrl="https://github.com/juancruzdauberte/habits-record"
           previewUrl="https://tierra-de-nudos.vercel.app/"
           technologies={[
             <FaReact className="text-react" />,
