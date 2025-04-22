@@ -36,7 +36,7 @@ export const Projects = () => {
           title="Habits Record"
           img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1745010998/Screenshot_1_equkwa.jpg"
           codeUrl="https://github.com/juancruzdauberte/habits-record"
-          previewUrl="https://tierra-de-nudos.vercel.app/"
+          previewUrl="https://habits-record-sable.vercel.app/"
           technologies={[
             <FaReact className="text-react" />,
             <SiTypescript className="text-typescript" />,
