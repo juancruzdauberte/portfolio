@@ -12,7 +12,7 @@ export const AboutMe = () => {
         </h3>
       </section>
 
-      <section className="flex flex-col gap-16">
+      <section className="flex flex-col gap-16 mx-4">
         <section className="flex flex-col gap-5 mt-3">
           <p>
             Mi nombre es Juan Cruz Dauberte, tengo 21 años y actualmente me
@@ -75,6 +75,12 @@ export const AboutMe = () => {
               alt="MongoDB"
               className="h-12"
             />
+            <img
+              src="https://mongoosejs.com/docs/images/mongoose5_62x30_transparent.png"
+              alt="Mongoose"
+              className="w-16"
+            />
+
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
               alt="PostgreSQL"
