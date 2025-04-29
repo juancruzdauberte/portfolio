@@ -1,7 +1,8 @@
 import { IoIosLink } from "react-icons/io";
 import { LuCodeXml } from "react-icons/lu";
+import { motion } from "framer-motion";
 
-type cardProyect = {
+type Props = {
   title: string;
   codeUrl: string;
   previewUrl: string;
@@ -17,9 +18,20 @@ export const ProjectCard = ({
   description,
   img,
   technologies,
-}: cardProyect) => {
+}: Props) => {
   return (
-    <section className="group flex flex-col justify-center w-[280px] md:w-[300px] rounded-sm overflow-hidden shadow-lg transition hover:shadow-xl bg-white dark:bg-slate-700">
+    <motion.section
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      whileHover={{
+        scale: 1.04,
+        boxShadow: "0 0 12px rgba(96,165,250,0.6)",
+        borderColor: "#60a5fa",
+      }}
+      transition={{ type: "spring", stiffness: 150, damping: 12 }}
+      viewport={{ once: true }}
+      className="group flex flex-col justify-center w-[280px] md:w-[300px] rounded-sm overflow-hidden hover:shadow-xl bg-white dark:bg-slate-700"
+    >
       <div className="flex justify-end bg-gray-100 w-full">
         <span className="w-20 text-sm text-center top-0 rounded-full border px-1 m-1 border-yellow-400 bg-yellow-50 text-yellow-400">
           En curso
@@ -39,7 +51,11 @@ export const ProjectCard = ({
         <p className="text-sm text-justify leading-relaxed">{description}</p>
 
         <div className="flex justify-center gap-3 flex-wrap">
-          <a
+          <motion.a
+            whileHover={{
+              boxShadow: "0 0 20px rgba(59, 130, 246, 0.6)",
+            }}
+            transition={{ duration: 0.07 }}
             href={codeUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -47,8 +63,12 @@ export const ProjectCard = ({
           >
             <LuCodeXml className="text-xl" />
             Code
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            whileHover={{
+              boxShadow: "0 0 20px rgba(59, 130, 246, 0.6)",
+            }}
+            transition={{ duration: 0.07 }}
             href={previewUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -56,7 +76,7 @@ export const ProjectCard = ({
           >
             <IoIosLink className="text-xl" />
             Preview
-          </a>
+          </motion.a>
         </div>
 
         <div className="flex flex-col items-center gap-2">
@@ -68,6 +88,6 @@ export const ProjectCard = ({
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

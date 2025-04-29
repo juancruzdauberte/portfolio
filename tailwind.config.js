@@ -11,6 +11,16 @@ export default {
         react: "#53C1DE",
         supabase: "#71C674",
       },
+      keyframes: {
+        shine: {
+          "0%": { backgroundPosition: "-200% center" },
+          "60%": { backgroundPosition: "-200% center" },
+          "100%": { backgroundPosition: "200% center" },
+        },
+      },
+      animation: {
+        shine: "shine 3s linear infinite",
+      },
     },
   },
   plugins: [],

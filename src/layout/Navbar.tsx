@@ -101,12 +101,12 @@ export const Navbar = () => {
       >
         <button
           onClick={closeModal}
-          className="absolute top-2 right-2 md:hidden text-2xl cursor-pointer"
+          className="absolute top-4 right-4 md:hidden text-2xl cursor-pointer"
           aria-label="Abrir menú"
         >
           <HiXMark />
         </button>
-        <ul className="flex flex-col items-start gap-4 text-center text-xl">
+        <ul className="flex flex-col items-start gap-4 text-center text-xl mt-8">
           <li>
             <Link
               to="proyectos"

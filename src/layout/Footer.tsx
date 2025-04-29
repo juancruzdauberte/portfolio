@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { TbMailShare } from "react-icons/tb";
+import { motion } from "framer-motion";
 
 export const Footer = () => {
   return (
@@ -9,30 +10,45 @@ export const Footer = () => {
       </section>
 
       <section className="flex gap-1 md:gap-2 right-1 md:right-4">
-        <a
+        <motion.a
+          whileHover={{
+            boxShadow: "0 0 10px rgba(59, 130, 246, 0.6)",
+            scale: 1.08,
+          }}
+          transition={{ duration: 0.02 }}
           href="https://www.linkedin.com/in/juancruzdauberte/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center border border-black rounded-full p-1 md:p-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white transition"
         >
           <FaLinkedin />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
+          whileHover={{
+            boxShadow: "0 0 10px rgba(59, 130, 246, 0.6)",
+            scale: 1.08,
+          }}
+          transition={{ duration: 0.02 }}
           href="https://github.com/juancruzdauberte"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center border border-black rounded-full p-1 md:p-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white transition"
         >
           <FaGithub />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
+          whileHover={{
+            boxShadow: "0 0 10px rgba(59, 130, 246, 0.6)",
+            scale: 1.08,
+          }}
+          transition={{ duration: 0.02 }}
           href="https://github.com/juancruzdauberte"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center border border-black rounded-full p-1 md:p-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white transition"
         >
           <TbMailShare />
-        </a>
+        </motion.a>
       </section>
     </section>
   );
