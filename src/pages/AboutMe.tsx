@@ -24,11 +24,13 @@ export const AboutMe = () => {
             la tecnología y el desarrollo de software. Me enfoco en el
             aprendizaje continuo, aplicando mis conocimientos en proyectos
             reales. Estoy en busqueda de contribuir a proyectos que impulsen mi
-            desarrollo profesional y generen un impacto positivo. Me gusta mucho
-            el deporte, me apasiona hacer actividades físicas. Jugar al fútbol
-            con mis amigos, ir al gimnasio, jugar un partido de padel. En mi
-            tiempo libre me gusta programar y pensar en ideas para iniciar un
-            nuevo proyecto. Muchas gracias por tu tiempo!
+            desarrollo profesional y generen un impacto positivo.
+          </p>
+          <p>
+            Me gusta mucho el deporte, me apasiona hacer actividades físicas.
+            Jugar al fútbol con mis amigos, ir al gimnasio, jugar un partido de
+            padel. En mi tiempo libre me gusta programar y pensar en ideas para
+            iniciar un nuevo proyecto. Muchas gracias por tu tiempo!
           </p>
           <div>
             <motion.a
