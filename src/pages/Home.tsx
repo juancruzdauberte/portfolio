@@ -17,14 +17,14 @@ export const Home = () => {
           />
         </motion.div>
         <div className="flex flex-col gap-2">
-          <h1 className="flex gap-2 md:text-xl">
+          <h1 className="flex flex-wrap items-center gap-2 md:text-xl">
             Hola, soy
             <motion.p className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-100 to-blue-400 bg-[length:200%_100%] animate-shine font-bold text-lg md:text-2xl">
               Juan Cruz Dauberte
             </motion.p>
           </h1>
           <span className="font-semibold text-blue-900 dark:text-blue-100">
-            Analista en Informática - Desarrollador Software
+            Analista en Informática - Desarrollador de Software
           </span>
         </div>
       </section>

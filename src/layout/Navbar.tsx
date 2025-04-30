@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { HiMiniBars3, HiXMark } from "react-icons/hi2";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 import { useTheme } from "../context/ThemeContext";
+import { motion } from "framer-motion";
+
 import Modal from "react-modal";
 Modal.setAppElement("#root");
 
@@ -24,6 +26,16 @@ export const Navbar = () => {
       document.body.style.overflow = "auto";
     };
   }, [menuOpen]);
+
+  const modalVariants = {
+    hidden: { x: "-100%", opacity: 0 },
+    visible: {
+      x: "0%",
+      opacity: 1,
+      transition: { type: "spring", stiffness: 300, damping: 30 },
+    },
+    exit: { x: "-100%", opacity: 0, transition: { duration: 0.2 } },
+  };
 
   return (
     <nav className="relative max-w-7xl mx-auto flex items-center justify-between">
@@ -71,7 +83,7 @@ export const Navbar = () => {
             offset={-80}
             className="cursor-pointer hover:text-blue-400 transition"
           >
-            Sobre Mi
+            Sobre Mí
           </Link>
         </li>
         <li className="hover:text-blue-400">
@@ -96,63 +108,71 @@ export const Navbar = () => {
         isOpen={menuOpen}
         onRequestClose={closeModal}
         contentLabel="Menú móvil"
-        className="z-60 text-black dark:text-white bg-white dark:bg-zinc-900 h-full absolute flex left-0 top-0 p-6 w-52 max-w-md mx-auto outline-none md:hidden"
+        className="z-60 text-black dark:text-white bg-white dark:bg-zinc-900 h-full absolute flex left-0 top-0 p-4 w-52 max-w-md mx-auto outline-none md:hidden"
         overlayClassName="z-50 inset-0 fixed inset-0 bg-black bg-opacity-50 flex md:hidden"
       >
-        <button
-          onClick={closeModal}
-          className="absolute top-4 right-4 md:hidden text-2xl cursor-pointer"
-          aria-label="Abrir menú"
+        <motion.div
+          variants={modalVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          className="w-full h-full flex flex-col gap-10"
         >
-          <HiXMark />
-        </button>
-        <ul className="flex flex-col items-start gap-4 text-center text-xl mt-8">
-          <li>
-            <Link
-              to="proyectos"
-              smooth={true}
-              duration={500}
-              offset={-80}
-              className="cursor-pointer hover:text-blue-400 transition"
-              onClick={closeModal}
-            >
-              Proyectos
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="experiencia"
-              smooth={true}
-              duration={500}
-              offset={-80}
-              className="cursor-pointer hover:text-blue-400 transition"
-              onClick={closeModal}
-            >
-              Experiencia
-            </Link>
-          </li>
-          <li>
-            <a
-              href="mailto:juandauberte@gmail.com"
-              className="hover:text-blue-400 transition"
-              onClick={closeModal}
-            >
-              Contacto
-            </a>
-          </li>
-          <li>
-            <Link
-              to="sobre-mi"
-              smooth={true}
-              duration={500}
-              offset={-80}
-              className="cursor-pointer hover:text-blue-400 transition"
-              onClick={closeModal}
-            >
-              Sobre Mi
-            </Link>
-          </li>
-        </ul>
+          <button
+            onClick={closeModal}
+            className="md:hidden text-2xl cursor-pointer"
+            aria-label="Abrir menú"
+          >
+            <HiXMark />
+          </button>
+          <ul className="flex flex-col items-start gap-4 text-center text-xl">
+            <li>
+              <Link
+                to="proyectos"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                className="cursor-pointer hover:text-blue-400 transition"
+                onClick={closeModal}
+              >
+                Proyectos
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="experiencia"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                className="cursor-pointer hover:text-blue-400 transition"
+                onClick={closeModal}
+              >
+                Experiencia
+              </Link>
+            </li>
+            <li>
+              <a
+                href="mailto:juandauberte@gmail.com"
+                className="hover:text-blue-400 transition"
+                onClick={closeModal}
+              >
+                Contacto
+              </a>
+            </li>
+            <li>
+              <Link
+                to="sobre-mi"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                className="cursor-pointer hover:text-blue-400 transition"
+                onClick={closeModal}
+              >
+                Sobre Mí
+              </Link>
+            </li>
+          </ul>
+        </motion.div>
       </Modal>
     </nav>
   );
