@@ -17,16 +17,7 @@ export const AboutMe = () => {
       <section className="flex flex-col gap-16 mx-4">
         <section className="flex flex-col gap-5 mt-3">
           <p>
-            Mi nombre es Juan Cruz Dauberte, tengo 21 años y actualmente me
-            encuentro estudiando la Licenciatura en Informática en la
-            Universidad Nacional San Antonio de Areco (UNSAdA), donde estoy
-            finalizando la Técnicatura. Además, estoy realizando la carrera de
-            Desarrollador Web FullStack en CoderHouse. Tengo una gran pasión por
-            la tecnología y el desarrollo de software. Me enfoco en el
-            aprendizaje continuo, aplicando mis conocimientos en proyectos en
-            los cuales estoy realizando. Estoy en búsqueda de contribuir a
-            proyectos que impulsen mi desarrollo profesional y generen un
-            impacto positivo dentro de la organización.
+           Hola! Mi nombre es Juan Cruz Dauberte y tengo 21 años. Soy un chico que le apasiona la tecnología sobre todo el desarrollo de software y los nuevos desafíos. Me encuentro finalizando la tecnicatura en informática, en la Universidad Nacional San Antonio de Areco (UNSAdA), y a su vez me estoy profesionalizando en la academia digital Coderhouse como Desarrollador Web Fullstack MERN. Actualmente, mi enfoque está dirigido al desarrollo FrontEnd, aplicando conocimientos en proyectos personales utilizando herramientas y tecnologías como Node Js, TypeScript, JavaScript y React. Busco contribuir a iniciativas que impulsen mi desarrollo profesional tanto como en lo personal y generen un impacto positivo dentro de la organización. Muchas gracias por tu tiempo!
           </p>
           <div className="flex flex-col">
             <p className="text-xl text-blue-400 mb-1 dark:text-blue-200">
