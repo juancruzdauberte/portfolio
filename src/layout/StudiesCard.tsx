@@ -40,7 +40,7 @@ export const StudiesCard = ({
             target="_blank"
             rel="noopener noreferrer"
           >
-            Ver credencial <GoArrowUpRight />
+            Ver certificado <GoArrowUpRight size={16} />
           </motion.a>
         )}
       </div>
