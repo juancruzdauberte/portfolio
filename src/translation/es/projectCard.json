@@ -1,0 +1,13 @@
+{
+  "projectCard": {
+    "tdn": {
+      "description": "E-commerce realizada para una persona de mi entorno. Aún falta la implementación de métodos de pago. El software está implementado para la venta de productos fabricados en macramé y cerámica."
+    },
+
+    "hb": {
+      "description": "Sitio web basado en el libro Habitos Átomicos de James Clear. La aplicación permite registrar tus hábitos y chequear si los has cumplido o no. Aún se encuentra en desarrollo."
+    },
+    "technologies": "Tecnologías utilizadas:",
+    "progress": "En curso"
+  }
+}

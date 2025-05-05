@@ -1,0 +1,25 @@
+{
+  "studies": {
+    "certificate": "View certificate",
+    "analystIt": {
+      "title": "IT Analyst",
+      "timeLaps": "February 2022 - Currently"
+    },
+    "webDevelopment": {
+      "title": " Web Development",
+      "timeLaps": "August 2024 - October 2024"
+    },
+    "js": {
+      "timeLaps": "October 2024 - January 2025",
+      "description": "ASYNCHRONOUS - NODE JS - NPM - DOM - ARRAY - OBJECTS - HIGHER ORDER FUNCTIONS"
+    },
+    "react": {
+      "timeLaps": "January 2025 - March 2025",
+      "description": "HOOKS - STATES - ROUTING - TAILWIND - FIRESTORE/FIREBASE"
+    },
+    "backI": {
+      "title": "Backend Development I",
+      "timeLaps": "March 2025 - Currently"
+    }
+  }
+}

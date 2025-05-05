@@ -1,0 +1,25 @@
+{
+  "studies": {
+    "certificate": "Ver certificado",
+    "analystIt": {
+      "title": "Analista en Informática",
+      "timeLaps": "Febrero 2022 - Actualmente"
+    },
+    "webDevelopment": {
+      "title": "Desarrollo Web",
+      "timeLaps": "Agosto 2024 - Octubre 2024"
+    },
+    "js": {
+      "timeLaps": "Octubre 2024 - Enero 2025",
+      "description": "ASINCRONISMO - NODE JS - NPM - DOM - ARRAY - OBJETOS - FUNCIONES DE ORDEN SUPERIOR"
+    },
+    "react": {
+      "timeLaps": "Enero 2025 - Marzo 2025",
+      "description": "HOOKS - ESTADOS - ROUTING - TAILWIND - FIRESTORE/FIREBASE"
+    },
+    "backI": {
+      "title": "Desarrollo Backend I",
+      "timeLaps": "Marzo 2025 - Actualmente"
+    }
+  }
+}

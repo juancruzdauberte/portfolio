@@ -1,0 +1,18 @@
+{
+  "experience": {
+    "title": "Work Experience",
+    "hb": {
+      "description": "Customer service and order manager with distributors via email. Catalog content creator.",
+      "timeLaps": "March 2024 – December 2024",
+      "orders": "Order issue management.",
+      "catalog": "Catalog content creator.",
+      "communication": "Communication with customers, distributors, and transport agencies.",
+      "trelloPresta": "Teamwork through the Trello and PrestaShop platforms."
+    },
+    "sl": {
+      "timeLaps": "February 2025 - Currently",
+      "description": "Customer service assistant via phone",
+      "communication": "Clear and precise communication with clients."
+    }
+  }
+}

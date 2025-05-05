@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { TbMailShare } from "react-icons/tb";
 
 export const Home = () => {
+  const { t } = useTranslation();
   return (
     <section className="w-full max-w-4xl flex flex-col gap-12">
       <section className="flex items-center gap-10">
@@ -18,23 +20,20 @@ export const Home = () => {
         </motion.div>
         <div className="flex flex-col gap-2">
           <h1 className="flex flex-wrap items-center gap-2 md:text-xl">
-            Hola, soy
+            {t("home.im")}
             <motion.p className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-100 to-blue-400 bg-[length:200%_100%] animate-shine font-bold text-lg md:text-2xl">
               Juan Cruz Dauberte
             </motion.p>
           </h1>
           <span className="font-semibold text-blue-900 dark:text-blue-100">
-            Analista en Informática - Desarrollador de Software
+            {t("home.titles")}
           </span>
         </div>
       </section>
 
       <section className="flex flex-col gap-4">
         <section>
-          <p className="">
-            Analista en Informática y Desarrollador Web. Creo soluciones
-            tecnológicas a los desafios o problemas que se propongan.
-          </p>
+          <p>{t("home.description")}</p>
         </section>
         <section className="flex flex-col sm:flex-row">
           <div className="flex flex-wrap gap-3">
@@ -78,7 +77,7 @@ export const Home = () => {
               className="flex items-center justify-center gap-2 border border-black rounded-full px-2 md:px-4 py-1  hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white "
             >
               <TbMailShare />
-              <span>Contáctame</span>
+              <span>{t("home.contactMe")}</span>
             </motion.a>
           </div>
         </section>

@@ -1,0 +1,14 @@
+{
+  "projectCard": {
+    "title": "Projects",
+    "tdn": {
+      "description": "E-commerce developed for someone in my circle. Payment methods are yet to be implemented. The software is designed for selling handmade macramé and ceramic products."
+    },
+
+    "hb": {
+      "description": "Website based on the book Atomic Habits by James Clear. The application allows users to track their habits and check whether they have completed them or not. It is still under development."
+    },
+    "technologies": "Technologies used:",
+    "progress": "In progress"
+  }
+}

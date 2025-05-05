@@ -1,0 +1,18 @@
+{
+  "experience": {
+    "title": "Experiencia laboral",
+    "hb": {
+      "description": "Atención al cliente y gestor de pedidos con distribuidores vía email. Creador de contenido en catálogo.",
+      "timeLaps": "Marzo 2024 - Diciembre 2024",
+      "orders": "Gestión en incidencia de pedidos.",
+      "catalog": "Creador de contenido en catálogo.",
+      "communication": "Comunicación con clientes, distribuidores y agencias de transporte.",
+      "trelloPresta": "Trabajo en equipo mediante la plataforma Trello y Prestashop."
+    },
+    "sl": {
+      "timeLaps": "Febrero 2025 - Actualmente",
+      "description": "Asistente de atención al cliente vía telefónica.",
+      "communication": "Comunicación clara y precisa con clientes."
+    }
+  }
+}

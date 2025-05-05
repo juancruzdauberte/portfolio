@@ -1,6 +1,7 @@
 import { IoIosLink } from "react-icons/io";
 import { LuCodeXml } from "react-icons/lu";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   title: string;
@@ -19,6 +20,7 @@ export const ProjectCard = ({
   img,
   technologies,
 }: Props) => {
+  const { t } = useTranslation();
   return (
     <motion.section
       initial={{ opacity: 0, scale: 0.95 }}
@@ -33,8 +35,8 @@ export const ProjectCard = ({
       className="group flex flex-col justify-center w-[280px] md:w-[300px] rounded-sm overflow-hidden hover:shadow-xl bg-white dark:bg-slate-700"
     >
       <div className="flex justify-end bg-gray-100 w-full">
-        <span className="w-20 text-sm text-center top-0 rounded-full border px-1 m-1 border-yellow-400 bg-yellow-50 text-yellow-400">
-          En curso
+        <span className="w-22 text-sm text-center top-0 rounded-full border px-1 m-1 border-yellow-400 bg-yellow-50 text-yellow-400">
+          {t("projectCard.progress")}
         </span>
       </div>
 
@@ -80,7 +82,9 @@ export const ProjectCard = ({
         </div>
 
         <div className="flex flex-col items-center gap-2">
-          <h6 className="text-sm font-semibold">Tecnologías utilizadas:</h6>
+          <h6 className="text-sm font-semibold">
+            {t("projectCard.technologies")}
+          </h6>
           <div className="flex gap-3 text-3xl">
             {technologies.map((TechIcon, index) => (
               <span key={index}>{TechIcon}</span>

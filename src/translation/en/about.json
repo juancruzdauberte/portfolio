@@ -1,0 +1,10 @@
+{
+  "about": {
+    "title": "About Me",
+    "titleStudies": "My Studies",
+    "description": "Hello! My name is Juan Cruz Dauberte and I am 21 years old. I am passionate about technology, especially software and challenges. I am currently finishing my Associate Degree in Computer Science at the National University of San Antonio de Areco (UNSAdA), the same time, I am training at the digital academy Coderhouse as a Fullstack MERN Web Developer. Currently, my focus is on FrontEnd development applying my knowledge in personal projects using tools and technologies such as Node.js, TypeScript, JavaScript, and React. Regarding BackEnd development, my focus is on building with technologies such as Express.js and the ODM Mongoose. For data storage, I have knowledge of SQL databases (MySQL and PostgreSQL) and NoSQL (MongoDB). I seek to contribute to initiatives that drive my professional and personal growth, and that generate a positive impact within the organization.",
+    "besides": "Besides...",
+    "descriptionBesides": "I really enjoy sports and I'm passionate about physical activities. I love playing football with my friends, going to the gym, and playing padel. In my free time, I enjoy programming and coming up with ideas for new challenges and projects. Thank you very much for your time!",
+    "download": "Download CV"
+  }
+}

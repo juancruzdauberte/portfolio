@@ -1,5 +1,6 @@
 import { GoArrowUpRight } from "react-icons/go";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   title: string;
@@ -16,6 +17,7 @@ export const StudiesCard = ({
   description,
   credentialUrl,
 }: Props) => {
+  const { t } = useTranslation();
   return (
     <motion.div
       whileHover={{ rotate: 1.5 }}
@@ -40,7 +42,7 @@ export const StudiesCard = ({
             target="_blank"
             rel="noopener noreferrer"
           >
-            Ver certificado <GoArrowUpRight size={16} />
+            {t("studies.certificate")} <GoArrowUpRight size={16} />
           </motion.a>
         )}
       </div>

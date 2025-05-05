@@ -6,12 +6,16 @@ import { useTheme } from "../context/ThemeContext";
 import { motion } from "framer-motion";
 
 import Modal from "react-modal";
+import { useTranslation } from "react-i18next";
+import { LanguageSelector } from "../common/LanguageSelector";
 Modal.setAppElement("#root");
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const openModal = (): void => setMenuOpen(true);
   const closeModal = (): void => setMenuOpen(false);
+
+  const { t } = useTranslation();
 
   const { darkMode, toggleDarkMode } = useTheme();
 
@@ -61,7 +65,7 @@ export const Navbar = () => {
             offset={-80}
             className="cursor-pointer hover:text-blue-400 transition"
           >
-            Proyectos
+            {t("navbar.projects")}
           </Link>
         </li>
         <li>
@@ -72,7 +76,7 @@ export const Navbar = () => {
             offset={-80}
             className="cursor-pointer hover:text-blue-400 transition"
           >
-            Experiencia
+            {t("navbar.experience")}
           </Link>
         </li>
         <li>
@@ -83,15 +87,15 @@ export const Navbar = () => {
             offset={-80}
             className="cursor-pointer hover:text-blue-400 transition"
           >
-            Sobre Mí
+            {t("navbar.aboutMe")}
           </Link>
         </li>
         <li className="hover:text-blue-400">
-          <a href="mailto:juandauberte@gmail.com">Contacto</a>
+          <a href="mailto:juandauberte@gmail.com">{t("navbar.contact")}</a>
         </li>
       </ul>
 
-      <div className="flex gap-2 md:gap-4 ml-auto">
+      <div className="flex items-center gap-2 md:gap-4 ml-auto">
         <button
           onClick={toggleDarkMode}
           className="border border-black rounded-full p-1 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white transition"
@@ -102,6 +106,7 @@ export const Navbar = () => {
             <MdOutlineDarkMode className="text-xl" />
           )}
         </button>
+        <LanguageSelector />
       </div>
 
       <Modal
@@ -135,7 +140,7 @@ export const Navbar = () => {
                 className="cursor-pointer hover:text-blue-400 transition"
                 onClick={closeModal}
               >
-                Proyectos
+                {t("navbar.projects")}
               </Link>
             </li>
             <li>
@@ -147,7 +152,7 @@ export const Navbar = () => {
                 className="cursor-pointer hover:text-blue-400 transition"
                 onClick={closeModal}
               >
-                Experiencia
+                {t("navbar.experience")}
               </Link>
             </li>
             <li>
@@ -156,7 +161,7 @@ export const Navbar = () => {
                 className="hover:text-blue-400 transition"
                 onClick={closeModal}
               >
-                Contacto
+                {t("navbar.contact")}
               </a>
             </li>
             <li>
@@ -168,7 +173,7 @@ export const Navbar = () => {
                 className="cursor-pointer hover:text-blue-400 transition"
                 onClick={closeModal}
               >
-                Sobre Mí
+                {t("navbar.aboutMe")}
               </Link>
             </li>
           </ul>
