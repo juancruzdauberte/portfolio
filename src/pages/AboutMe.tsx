@@ -83,11 +83,11 @@ export const AboutMe = () => {
               title={t("studies.backI.title")}
               academy="Coderhouse"
               timelaps={t("studies.backI.timeLaps")}
-              description="API REST - EXPRESS - MONGO DB - MONGOOSE - WEBSOCKETS - HANDLEBARS - ROUTER - MULTER"
+              description="API REST - EXPRESS - MONGODB - MONGOOSE - WEBSOCKETS - HANDLEBARS - ROUTER - MULTER"
             />
           </div>
         </section>
-        <section className="flex flex-col gap-3">
+        <section className="flex flex-col gap-8">
           <div>
             <h4 className="text-2xl font-semibold text-blue-700 dark:text-blue-400">
               {t("about.technologiesTools")}
