@@ -12,7 +12,8 @@
     "sl": {
       "timeLaps": "Febrero 2025 - Actualmente",
       "description": "Asistente de atención al cliente vía telefónica.",
-      "communication": "Comunicación clara y precisa con clientes."
+      "communication": "Comunicación clara y precisa con clientes.",
+      "ic": "Registro de citas iniciales."
     }
   }
 }

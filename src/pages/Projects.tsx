@@ -1,5 +1,5 @@
 import { FiFolder } from "react-icons/fi";
-import { ProjectCard } from "../layout/ProjectCard";
+import { ProjectCard } from "../common/ProjectCard";
 import { RiSupabaseFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiReactquery, SiTypescript } from "react-icons/si";
 import { FaReact } from "react-icons/fa";

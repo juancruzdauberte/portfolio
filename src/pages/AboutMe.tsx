@@ -1,9 +1,9 @@
 import { FiUser } from "react-icons/fi";
 import Cv from "../../public/download/Curriculum Vitae Juan Cruz Dauberte.pdf";
 import { PiFilePdf } from "react-icons/pi";
-import { StudiesCard } from "../layout/StudiesCard";
+import { StudiesCard } from "../common/StudiesCard";
 import { motion } from "framer-motion";
-import { Technologies } from "../layout/Technologies";
+import { Technologies } from "../common/Technologies";
 import { useTranslation } from "react-i18next";
 export const AboutMe = () => {
   const { t } = useTranslation();
@@ -55,7 +55,7 @@ export const AboutMe = () => {
           <div className="flex flex-wrap gap-10 mt-3">
             <StudiesCard
               title={t("studies.analystIt.title")}
-              academy="Universidad Nacional San Antonio de Areco (UNSAdA)"
+              academy={t("studies.analystIt.academy")}
               timelaps={t("studies.analystIt.timeLaps")}
             />
             <StudiesCard

@@ -29,7 +29,7 @@ export const StudiesCard = ({
         <span className="text-lg">{timelaps}</span>
         <span className="text-lg font-semibold">{academy}</span>
 
-        {description && <p className="text-lg ">{description}</p>}
+        {description && <p className="text-sm ">{description}</p>}
 
         {credentialUrl && (
           <motion.a

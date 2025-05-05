@@ -2,10 +2,10 @@
   "about": {
     "title": "Sobre Mí",
     "titleStudies": "Mis Estudios",
-    "description": "Hola! Mi nombre es Juan Cruz Dauberte y tengo 21 años. Soy un chico que le apasiona la tecnología sobre todo el desarrollo de software y los nuevos desafíos. Me encuentro finalizando la tecnicatura en informática, en la Universidad Nacional San Antonio de Areco (UNSAdA), y a su vez me estoy profesionalizando en la academia digital Coderhouse como Desarrollador Web Fullstack MERN. Actualmente, mi enfoque está dirigido al desarrollo FrontEnd, aplicando conocimientos en proyectos personales utilizando herramientas y tecnologías como Node Js, TypeScript, JavaScript y React. En cuanto al desarrollo BackEnd mi enfoque va dirigido al desarrollo utilizando tecnologias como Express Js, ODM Mongoose. Para el almacenamiento de datos tengo conocimientos en base de datos SQL (MySQL y PostgreSQL) y NOSQL (MongoDB). Busco contribuir a iniciativas que impulsen mi desarrollo profesional tanto como en lo personal y generen un impacto positivo dentro de la organización.",
+    "description": "Hola, mi nombre es Juan Cruz Dauberte y tengo 21 años. Soy un chico que le apasiona la tecnología sobre todo el desarrollo de software y los nuevos desafíos. Me encuentro finalizando la tecnicatura en informática, en la Universidad Nacional San Antonio de Areco (UNSAdA), y a su vez me estoy profesionalizando en la academia digital Coderhouse como Desarrollador Web Fullstack MERN. Actualmente, mi enfoque está dirigido al desarrollo Frontend, aplicando conocimientos en proyectos personales utilizando herramientas y tecnologías como Node Js, TypeScript, JavaScript y React. En cuanto al desarrollo Backend mi enfoque va dirigido a crear soluciones utilizando tecnologías como Express Js y ODM Mongoose. Para el almacenamiento de datos tengo conocimientos en base de datos SQL (MySQL y PostgreSQL) y NOSQL (MongoDB). Busco contribuir a iniciativas que impulsen mi desarrollo profesional tanto como en lo personal y generen un impacto positivo dentro de la organización.",
     "besides": "Además...",
     "descriptionBesides": "Me gusta mucho el deporte, me apasiona hacer actividades físicas. Jugar al fútbol con mis amigos, ir al gimnasio, jugar al pádel. En mi tiempo libre me gusta programar y pensar en ideas para realizar nuevos desafios y proyectos. Muchas gracias por tu tiempo!",
     "download": "Descargar CV",
-    "technologiesTools": "Technologies & Tools"
+    "technologiesTools": "Tecnologías & Herramientas"
   }
 }

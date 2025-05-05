@@ -12,7 +12,8 @@
     "sl": {
       "timeLaps": "February 2025 - Currently",
       "description": "Customer service assistant via phone",
-      "communication": "Clear and precise communication with clients."
+      "communication": "Clear and precise communication with clients.",
+      "ic": "First appointment record."
     }
   }
 }

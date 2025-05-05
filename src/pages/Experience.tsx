@@ -44,6 +44,7 @@ export const Experience = () => {
             <ul className="list-disc list-inside space-y-1 mx-2">
               <li>Home Office.</li>
               <li>{t("experience.sl.communication")}</li>
+              <li>{t("experience.sl.ic")}</li>
             </ul>
           </div>
         </section>
