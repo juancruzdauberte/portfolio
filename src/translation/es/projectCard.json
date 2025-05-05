@@ -1,5 +1,6 @@
 {
   "projectCard": {
+    "title": "Proyectos",
     "tdn": {
       "description": "E-commerce realizada para una persona de mi entorno. Aún falta la implementación de métodos de pago. El software está implementado para la venta de productos fabricados en macramé y cerámica."
     },
