@@ -41,6 +41,10 @@ export const Technologies = () => {
         alt="PostgreSQL"
       />
       <TechIcon
+        src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1747828893/sql-server_fsqzxk.png"
+        alt="SQL Server"
+      />
+      <TechIcon
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
         alt="MySQL"
       />
