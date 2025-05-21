@@ -32,7 +32,7 @@ export const LanguageSelector = () => {
         </button>
 
         {isOpen && (
-          <div className="flex flex-col gap-2 absolute top-10 right-1 bg-white shadow-md w-20 z-10 dark:bg-zinc-700">
+          <div className="flex flex-col gap-2 absolute top-10 right-1 bg-white shadow-md w-20 z-10 dark:bg-zinc-800">
             <button
               onClick={() => {
                 changeLanguage("es");
@@ -40,7 +40,7 @@ export const LanguageSelector = () => {
               }}
               title="Español"
               className={`flex justify-center items-center gap-1 p-1 text-sm w-full ${
-                language === "es" && "bg-slate-100"
+                language === "es" && "bg-slate-100 dark:bg-gray-600"
               }`}
             >
               <img
@@ -57,7 +57,7 @@ export const LanguageSelector = () => {
               }}
               title="English"
               className={`flex justify-center items-center gap-1 p-1 text-sm w-full ${
-                language === "en" && "bg-slate-100"
+                language === "en" && "bg-slate-100 dark:bg-gray-600"
               }`}
             >
               <img
