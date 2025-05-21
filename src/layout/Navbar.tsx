@@ -90,6 +90,17 @@ export const Navbar = () => {
             {t("navbar.aboutMe")}
           </Link>
         </li>
+        <li>
+          <Link
+            to="habilidades"
+            smooth={true}
+            duration={500}
+            offset={-80}
+            className="cursor-pointer hover:text-blue-400 transition"
+          >
+            Habilidades
+          </Link>
+        </li>
         <li className="hover:text-blue-400">
           <a href="mailto:juandauberte@gmail.com">{t("navbar.contact")}</a>
         </li>

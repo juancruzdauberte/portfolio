@@ -1,0 +1,12 @@
+{
+  "skills": {
+    "title": "Skills",
+    "softSkills": {
+      "title": "Soft skills",
+      "description": "Teamwork – Effective communication – Problem solving – Continuous learning – Proactivity – Time management – Adaptability"
+    },
+    "techSkills": {
+      "title": "Tech skills"
+    }
+  }
+}

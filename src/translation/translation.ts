@@ -13,6 +13,10 @@ import aboutMeEn from "./en/about.json";
 import aboutMeEs from "./es/about.json";
 import studiesEs from "./es/studiesCard.json";
 import studiesEn from "./en/studiesCard.json";
+import techEs from "./es/tech.json";
+import techEn from "./en/tech.json";
+import skillsEs from "./es/skills.json";
+import skillsEn from "./en/skills.json";
 
 const resources = {
   es: {
@@ -23,6 +27,8 @@ const resources = {
       ...projectCardEs,
       ...aboutMeEs,
       ...studiesEs,
+      ...techEs,
+      ...skillsEs,
     },
   },
   en: {
@@ -33,6 +39,8 @@ const resources = {
       ...projectCardEn,
       ...aboutMeEn,
       ...studiesEn,
+      ...techEn,
+      ...skillsEn,
     },
   },
 };

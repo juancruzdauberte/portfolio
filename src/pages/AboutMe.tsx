@@ -3,7 +3,6 @@ import Cv from "../../public/download/Curriculum Vitae Juan Cruz Dauberte.pdf";
 import { PiFilePdf } from "react-icons/pi";
 import { StudiesCard } from "../common/StudiesCard";
 import { motion } from "framer-motion";
-import { Technologies } from "../common/Technologies";
 import { useTranslation } from "react-i18next";
 export const AboutMe = () => {
   const { t } = useTranslation();
@@ -86,14 +85,6 @@ export const AboutMe = () => {
               description="API REST - EXPRESS - MONGODB - MONGOOSE - WEBSOCKETS - HANDLEBARS - ROUTER - MULTER"
             />
           </div>
-        </section>
-        <section className="flex flex-col gap-8">
-          <div>
-            <h4 className="text-2xl font-semibold text-blue-700 dark:text-blue-400">
-              {t("about.technologiesTools")}
-            </h4>
-          </div>
-          <Technologies />
         </section>
       </section>
     </section>

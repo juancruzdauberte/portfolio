@@ -1,0 +1,12 @@
+{
+  "skills": {
+    "title": "Habilidades",
+    "softSkills": {
+      "title": "Habilidades blandas",
+      "description": "Trabajo en equipo - Comunicación efectiva - Resolución de problemas - Aprendizaje continuo - Proactividad - Gestión de tiempos - Adaptablidad"
+    },
+    "techSkills": {
+      "title": "Habilidades tecnológicas"
+    }
+  }
+}

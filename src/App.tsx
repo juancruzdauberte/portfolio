@@ -6,6 +6,7 @@ import { Experience } from "./pages/Experience";
 import { Home } from "./pages/Home";
 import { Projects } from "./pages/Projects";
 import { AboutMe } from "./pages/AboutMe";
+import { Skills } from "./pages/Skills";
 
 function App() {
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -33,6 +34,7 @@ function App() {
           <Experience />
           <Projects />
           <AboutMe />
+          <Skills />
         </main>
         <footer className="flex justify-center items-center">
           <Footer />
