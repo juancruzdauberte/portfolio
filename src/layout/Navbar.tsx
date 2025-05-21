@@ -98,7 +98,7 @@ export const Navbar = () => {
             offset={-80}
             className="cursor-pointer hover:text-blue-400 transition"
           >
-            Habilidades
+            {t("navbar.skills")}
           </Link>
         </li>
         <li className="hover:text-blue-400">
