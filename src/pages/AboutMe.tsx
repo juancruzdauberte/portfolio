@@ -83,6 +83,7 @@ export const AboutMe = () => {
               academy="Coderhouse"
               timelaps={t("studies.backI.timeLaps")}
               description="API REST - EXPRESS - MONGODB - MONGOOSE - WEBSOCKETS - HANDLEBARS - ROUTER - MULTER"
+              credentialUrl="https://pub.coderhouse.com/certificates/48cd567f-32a6-46a1-93b5-fe4a0bda97e4?v=1"
             />
           </div>
         </section>
