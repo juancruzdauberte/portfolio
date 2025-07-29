@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { PiFilePdf } from "react-icons/pi";
 import { TbMailShare } from "react-icons/tb";
+import cv from "../../public/download/Curriculum Vitae Juan Cruz Dauberte.pdf";
 
 export const Home = () => {
   const { t } = useTranslation();
@@ -78,6 +80,21 @@ export const Home = () => {
             >
               <TbMailShare />
               <span>{t("home.contactMe")}</span>
+            </motion.a>
+
+            <motion.a
+              whileHover={{
+                boxShadow: "0 0 20px rgba(59, 130, 246, 0.6)",
+                scale: 1.03,
+              }}
+              transition={{ duration: 0.07 }}
+              href={cv}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 border border-black rounded-full px-2 md:px-4 py-1  hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white "
+            >
+              <PiFilePdf size={25} />
+              <span>{t("about.download")}</span>
             </motion.a>
           </div>
         </section>
