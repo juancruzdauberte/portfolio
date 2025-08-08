@@ -5,7 +5,8 @@ import { useTranslation } from "react-i18next";
 
 type Props = {
   title: string;
-  codeUrl: string;
+  codeUrlFront?: string;
+  codeUrlBack?: string;
   previewUrl: string;
   description: string;
   img: string;
@@ -14,7 +15,8 @@ type Props = {
 
 export const ProjectCard = ({
   title,
-  codeUrl,
+  codeUrlFront,
+  codeUrlBack,
   previewUrl,
   description,
   img,
@@ -58,14 +60,29 @@ export const ProjectCard = ({
               boxShadow: "0 0 20px rgba(59, 130, 246, 0.6)",
             }}
             transition={{ duration: 0.07 }}
-            href={codeUrl}
+            href={codeUrlFront}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 border border-black dark:border-white rounded-full py-1 px-4 text-sm font-medium hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
           >
             <LuCodeXml className="text-xl" />
-            Code
+            Front
           </motion.a>
+          {codeUrlBack && (
+            <motion.a
+              whileHover={{
+                boxShadow: "0 0 20px rgba(59, 130, 246, 0.6)",
+              }}
+              transition={{ duration: 0.07 }}
+              href={codeUrlBack}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 border border-black dark:border-white rounded-full py-1 px-4 text-sm font-medium hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
+            >
+              <LuCodeXml className="text-xl" />
+              Back
+            </motion.a>
+          )}
           <motion.a
             whileHover={{
               boxShadow: "0 0 20px rgba(59, 130, 246, 0.6)",
@@ -85,7 +102,7 @@ export const ProjectCard = ({
           <h6 className="text-sm font-semibold">
             {t("projectCard.technologies")}
           </h6>
-          <div className="flex gap-3 text-3xl">
+          <div className="flex flex-wrap gap-3 text-3xl">
             {technologies.map((TechIcon, index) => (
               <span key={index}>{TechIcon}</span>
             ))}

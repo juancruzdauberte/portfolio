@@ -26,6 +26,11 @@ export const Technologies = () => {
             alt="TanStack"
           />
           <TechIcon
+            src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1754677841/zustand_pnlukv.png"
+            alt="Zustand"
+          />
+
+          <TechIcon
             src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
             alt="Tailwind"
           />

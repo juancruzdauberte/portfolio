@@ -1,7 +1,16 @@
 import { FiFolder } from "react-icons/fi";
 import { ProjectCard } from "../common/ProjectCard";
 import { RiSupabaseFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiReactquery, SiTypescript } from "react-icons/si";
+import {
+  SiReactquery,
+  SiTypescript,
+  SiExpress,
+  SiJsonwebtokens,
+  SiNodedotjs,
+  SiMysql,
+} from "react-icons/si";
+import { TbBrandOauth } from "react-icons/tb";
+
 import { FaReact } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
@@ -18,15 +27,20 @@ export const Projects = () => {
 
       <section className="flex flex-col items-center gap-10 ms-4 sm:items-start md:flex-row md:gap-16">
         <ProjectCard
-          description={t("projectCard.tdn.description")}
-          title="Tierra de nudos"
-          img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1745010629/Screenshot_2_l01new.jpg"
-          codeUrl="https://github.com/juancruzdauberte/Tierra-de-Nudos"
-          previewUrl="https://tierra-de-nudos.vercel.app/"
+          description={t("projectCard.cec.description")}
+          title="Como En Casa"
+          img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1754500072/Screenshot_3_xi7may.png"
+          codeUrlFront="https://github.com/juancruzdauberte/ComoEnCasa-front"
+          codeUrlBack="https://github.com/juancruzdauberte/comoencasa-back"
+          previewUrl="https://como-en-casa-front.vercel.app/login"
           technologies={[
-            <FaReact className="text-react" />,
+            <SiNodedotjs className="text-green-500" />,
+            <SiMysql />,
             <SiTypescript className="text-typescript" />,
-            <RiSupabaseFill className="text-supabase" />,
+            <SiExpress className="text-gray-600" />,
+            <SiJsonwebtokens />,
+            <TbBrandOauth />,
+            <FaReact className="text-react" />,
             <RiTailwindCssFill className="text-tailwind" />,
             <SiReactquery className="text-red-400" />,
           ]}
@@ -35,7 +49,7 @@ export const Projects = () => {
           description={t("projectCard.hb.description")}
           title="Habits Record"
           img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1745010998/Screenshot_1_equkwa.jpg"
-          codeUrl="https://github.com/juancruzdauberte/habits-record"
+          codeUrlFront="https://github.com/juancruzdauberte/habits-record"
           previewUrl="https://habits-record-sable.vercel.app/"
           technologies={[
             <FaReact className="text-react" />,

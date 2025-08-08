@@ -1,8 +1,8 @@
 {
   "projectCard": {
     "title": "Proyectos",
-    "tdn": {
-      "description": "E-commerce realizada para una persona de mi entorno. Aún falta la implementación de métodos de pago. El software está implementado para la venta de productos fabricados en macramé y cerámica."
+    "cec": {
+      "description": "Desarrollé un software web de gestión, control y administración de pedidos y finanzas para una rotisería llamada Como En Casa ubicada en Baradero, Pcia. de Buenos Aires. La plataforma permite a dichos usuarios predefinidos la autenticación y autorización mediante OAuth2, JWT y Cookies la gestión y control de sus pedidos y finanzas."
     },
 
     "hb": {

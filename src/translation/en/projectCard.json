@@ -1,8 +1,8 @@
 {
   "projectCard": {
     "title": "Projects",
-    "tdn": {
-      "description": "E-commerce developed for someone in my circle. Payment methods are yet to be implemented. The software is designed for selling handmade macramé and ceramic products."
+    "cec": {
+      "description": "I developed a web-based software for managing, controlling, and administering orders and finances for a deli called Como En Casa located in Baradero, Buenos Aires Province. The platform allows predefined users to authenticate and authorize their orders and finances using OAuth2, JWT, and cookies."
     },
 
     "hb": {

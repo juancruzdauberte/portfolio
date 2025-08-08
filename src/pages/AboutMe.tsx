@@ -85,6 +85,12 @@ export const AboutMe = () => {
               description="API REST - EXPRESS - MONGODB - MONGOOSE - WEBSOCKETS - HANDLEBARS - ROUTER - MULTER"
               credentialUrl="https://pub.coderhouse.com/certificates/48cd567f-32a6-46a1-93b5-fe4a0bda97e4?v=1"
             />
+            <StudiesCard
+              title={t("studies.data.title")}
+              academy="Universidad de Buenos Aires"
+              timelaps={t("studies.data.timeLaps")}
+              description={t("studies.data.description")}
+            />
           </div>
         </section>
       </section>
