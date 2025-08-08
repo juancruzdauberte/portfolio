@@ -4,7 +4,9 @@
     "cec": {
       "description": "I developed a web-based software for managing, controlling, and administering orders and finances for a deli called Como En Casa located in Baradero, Buenos Aires Province. The platform allows predefined users to authenticate and authorize their orders and finances using OAuth2, JWT, and cookies."
     },
-
+    "tbs": {
+      "description": "Together with Franco Leszkiewicz, we developed a web-based system for the administrative and financial management of TheBlackSheep. The software allows for the authentication and authorization of predefined users, providing secure access to functions such as uploading, viewing, and managing information related to travel and internal finances."
+    },
     "hb": {
       "description": "Website based on the book Atomic Habits by James Clear. The application allows users to track their habits and check whether they have completed them or not. It is still under development."
     },

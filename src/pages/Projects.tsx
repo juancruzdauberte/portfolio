@@ -25,7 +25,7 @@ export const Projects = () => {
         </h3>
       </section>
 
-      <section className="flex flex-col items-center gap-10 ms-4 sm:items-start md:flex-row md:gap-16">
+      <section className="flex flex-col items-center gap-10 ms-4 sm:items-start md:flex-row md:gap-16 w-full">
         <ProjectCard
           description={t("projectCard.cec.description")}
           title="Como En Casa"
@@ -45,6 +45,26 @@ export const Projects = () => {
             <SiReactquery className="text-red-400" />,
           ]}
         />
+
+        <ProjectCard
+          description={t("projectCard.tbs.description")}
+          title="The Black Sheep"
+          img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1754687196/Screenshot_1_juci2x.png"
+          codeUrlFront="https://github.com/franles/tbsfrontend"
+          codeUrlBack="https://github.com/franles/TheBlackSheep"
+          technologies={[
+            <SiNodedotjs className="text-green-500" />,
+            <SiMysql />,
+            <SiTypescript className="text-typescript" />,
+            <SiExpress className="text-gray-600" />,
+            <SiJsonwebtokens />,
+            <TbBrandOauth />,
+            <FaReact className="text-react" />,
+            <RiTailwindCssFill className="text-tailwind" />,
+            <SiReactquery className="text-red-400" />,
+          ]}
+        />
+
         <ProjectCard
           description={t("projectCard.hb.description")}
           title="Habits Record"

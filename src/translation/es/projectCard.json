@@ -4,7 +4,9 @@
     "cec": {
       "description": "Desarrollé un software web de gestión, control y administración de pedidos y finanzas para una rotisería llamada Como En Casa ubicada en Baradero, Pcia. de Buenos Aires. La plataforma permite a dichos usuarios predefinidos la autenticación y autorización mediante OAuth2, JWT y Cookies la gestión y control de sus pedidos y finanzas."
     },
-
+    "tbs": {
+      "description": "Desarrollamos junto a Franco Leszkiewicz un sistema web para la gestión administrativa y financiera de para empresa TheBlackSheep. El software permite la autenticación y autorización de usuarios predefinidos brindando acceso seguro a funciones carga, visualización y administración de información relacionada con viajes y finanzas internas."
+    },
     "hb": {
       "description": "Sitio web basado en el libro Habitos Átomicos de James Clear. La aplicación permite registrar tus hábitos y chequear si los has cumplido o no. Aún se encuentra en desarrollo."
     },
