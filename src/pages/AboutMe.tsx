@@ -87,9 +87,16 @@ export const AboutMe = () => {
             />
             <StudiesCard
               title={t("studies.data.title")}
-              academy="Universidad de Buenos Aires"
+              academy={t("studies.data.academy")}
               timelaps={t("studies.data.timeLaps")}
               description={t("studies.data.description")}
+            />
+
+            <StudiesCard
+              title={t("studies.data2.title")}
+              academy={t("studies.data2.academy")}
+              timelaps={t("studies.data2.timeLaps")}
+              description={t("studies.data2.description")}
             />
           </div>
         </section>

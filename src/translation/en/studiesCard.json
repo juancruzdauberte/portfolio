@@ -24,8 +24,15 @@
     },
     "data": {
       "title": "Data Management and Analysis",
-      "description": "DATA ANALYSIS - POWER BI - SQL - PYTHON",
-      "timeLaps": "August 2025 - Currently"
+      "description": "DATA ANALYSIS - POWER BI - SQL - PYTHON - PANDAS - NUMPY - MACHINE LEARNING - VISUALIZACIÓN DE DATOS - MODELADO DE DATOS - PREPARACIÓN DE DATOS",
+      "timeLaps": "August 2025 - Currently",
+      "academy": "University of Buenos Aires"
+    },
+    "data2": {
+      "title": "Data Science",
+      "description": "DATA ANALYSIS - POWER BI - SQL - PYTHON - PANDAS - NUMPY - MACHINE LEARNING - DATA VISUALIZATION - DATA MODELING - DATA PREPARATION",
+      "timeLaps": "Agosto 2025 - Actualmente",
+      "academy": "National University of San Martin"
     }
   }
 }

@@ -59,13 +59,13 @@ export const Navbar = () => {
       >
         <li>
           <Link
-            to="proyectos"
+            to="sobre-mi"
             smooth={true}
             duration={500}
             offset={-80}
-            className="cursor-pointer hover:text-blue-400 transition"
+            className="cursor-pointer hover:text-blue-400 transition [&.active-link]:text-blue-400"
           >
-            {t("navbar.projects")}
+            {t("navbar.aboutMe")}
           </Link>
         </li>
         <li>
@@ -79,15 +79,16 @@ export const Navbar = () => {
             {t("navbar.experience")}
           </Link>
         </li>
+
         <li>
           <Link
-            to="sobre-mi"
+            to="proyectos"
             smooth={true}
             duration={500}
             offset={-80}
             className="cursor-pointer hover:text-blue-400 transition"
           >
-            {t("navbar.aboutMe")}
+            {t("navbar.projects")}
           </Link>
         </li>
         <li>
@@ -174,18 +175,6 @@ export const Navbar = () => {
               >
                 {t("navbar.contact")}
               </a>
-            </li>
-            <li>
-              <Link
-                to="sobre-mi"
-                smooth={true}
-                duration={500}
-                offset={-80}
-                className="cursor-pointer hover:text-blue-400 transition"
-                onClick={closeModal}
-              >
-                {t("navbar.aboutMe")}
-              </Link>
             </li>
           </ul>
         </motion.div>

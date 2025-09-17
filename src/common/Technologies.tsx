@@ -10,14 +10,6 @@ export const Technologies = () => {
 
         <div className="flex flex-wrap gap-2">
           <TechIcon
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-            alt="TypeScript"
-          />
-          <TechIcon
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-            alt="JavaScript"
-          />
-          <TechIcon
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
             alt="React Js"
           />
@@ -66,7 +58,18 @@ export const Technologies = () => {
             src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1745953822/icon-express_foa4dc.png"
             alt="Express"
           />
-
+          <TechIcon
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+            alt="TypeScript"
+          />
+          <TechIcon
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+            alt="JavaScript"
+          />
+          <TechIcon
+            src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/files/python-logo-only.svg"
+            alt="Python"
+          />
           <TechIcon
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
             alt="MongoDB"

@@ -24,8 +24,15 @@
     },
     "data": {
       "title": "Gestion y Análisis de Datos",
-      "description": "ANÁLISIS DE DATOS - POWER BI - SQL - PYTHON",
-      "timeLaps": "Agosto 2025 - Actualmente"
+      "description": "ANÁLISIS DE DATOS - POWER BI - SQL - PYTHON - PANDAS - NUMPY - MACHINE LEARNING - VISUALIZACIÓN DE DATOS - MODELADO DE DATOS - PREPARACIÓN DE DATOS",
+      "timeLaps": "Agosto 2025 - Actualmente",
+      "academy": "Universidad De Buenos Aires"
+    },
+    "data2": {
+      "title": "Ciencia de Datos",
+      "description": "ANÁLISIS DE DATOS - POWER BI - SQL - PYTHON - PANDAS - NUMPY - MACHINE LEARNING - VISUALIZACIÓN DE DATOS - MODELADO DE DATOS - PREPARACIÓN DE DATOS",
+      "timeLaps": "Agosto 2025 - Actualmente",
+      "academy": "Universidad Nacional de San Martín"
     }
   }
 }
