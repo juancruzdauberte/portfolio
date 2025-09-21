@@ -7,6 +7,9 @@
     "tbs": {
       "description": "Together with Franco Leszkiewicz, we developed a web-based system for the administrative and financial management of TheBlackSheep. The software allows for the authentication and authorization of predefined users, providing secure access to functions such as uploading, viewing, and managing information related to travel and internal finances."
     },
+    "dh": {
+      "description": "I created a landing page for a airbnb house located in Baradero, Buenos Aires province. This aim is to showcase the house, the services and amenities it offers for booking purposes."
+    },
     "hb": {
       "description": "Website based on the book Atomic Habits by James Clear. The application allows users to track their habits and check whether they have completed them or not. It is still under development."
     },

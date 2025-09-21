@@ -14,6 +14,10 @@ export const Technologies = () => {
             alt="React Js"
           />
           <TechIcon
+            src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1758482854/nextjs-icon-svgrepo-com_pkvcfh.png"
+            alt="Next Js"
+          />
+          <TechIcon
             src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1745432721/react-query-seeklogo_axk8ly.png"
             alt="TanStack"
           />

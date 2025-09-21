@@ -1,6 +1,10 @@
 import { FiFolder } from "react-icons/fi";
 import { ProjectCard } from "../common/ProjectCard";
-import { RiSupabaseFill, RiTailwindCssFill } from "react-icons/ri";
+import {
+  RiSupabaseFill,
+  RiTailwindCssFill,
+  RiNextjsFill,
+} from "react-icons/ri";
 import {
   SiReactquery,
   SiTypescript,
@@ -25,7 +29,7 @@ export const Projects = () => {
         </h3>
       </section>
 
-      <section className="flex flex-col items-center gap-10 ms-4 sm:items-start md:flex-row md:gap-16 w-full">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-10 ms-4 md:gap-16 w-full">
         <ProjectCard
           description={t("projectCard.cec.description")}
           title="Como En Casa"
@@ -43,6 +47,20 @@ export const Projects = () => {
             <FaReact className="text-react" />,
             <RiTailwindCssFill className="text-tailwind" />,
             <SiReactquery className="text-red-400" />,
+          ]}
+        />
+
+        <ProjectCard
+          description={t("projectCard.dh.description")}
+          title="Dreamhouse Baradero"
+          img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1758483307/Screenshot_1_hg1irr.png"
+          previewUrl="https://www.dreamhousebaradero.com"
+          technologies={[
+            <SiNodedotjs className="text-green-500" />,
+            <SiTypescript className="text-typescript" />,
+            <RiNextjsFill />,
+            <FaReact className="text-react" />,
+            <RiTailwindCssFill className="text-tailwind" />,
           ]}
         />
 

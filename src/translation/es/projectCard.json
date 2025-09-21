@@ -7,6 +7,9 @@
     "tbs": {
       "description": "Desarrollamos junto a Franco Leszkiewicz un sistema web para la gestión administrativa y financiera de para empresa TheBlackSheep. El software permite la autenticación y autorización de usuarios predefinidos brindando acceso seguro a funciones carga, visualización y administración de información relacionada con viajes y finanzas internas."
     },
+    "dh": {
+      "description": "Realicé una landing page para una casa quinta ubicada en Baradero, provincia de Buenos Aires. Su funcionalidad es mostrar la casa con los servicios y comodidades que ofrece para la reserva de la misma"
+    },
     "hb": {
       "description": "Sitio web basado en el libro Habitos Átomicos de James Clear. La aplicación permite registrar tus hábitos y chequear si los has cumplido o no. Aún se encuentra en desarrollo."
     },
