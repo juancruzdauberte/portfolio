@@ -4,103 +4,240 @@ import { PiFilePdf } from "react-icons/pi";
 import { StudiesCard } from "../common/StudiesCard";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+
 export const AboutMe = () => {
   const { t } = useTranslation();
 
+  // Variantes de animación
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { x: -50, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12,
+      },
+    },
+  };
+
+  const titleVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 200,
+        damping: 15,
+      },
+    },
+  };
+
   return (
     <section id="sobre-mi" className="w-full max-w-4xl flex flex-col">
-      <section className="flex items-center gap-2">
-        <FiUser className="text-3xl md:text-4xl text-blue-950 dark:text-blue-600" />
+      {/* Título con animación */}
+      <motion.section
+        variants={titleVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        className="flex items-center gap-2"
+      >
+        <motion.div
+          animate={{
+            rotate: [0, 10, -10, 10, 0],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            repeatDelay: 5,
+          }}
+        >
+          <FiUser className="text-3xl md:text-4xl text-blue-950 dark:text-blue-600" />
+        </motion.div>
         <h3 className="text-2xl md:text-3xl font-bold text-blue-950 dark:text-blue-600">
           {t("about.title")}
         </h3>
-      </section>
+      </motion.section>
 
-      <section className="flex flex-col gap-16 mx-4">
-        <section className="flex flex-col gap-5 mt-3">
-          <p>{t("about.description")}</p>
-          <div className="flex flex-col">
-            <p className="text-xl text-blue-400 mb-1 dark:text-blue-200">
+      <motion.section
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="flex flex-col gap-16 mx-4"
+      >
+        {/* Descripción personal */}
+        <motion.section 
+          variants={itemVariants}
+          className="flex flex-col gap-5 mt-3"
+        >
+          <motion.p
+            variants={itemVariants}
+            className="relative"
+          >
+            {/* Efecto de subrayado animado */}
+            <motion.span
+              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.3 }}
+            />
+            {t("about.description")}
+          </motion.p>
+          
+          <motion.div 
+            variants={itemVariants}
+            className="flex flex-col relative"
+          >
+            {/* Línea decorativa lateral */}
+            <motion.div
+              className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 to-blue-600 rounded-full"
+              initial={{ height: 0 }}
+              whileInView={{ height: "100%" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            />
+            <p className="text-xl text-blue-400 mb-1 dark:text-blue-200 pl-4">
               {t("about.besides")}
             </p>
-            <p>{t("about.descriptionBesides")}</p>
-          </div>
+            <p className="pl-4">{t("about.descriptionBesides")}</p>
+          </motion.div>
 
-          <div>
+          <motion.div variants={itemVariants}>
             <motion.a
-              whileHover={{
-                boxShadow: "0 0 20px rgba(59, 130, 246, 0.6)",
-                scale: 1.03,
-              }}
-              transition={{ duration: 0.07 }}
               href={Cv}
               download={"Curriculum Vitae Juan Cruz Dauberte"}
-              className="flex items-center gap-1 border rounded-full border-black p-0.5 w-40 md:w-48 justify-center  hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black dark:border-white"
+              className="relative group flex items-center gap-1 border rounded-full border-black p-0.5 w-40 md:w-48 justify-center dark:border-white overflow-hidden"
               rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <PiFilePdf size={25} />
-              {t("about.download")}
+              {/* Fondo animado */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600"
+                initial={{ x: "-100%" }}
+                whileHover={{ x: "0%" }}
+                transition={{ duration: 0.3 }}
+              />
+              
+              {/* Efecto de brillo */}
+              <motion.div
+                className="absolute inset-0 bg-white"
+                initial={{ x: "-100%", opacity: 0 }}
+                whileHover={{ 
+                  x: "100%",
+                  opacity: [0, 0.3, 0],
+                }}
+                transition={{ duration: 0.6 }}
+              />
+
+              <PiFilePdf size={25} className="relative z-10 group-hover:text-white transition-colors" />
+              <span className="relative z-10 group-hover:text-white transition-colors">
+                {t("about.download")}
+              </span>
             </motion.a>
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
 
-        <section>
-          <div>
-            <h5 className="text-2xl font-semibold text-blue-700 dark:text-blue-400">
+        {/* Sección de estudios */}
+        <motion.section variants={itemVariants}>
+          <motion.div
+            initial={{ x: -20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h5 className="text-2xl font-semibold text-blue-700 dark:text-blue-400 relative inline-block">
               {t("about.titleStudies")}
+              {/* Subrayado animado */}
+              <motion.span
+                className="absolute bottom-0 left-0 h-0.5 bg-blue-500"
+                initial={{ width: 0 }}
+                whileInView={{ width: "100%" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              />
             </h5>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-wrap gap-10 mt-3">
-            <StudiesCard
-              title={t("studies.analystIt.title")}
-              academy={t("studies.analystIt.academy")}
-              timelaps={t("studies.analystIt.timeLaps")}
-            />
-            <StudiesCard
-              title={t("studies.webDevelopment.title")}
-              academy="Coderhouse"
-              timelaps={t("studies.webDevelopment.timeLaps")}
-              description="HTML - CSS - BOOTSTRAP - SASS - SEO - GIT - GITHUB"
-              credentialUrl="https://pub.coderhouse.com/certificates/e308b2ba-a656-45eb-bf88-925ee34aa3dd?v=1"
-            />
-            <StudiesCard
-              title="Javascript"
-              academy="Coderhouse"
-              timelaps={t("studies.js.timeLaps")}
-              description={t("studies.js.description")}
-              credentialUrl="https://pub.coderhouse.com/certificates/46f837e2-56cf-4135-90a7-ed28201f888e?v=1"
-            />
-            <StudiesCard
-              title="React JS"
-              academy="Coderhouse"
-              timelaps={t("studies.react.timeLaps")}
-              description={t("studies.react.description")}
-              credentialUrl="https://pub.coderhouse.com/certificates/99644ed7-538e-477d-adbd-679770553ce8?v=1"
-            />
-            <StudiesCard
-              title={t("studies.backI.title")}
-              academy="Coderhouse"
-              timelaps={t("studies.backI.timeLaps")}
-              description="API REST - EXPRESS - MONGODB - MONGOOSE - WEBSOCKETS - HANDLEBARS - ROUTER - MULTER"
-              credentialUrl="https://pub.coderhouse.com/certificates/48cd567f-32a6-46a1-93b5-fe4a0bda97e4?v=1"
-            />
-            <StudiesCard
-              title={t("studies.data.title")}
-              academy={t("studies.data.academy")}
-              timelaps={t("studies.data.timeLaps")}
-              description={t("studies.data.description")}
-            />
-
-            <StudiesCard
-              title={t("studies.data2.title")}
-              academy={t("studies.data2.academy")}
-              timelaps={t("studies.data2.timeLaps")}
-              description={t("studies.data2.description")}
-            />
-          </div>
-        </section>
-      </section>
+          <motion.div
+            className="flex flex-wrap gap-10 mt-3"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            {[
+              {
+                title: t("studies.analystIt.title"),
+                academy: t("studies.analystIt.academy"),
+                timelaps: t("studies.analystIt.timeLaps"),
+              },
+              {
+                title: t("studies.webDevelopment.title"),
+                academy: "Coderhouse",
+                timelaps: t("studies.webDevelopment.timeLaps"),
+                description: "HTML - CSS - BOOTSTRAP - SASS - SEO - GIT - GITHUB",
+                credentialUrl: "https://pub.coderhouse.com/certificates/e308b2ba-a656-45eb-bf88-925ee34aa3dd?v=1",
+              },
+              {
+                title: "Javascript",
+                academy: "Coderhouse",
+                timelaps: t("studies.js.timeLaps"),
+                description: t("studies.js.description"),
+                credentialUrl: "https://pub.coderhouse.com/certificates/46f837e2-56cf-4135-90a7-ed28201f888e?v=1",
+              },
+              {
+                title: "React JS",
+                academy: "Coderhouse",
+                timelaps: t("studies.react.timeLaps"),
+                description: t("studies.react.description"),
+                credentialUrl: "https://pub.coderhouse.com/certificates/99644ed7-538e-477d-adbd-679770553ce8?v=1",
+              },
+              {
+                title: t("studies.backI.title"),
+                academy: "Coderhouse",
+                timelaps: t("studies.backI.timeLaps"),
+                description: "API REST - EXPRESS - MONGODB - MONGOOSE - WEBSOCKETS - HANDLEBARS - ROUTER - MULTER",
+                credentialUrl: "https://pub.coderhouse.com/certificates/48cd567f-32a6-46a1-93b5-fe4a0bda97e4?v=1",
+              },
+              {
+                title: t("studies.data.title"),
+                academy: t("studies.data.academy"),
+                timelaps: t("studies.data.timeLaps"),
+                description: t("studies.data.description"),
+              },
+              {
+                title: t("studies.data2.title"),
+                academy: t("studies.data2.academy"),
+                timelaps: t("studies.data2.timeLaps"),
+                description: t("studies.data2.description"),
+              },
+            ].map((study, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+              >
+                <StudiesCard {...study} />
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.section>
+      </motion.section>
     </section>
   );
 };

@@ -14,22 +14,78 @@ import {
   SiMysql,
 } from "react-icons/si";
 import { TbBrandOauth } from "react-icons/tb";
-
 import { FaReact } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 export const Projects = () => {
   const { t } = useTranslation();
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const titleVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 200,
+        damping: 15,
+      },
+    },
+  };
+
   return (
     <section id="proyectos" className="w-full max-w-4xl flex flex-col gap-10">
-      <section className="flex items-center gap-2">
-        <FiFolder className="text-3xl md:text-4xl text-blue-950 dark:text-blue-600" />
-        <h3 className="text-2xl md:text-3xl font-bold text-blue-950 dark:text-blue-600">
+      {/* Título animado */}
+      <motion.section
+        variants={titleVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        className="flex items-center gap-2"
+      >
+        <motion.div
+          animate={{
+            rotate: [0, 10, -10, 10, 0],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            repeatDelay: 5,
+          }}
+        >
+          <FiFolder className="text-3xl md:text-4xl text-blue-950 dark:text-blue-600" />
+        </motion.div>
+        <h3 className="text-2xl md:text-3xl font-bold text-blue-950 dark:text-blue-600 relative">
           {t("projectCard.title")}
+          {/* Subrayado animado */}
+          <motion.span
+            className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"
+            initial={{ width: 0 }}
+            whileInView={{ width: "100%" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          />
         </h3>
-      </section>
+      </motion.section>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-10 ms-4 md:gap-16 w-full">
+      <motion.section
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-10 ms-4 md:gap-16 w-full"
+      >
         <ProjectCard
           description={t("projectCard.cec.description")}
           title="Como En Casa"
@@ -97,7 +153,7 @@ export const Projects = () => {
             <SiReactquery className="text-red-400" />,
           ]}
         />
-      </section>
+      </motion.section>
     </section>
   );
 };
