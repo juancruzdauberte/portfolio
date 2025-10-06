@@ -10,7 +10,9 @@ const AboutMe = lazy(() =>
   import("./pages/AboutMe").then((module) => ({ default: module.AboutMe }))
 );
 const Experience = lazy(() =>
-  import("./pages/Experience").then((module) => ({ default: module.Experience }))
+  import("./pages/Experience").then((module) => ({
+    default: module.Experience,
+  }))
 );
 const Projects = lazy(() =>
   import("./pages/Projects").then((module) => ({ default: module.Projects }))
@@ -33,7 +35,7 @@ const SectionLoader = () => (
 function App() {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const { scrollYProgress } = useScroll();
-  
+
   // Usar useSpring para animación más suave
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -60,16 +62,11 @@ function App() {
 
   return (
     <ThemeProvider>
-      <section className="min-h-screen flex flex-col text-md md:text-xl text-black dark:text-white bg-customWhite dark:bg-customDark transition-colors duration-300 relative overflow-x-hidden">
-        {/* Partículas de fondo con menor complejidad */}
-        <div className="fixed top-10 left-10 w-64 h-64 bg-blue-400/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="fixed top-1/3 right-10 w-72 h-72 bg-purple-400/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="fixed bottom-20 left-1/4 w-80 h-80 bg-pink-400/5 rounded-full blur-3xl pointer-events-none" />
-
+      <section className="min-h-screen flex flex-col text-sm sm:text-base md:text-lg lg:text-xl text-black dark:text-white bg-customWhite dark:bg-customDark transition-colors duration-300 relative">
         {/* Header optimizado */}
         <motion.header
           className={`fixed top-0 w-full z-40 transition-all duration-300 ${
-            scrolled && "bg-white/80 dark:bg-black/80 backdrop-blur-xl shadow-lg"
+            scrolled && "dark:bg-black/80 backdrop-blur shadow-lg"
           }`}
           initial={{ y: -100 }}
           animate={{ y: 0 }}
@@ -81,12 +78,12 @@ function App() {
             style={{ scaleX, willChange: "transform" }}
           />
 
-          <div className="p-3">
+          <div className="py-3 sm:p-3 sm:px-3 sm:py-1.5 w-full">
             <Navbar />
           </div>
         </motion.header>
 
-        <main className="flex-1 flex flex-col w-full items-center gap-40 px-4 mb-16 relative">
+        <main className="flex-1 flex flex-col w-full items-center gap-20 sm:gap-28 md:gap-40 px-4 sm:px-6 md:px-8 mb-12 sm:mb-16 relative">
           {/* Home Section - Siempre cargada */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -101,8 +98,8 @@ function App() {
             className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            viewport={{ once: true, margin: "100px" }}
-            transition={{ duration: 1 }}
+            viewport={{ once: true, margin: "50px" }}
+            transition={{ duration: 0.8 }}
           />
 
           {/* About Me - Lazy loaded */}
@@ -114,8 +111,8 @@ function App() {
             className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            viewport={{ once: true, margin: "100px" }}
-            transition={{ duration: 1 }}
+            viewport={{ once: true, margin: "50px" }}
+            transition={{ duration: 0.8 }}
           />
 
           {/* Experience - Lazy loaded */}
@@ -127,8 +124,8 @@ function App() {
             className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-pink-500 to-transparent"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            viewport={{ once: true, margin: "100px" }}
-            transition={{ duration: 1 }}
+            viewport={{ once: true, margin: "50px" }}
+            transition={{ duration: 0.8 }}
           />
 
           {/* Projects - Lazy loaded */}
@@ -140,8 +137,8 @@ function App() {
             className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            viewport={{ once: true, margin: "100px" }}
-            transition={{ duration: 1 }}
+            viewport={{ once: true, margin: "50px" }}
+            transition={{ duration: 0.8 }}
           />
 
           {/* Skills - Lazy loaded */}
@@ -153,8 +150,8 @@ function App() {
             className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            viewport={{ once: true, margin: "100px" }}
-            transition={{ duration: 1 }}
+            viewport={{ once: true, margin: "50px" }}
+            transition={{ duration: 0.8 }}
           />
         </main>
 
@@ -164,7 +161,7 @@ function App() {
 
         {/* Botón de scroll to top optimizado */}
         <motion.button
-          className="fixed bottom-8 right-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white p-3 rounded-full shadow-lg z-40"
+          className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white p-2.5 sm:p-3 rounded-full shadow-lg z-40"
           initial={{ opacity: 0, scale: 0 }}
           animate={{
             opacity: scrolled ? 1 : 0,
@@ -179,7 +176,7 @@ function App() {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
+            className="h-5 w-5 sm:h-6 sm:w-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

@@ -54,11 +54,11 @@ export const ProjectCard = ({
       }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      className="relative group flex flex-col justify-center w-[300px] rounded-lg overflow-hidden bg-white dark:bg-slate-700 shadow-lg"
+      className="relative group flex flex-col justify-center w-full max-w-[320px] sm:max-w-[300px] rounded-lg overflow-hidden bg-white dark:bg-slate-700 shadow-lg"
       style={{ willChange: isHovered ? "transform" : "auto" }}
     >
       {/* Contenedor de imagen con lazy loading */}
-      <div className="relative w-full h-48 overflow-hidden bg-gray-200 dark:bg-gray-700">
+      <div className="relative w-full h-40 sm:h-48 overflow-hidden bg-gray-200 dark:bg-gray-700">
         {/* Placeholder mientras carga */}
         {!imageLoaded && (
           <div className="absolute inset-0 bg-gray-300 dark:bg-gray-600 animate-pulse" />
@@ -86,9 +86,9 @@ export const ProjectCard = ({
         />
       </div>
 
-      <div className="relative flex flex-col gap-4 px-4 py-5 text-center bg-white dark:bg-slate-700">
+      <div className="relative flex flex-col gap-3 sm:gap-4 px-3 sm:px-4 py-4 sm:py-5 text-center bg-white dark:bg-slate-700">
         <motion.h4
-          className="text-xl font-semibold relative"
+          className="text-lg sm:text-xl font-semibold relative"
           initial={{ y: 10, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
@@ -105,7 +105,7 @@ export const ProjectCard = ({
         </motion.h4>
 
         <motion.p
-          className="text-sm text-justify leading-relaxed"
+          className="text-xs sm:text-sm text-justify leading-relaxed"
           initial={{ y: 10, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
@@ -115,7 +115,7 @@ export const ProjectCard = ({
         </motion.p>
 
         <motion.div
-          className="flex justify-center gap-3 flex-wrap"
+          className="flex justify-center gap-2 sm:gap-3 flex-wrap"
           initial={{ y: 10, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
@@ -126,7 +126,7 @@ export const ProjectCard = ({
               href={codeUrlFront}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative group/btn flex items-center gap-2 border border-black dark:border-white rounded-full py-1 px-4 text-sm font-medium overflow-hidden"
+              className="relative group/btn flex items-center gap-1.5 sm:gap-2 border border-black dark:border-white rounded-full py-0.5 px-3 sm:py-1 sm:px-4 text-xs sm:text-sm font-medium overflow-hidden"
               whileHover={hoverScale}
               whileTap={tapScale}
             >
@@ -137,7 +137,7 @@ export const ProjectCard = ({
                 transition={transitions.fast}
               />
 
-              <LuCodeXml className="text-xl relative z-10 group-hover/btn:text-white transition-colors" />
+              <LuCodeXml className="text-base sm:text-xl relative z-10 group-hover/btn:text-white transition-colors" />
               <span className="relative z-10 group-hover/btn:text-white transition-colors">
                 Front
               </span>
@@ -183,7 +183,7 @@ export const ProjectCard = ({
                 transition={transitions.fast}
               />
 
-              <IoIosLink className="text-xl relative z-10 group-hover/btn:text-white transition-colors" />
+              <IoIosLink className="text-base sm:text-xl relative z-10 group-hover/btn:text-white transition-colors" />
               <span className="relative z-10 group-hover/btn:text-white transition-colors">
                 Deploy
               </span>
@@ -192,16 +192,16 @@ export const ProjectCard = ({
         </motion.div>
 
         <motion.div
-          className="flex flex-col items-center gap-2"
+          className="flex flex-col items-center gap-1.5 sm:gap-2"
           initial={{ y: 10, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          <h6 className="text-sm font-semibold">
+          <h6 className="text-xs sm:text-sm font-semibold">
             {t("projectCard.technologies")}
           </h6>
-          <div className="flex flex-wrap gap-3 text-3xl justify-center">
+          <div className="flex flex-wrap gap-2 sm:gap-3 text-2xl sm:text-3xl justify-center">
             {technologies.map((TechIcon, index) => (
               <motion.span
                 key={index}

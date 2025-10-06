@@ -33,7 +33,7 @@ export const StudiesCard = ({
       }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      className="relative p-1 w-[400px] h-full group"
+      className="relative p-1 w-full max-w-[400px] h-full group"
     >
       {/* Borde gradiente animado */}
       <motion.div
@@ -65,7 +65,7 @@ export const StudiesCard = ({
         transition={{ duration: 2, repeat: isHovered ? Infinity : 0 }}
       />
 
-      <div className="relative bg-white dark:bg-black px-6 py-4 flex flex-col gap-3 w-full h-full rounded-lg">
+      <div className="relative bg-white dark:bg-black px-4 sm:px-6 py-3 sm:py-4 flex flex-col gap-2 sm:gap-3 w-full h-full rounded-lg">
         {/* Partículas decorativas */}
         <motion.div
           className="absolute top-2 right-2 w-2 h-2 bg-blue-400 rounded-full"
@@ -81,7 +81,7 @@ export const StudiesCard = ({
         />
 
         <motion.h5
-          className="text-blue-500 font-semibold text-xl relative"
+          className="text-blue-500 font-semibold text-lg sm:text-xl relative"
           initial={{ x: -20, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
@@ -98,7 +98,7 @@ export const StudiesCard = ({
         </motion.h5>
 
         <motion.span
-          className="text-lg"
+          className="text-base sm:text-lg"
           initial={{ x: -20, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
@@ -108,7 +108,7 @@ export const StudiesCard = ({
         </motion.span>
 
         <motion.span
-          className="text-lg font-semibold"
+          className="text-base sm:text-lg font-semibold"
           initial={{ x: -20, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
@@ -131,7 +131,7 @@ export const StudiesCard = ({
 
         {credentialUrl && (
           <motion.a
-            className="relative group/btn flex text-sm max-w-36 gap-1 items-center justify-center border border-black rounded-full p-1 dark:border-white overflow-hidden"
+            className="relative group/btn flex text-xs sm:text-sm max-w-32 sm:max-w-36 gap-1 items-center justify-center border border-black rounded-full p-0.5 sm:p-1 dark:border-white overflow-hidden"
             href={credentialUrl}
             target="_blank"
             rel="noopener noreferrer"

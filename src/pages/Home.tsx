@@ -49,17 +49,17 @@ export const Home = () => {
   };
 
   return (
-    <section className="w-full min-h-dvh flex flex-col items-center justify-center gap-10 relative">
-      {/* Partículas flotantes de fondo - Contenidas */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-40 right-20 w-40 h-40 bg-purple-400/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-20 left-1/3 w-36 h-36 bg-cyan-400/10 rounded-full blur-3xl pointer-events-none" />
+    <section className="w-full min-h-dvh flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10 relative px-4 sm:px-6">
+      {/* Partículas flotantes de fondo - Contenidas y Responsive */}
+      <div className="absolute top-20 left-4 sm:left-10 w-24 sm:w-32 h-24 sm:h-32 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-40 right-8 sm:right-20 w-32 sm:w-40 h-32 sm:h-40 bg-purple-400/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 left-1/4 sm:left-1/3 w-28 sm:w-36 h-28 sm:h-36 bg-cyan-400/10 rounded-full blur-3xl pointer-events-none" />
 
       <motion.section
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="max-w-4xl w-full flex flex-col md:flex-row items-center gap-6 md:gap-20 z-10 px-4"
+        className="max-w-4xl w-full flex flex-col md:flex-row items-center gap-5 sm:gap-6 md:gap-20 z-10"
       >
         {/* Imagen de perfil con efectos avanzados */}
         <motion.div
@@ -69,7 +69,7 @@ export const Home = () => {
             rotate: [0, -5, 5, -5, 0],
             transition: { duration: 0.5 }
           }}
-          className="relative w-28 h-28 md:w-36 md:h-36 flex items-center justify-center flex-shrink-0"
+          className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 flex items-center justify-center flex-shrink-0"
         >
           {/* Anillo animado detrás de la imagen */}
           <motion.div
@@ -120,10 +120,10 @@ export const Home = () => {
           </div>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="flex flex-col gap-2 text-center md:text-left">
-          <h1 className="flex flex-wrap items-center gap-2 text-lg sm:text-xl md:text-2xl justify-center md:justify-start">
+        <motion.div variants={itemVariants} className="flex flex-col gap-1.5 sm:gap-2 text-center md:text-left">
+          <h1 className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-base sm:text-lg md:text-xl lg:text-2xl justify-center md:justify-start">
             <motion.p 
-              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-[length:200%_100%] font-bold text-xl sm:text-2xl md:text-3xl"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-[length:200%_100%] font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl"
               animate={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
@@ -138,7 +138,7 @@ export const Home = () => {
           </h1>
           <motion.span 
             variants={itemVariants}
-            className="font-semibold text-blue-900 dark:text-blue-100 text-sm sm:text-base md:text-lg"
+            className="font-semibold text-blue-900 dark:text-blue-100 text-xs sm:text-sm md:text-base lg:text-lg"
           >
             {t("home.titles")}
           </motion.span>
@@ -149,18 +149,18 @@ export const Home = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="flex flex-col gap-4 text-center px-4 sm:px-6 max-w-3xl w-full z-10"
+        className="flex flex-col gap-3 sm:gap-4 text-center max-w-3xl w-full z-10"
       >
         <motion.p 
           variants={itemVariants}
-          className="text-sm sm:text-base md:text-lg"
+          className="text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed"
         >
           {t("home.description")}
         </motion.p>
         
         <motion.div 
           variants={itemVariants}
-          className="flex flex-wrap gap-3 justify-center"
+          className="flex flex-wrap gap-2 sm:gap-3 justify-center"
         >
           {[
             { 
@@ -193,7 +193,7 @@ export const Home = () => {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative group flex items-center justify-center gap-2 border border-black dark:border-white rounded-full px-3 py-1 text-sm sm:text-base overflow-hidden whitespace-nowrap"
+              className="relative group flex items-center justify-center gap-1.5 sm:gap-2 border border-black dark:border-white rounded-full px-2.5 py-1 sm:px-3 sm:py-1.5 text-xs sm:text-sm md:text-base overflow-hidden whitespace-nowrap"
               whileHover={{ 
                 scale: 1.05,
                 y: -2,
@@ -220,7 +220,7 @@ export const Home = () => {
                 transition={{ duration: 0.6 }}
               />
 
-              <span className="relative z-10 group-hover:text-white transition-colors">
+              <span className="relative z-10 group-hover:text-white transition-colors text-base sm:text-lg">
                 {link.icon}
               </span>
               <span className="relative z-10 group-hover:text-white transition-colors">
@@ -246,14 +246,14 @@ export const Home = () => {
             ease: "easeInOut"
           }
         }}
-        className="cursor-pointer lg:absolute lg:bottom-14 z-10"
+        className="cursor-pointer lg:absolute lg:bottom-14 z-10 mt-2 sm:mt-0"
       >
         <Link to="sobre-mi" smooth={true} duration={500} offset={-80}>
           <motion.div
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
           >
-            <MdKeyboardArrowDown size={35} className="text-blue-500" />
+            <MdKeyboardArrowDown className="text-blue-500 text-3xl sm:text-4xl md:text-5xl" />
           </motion.div>
         </Link>
       </motion.div>

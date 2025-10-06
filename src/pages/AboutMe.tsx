@@ -46,7 +46,7 @@ export const AboutMe = () => {
   };
 
   return (
-    <section id="sobre-mi" className="w-full max-w-4xl flex flex-col">
+    <section id="sobre-mi" className="w-full max-w-4xl flex flex-col px-4 sm:px-6">
       {/* Título con animación */}
       <motion.section
         variants={titleVariants}
@@ -67,7 +67,7 @@ export const AboutMe = () => {
         >
           <FiUser className="text-3xl md:text-4xl text-blue-950 dark:text-blue-600" />
         </motion.div>
-        <h3 className="text-2xl md:text-3xl font-bold text-blue-950 dark:text-blue-600">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-950 dark:text-blue-600">
           {t("about.title")}
         </h3>
       </motion.section>
@@ -77,12 +77,12 @@ export const AboutMe = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="flex flex-col gap-16 mx-4"
+        className="flex flex-col gap-10 sm:gap-12 md:gap-16"
       >
         {/* Descripción personal */}
         <motion.section 
           variants={itemVariants}
-          className="flex flex-col gap-5 mt-3"
+          className="flex flex-col gap-3 sm:gap-4 md:gap-5 mt-3"
         >
           <motion.p
             variants={itemVariants}
@@ -111,17 +111,17 @@ export const AboutMe = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             />
-            <p className="text-xl text-blue-400 mb-1 dark:text-blue-200 pl-4">
+            <p className="text-base sm:text-lg md:text-xl text-blue-400 mb-1 dark:text-blue-200 pl-3 sm:pl-4">
               {t("about.besides")}
             </p>
-            <p className="pl-4">{t("about.descriptionBesides")}</p>
+            <p className="pl-3 sm:pl-4 text-sm sm:text-base">{t("about.descriptionBesides")}</p>
           </motion.div>
 
           <motion.div variants={itemVariants}>
             <motion.a
               href={Cv}
               download={"Curriculum Vitae Juan Cruz Dauberte"}
-              className="relative group flex items-center gap-1 border rounded-full border-black p-0.5 w-40 md:w-48 justify-center dark:border-white overflow-hidden"
+              className="relative group flex items-center gap-1 border rounded-full border-black p-0.5 w-36 sm:w-40 md:w-48 justify-center dark:border-white overflow-hidden text-sm sm:text-base"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -145,7 +145,7 @@ export const AboutMe = () => {
                 transition={{ duration: 0.6 }}
               />
 
-              <PiFilePdf size={25} className="relative z-10 group-hover:text-white transition-colors" />
+              <PiFilePdf className="relative z-10 group-hover:text-white transition-colors text-xl sm:text-2xl" />
               <span className="relative z-10 group-hover:text-white transition-colors">
                 {t("about.download")}
               </span>
@@ -161,7 +161,7 @@ export const AboutMe = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h5 className="text-2xl font-semibold text-blue-700 dark:text-blue-400 relative inline-block">
+            <h5 className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-700 dark:text-blue-400 relative inline-block">
               {t("about.titleStudies")}
               {/* Subrayado animado */}
               <motion.span
@@ -175,7 +175,7 @@ export const AboutMe = () => {
           </motion.div>
 
           <motion.div
-            className="flex flex-wrap gap-10 mt-3"
+            className="flex flex-wrap gap-6 sm:gap-8 md:gap-10 mt-3 justify-center lg:justify-start"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"

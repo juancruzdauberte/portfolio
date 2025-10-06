@@ -45,7 +45,10 @@ export const Projects = () => {
   };
 
   return (
-    <section id="proyectos" className="w-full max-w-4xl flex flex-col gap-10">
+    <section
+      id="proyectos"
+      className="w-full max-w-4xl flex flex-col gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6"
+    >
       {/* Título animado */}
       <motion.section
         variants={titleVariants}
@@ -66,7 +69,7 @@ export const Projects = () => {
         >
           <FiFolder className="text-3xl md:text-4xl text-blue-950 dark:text-blue-600" />
         </motion.div>
-        <h3 className="text-2xl md:text-3xl font-bold text-blue-950 dark:text-blue-600 relative">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-950 dark:text-blue-600 relative">
           {t("projectCard.title")}
           {/* Subrayado animado */}
           <motion.span
@@ -84,7 +87,7 @@ export const Projects = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-10 ms-4 md:gap-16 w-full"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-6 sm:gap-8 md:gap-10 lg:gap-12 w-full justify-items-center"
       >
         <ProjectCard
           description={t("projectCard.cec.description")}

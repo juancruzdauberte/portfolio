@@ -32,7 +32,7 @@ export const LanguageSelector = () => {
         </button>
 
         {isOpen && (
-          <div className="flex flex-col gap-2 absolute top-10 right-1 bg-white shadow-md w-20 z-10 dark:bg-zinc-800">
+          <div className="flex flex-col gap-2 absolute top-10 right-2 bg-white shadow-md z-10 dark:bg-zinc-800">
             <button
               onClick={() => {
                 changeLanguage("es");

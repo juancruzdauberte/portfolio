@@ -30,7 +30,7 @@ export const Footer = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="flex flex-col gap-5 py-5 items-center relative"
+      className="flex flex-col gap-3 sm:gap-4 md:gap-5 py-4 sm:py-5 items-center relative px-4"
     >
       {/* Línea decorativa superior */}
       {/* <motion.div
@@ -48,7 +48,7 @@ export const Footer = () => {
         transition={{ delay: 0.2, duration: 0.5 }}
       >
         <motion.span
-          className="font-bold md:text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+          className="font-bold text-lg sm:text-xl md:text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
           animate={{
             backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
           }}
@@ -66,7 +66,7 @@ export const Footer = () => {
       </motion.section>
 
       <motion.section
-        className="flex gap-1 md:gap-2"
+        className="flex gap-2 sm:gap-3"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}

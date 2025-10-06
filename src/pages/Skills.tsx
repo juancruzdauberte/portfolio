@@ -43,7 +43,10 @@ export const Skills = () => {
   };
 
   return (
-    <section id="habilidades" className="w-full max-w-4xl flex flex-col">
+    <section
+      id="habilidades"
+      className="w-full max-w-4xl flex flex-col px-4 sm:px-6"
+    >
       {/* Título animado */}
       <motion.section
         variants={titleVariants}
@@ -65,7 +68,7 @@ export const Skills = () => {
         >
           <GiSkills className="text-3xl md:text-4xl text-blue-950 dark:text-blue-600" />
         </motion.div>
-        <h5 className="text-2xl md:text-3xl font-bold text-blue-950 dark:text-blue-600 relative">
+        <h5 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-950 dark:text-blue-600 relative">
           {t("skills.title")}
           {/* Subrayado animado */}
           <motion.span
@@ -83,14 +86,14 @@ export const Skills = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="flex flex-col gap-10 mx-4 mt-5"
+        className="flex flex-col gap-6 sm:gap-8 md:gap-10 mt-4 sm:mt-5"
       >
         {/* Soft Skills */}
         <motion.section variants={itemVariants} className="relative">
           {/* Línea decorativa lateral */}
 
           <motion.h6
-            className="text-2xl font-semibold text-blue-700 dark:text-blue-400 mb-1 relative inline-block"
+            className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-700 dark:text-blue-400 mb-1 relative inline-block"
             initial={{ x: -20, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -122,7 +125,7 @@ export const Skills = () => {
           {/* Línea decorativa lateral */}
 
           <motion.p
-            className="text-2xl font-semibold text-blue-700 dark:text-blue-400 mb-1 relative inline-block"
+            className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-700 dark:text-blue-400 mb-1 relative inline-block"
             initial={{ x: -20, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}

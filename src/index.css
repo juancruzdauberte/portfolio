@@ -19,10 +19,34 @@
 
 /* Prevenir scroll horizontal en toda la página */
 html,
-body {
+body,
+#root {
   overflow-x: hidden;
   width: 100%;
-  position: relative;
+  max-width: 100vw;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Asegurar que body tenga el scroll principal */
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Asegurar que todos los elementos respeten el ancho de la pantalla */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Prevenir overflow en imágenes y videos */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 html {
@@ -281,5 +305,106 @@ select {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 640px) {
+  /* Reducir espaciado en móviles */
+  .gap-10 {
+    gap: 2rem;
+  }
+  
+  /* Ajustar tamaños de fuente para móviles */
+  h1 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+  }
+  
+  h3 {
+    font-size: clamp(1.125rem, 3.5vw, 1.5rem);
+  }
+  
+  /* Mejorar tap targets en móviles (mínimo 44x44px) */
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Optimizar padding para móviles */
+  section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Media Queries para tablets */
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* Ajustes específicos para tablets */
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Mejoras de accesibilidad táctil */
+@media (hover: none) and (pointer: coarse) {
+  /* Dispositivos táctiles */
+  button,
+  a {
+    padding: 0.75rem 1rem;
+  }
+  
+  /* Aumentar espaciado entre elementos clicables */
+  nav a,
+  nav button {
+    margin: 0.5rem;
+  }
+}
+
+/* Optimización para pantallas pequeñas */
+@media (max-width: 375px) {
+  /* iPhone SE y dispositivos similares */
+  body {
+    font-size: 14px;
+  }
+  
+  .text-lg {
+    font-size: 1rem;
+  }
+  
+  .text-xl {
+    font-size: 1.125rem;
+  }
+}
+
+/* Mejoras de performance para dispositivos móviles */
+@media (max-width: 768px) {
+  /* Reducir complejidad de animaciones */
+  @keyframes simplified-float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .animate-float {
+    animation: simplified-float 4s ease-in-out infinite;
+  }
+  
+  /* Reducir blur para mejor rendimiento */
+  .blur-3xl {
+    filter: blur(40px);
+  }
+  
+  /* Simplificar sombras */
+  .shadow-lg {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
 }

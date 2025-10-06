@@ -55,7 +55,7 @@ export const Experience = () => {
   };
 
   return (
-    <section id="experiencia" className="w-full max-w-4xl flex flex-col">
+    <section id="experiencia" className="w-full max-w-4xl flex flex-col px-4 sm:px-6">
       {/* Título animado */}
       <motion.section
         variants={titleVariants}
@@ -76,7 +76,7 @@ export const Experience = () => {
         >
           <LiaSuitcaseSolid className="text-3xl md:text-4xl text-blue-950 dark:text-blue-600" />
         </motion.div>
-        <h3 className="text-2xl md:text-3xl font-bold text-blue-950 dark:text-blue-600">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-950 dark:text-blue-600">
           {t("experience.title")}
         </h3>
       </motion.section>
@@ -86,7 +86,7 @@ export const Experience = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="flex flex-col gap-32 mt-10 mx-4"
+        className="flex flex-col gap-16 sm:gap-24 md:gap-32 mt-6 sm:mt-8 md:mt-10"
       >
         {/* Experiencia 1 - Habitium */}
         <motion.section
@@ -95,7 +95,7 @@ export const Experience = () => {
         >
           {/* Línea vertical decorativa */}
           <motion.div
-            className="absolute -left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-transparent rounded-full"
+            className="absolute -left-4 sm:-left-6 top-0 bottom-0 w-0.5 sm:w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-transparent rounded-full"
             initial={{ height: 0 }}
             whileInView={{ height: "100%" }}
             viewport={{ once: true }}
@@ -104,7 +104,7 @@ export const Experience = () => {
 
           {/* Punto decorativo */}
           <motion.div
-            className="absolute -left-8 top-0 w-4 h-4 bg-blue-500 rounded-full"
+            className="absolute -left-6 sm:-left-8 top-0 w-3 h-3 sm:w-4 sm:h-4 bg-blue-500 rounded-full"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
@@ -126,7 +126,7 @@ export const Experience = () => {
 
           <div className="flex flex-col gap-2">
             <motion.h4
-              className="text-xl md:text-2xl font-semibold relative inline-block"
+              className="text-lg sm:text-xl md:text-2xl font-semibold relative inline-block"
               initial={{ x: -30, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
@@ -148,7 +148,7 @@ export const Experience = () => {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="text-blue-600 dark:text-blue-400 font-medium"
+              className="text-blue-600 dark:text-blue-400 font-medium text-sm sm:text-base"
             >
               {t("experience.hb.timeLaps")}
             </motion.span>
@@ -165,7 +165,7 @@ export const Experience = () => {
             </motion.p>
 
             <motion.ul
-              className="list-none space-y-2 mx-2"
+              className="list-none space-y-2 mx-1 sm:mx-2"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -181,7 +181,7 @@ export const Experience = () => {
                   key={i}
                   custom={i}
                   variants={listItemVariants}
-                  className="flex items-start gap-2"
+                  className="flex items-start gap-1.5 sm:gap-2 text-sm sm:text-base"
                 >
                   <motion.span
                     className="text-blue-500 font-bold mt-1"
@@ -206,7 +206,7 @@ export const Experience = () => {
         >
           {/* Línea vertical decorativa */}
           <motion.div
-            className="absolute -left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 via-pink-500 to-transparent rounded-full"
+            className="absolute -left-4 sm:-left-6 top-0 bottom-0 w-0.5 sm:w-1 bg-gradient-to-b from-purple-500 via-pink-500 to-transparent rounded-full"
             initial={{ height: 0 }}
             whileInView={{ height: "100%" }}
             viewport={{ once: true }}
@@ -215,7 +215,7 @@ export const Experience = () => {
 
           {/* Punto decorativo */}
           <motion.div
-            className="absolute -left-8 top-0 w-4 h-4 bg-purple-500 rounded-full"
+            className="absolute -left-6 sm:-left-8 top-0 w-3 h-3 sm:w-4 sm:h-4 bg-purple-500 rounded-full"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
@@ -259,7 +259,7 @@ export const Experience = () => {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="text-purple-600 dark:text-purple-400 font-medium"
+              className="text-purple-600 dark:text-purple-400 font-medium text-sm sm:text-base"
             >
               {t("experience.sl.timeLaps")}
             </motion.span>
