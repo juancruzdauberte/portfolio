@@ -30,8 +30,10 @@ export const TechIcon = ({
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => setIsHovered(!isHovered)}
     >
-      {/* Contenedor con tamaño fijo */}
-      <div className={`relative ${h || "h-8 w-8 md:h-12 md:w-12"}`}>
+      {/* Contenedor con tamaño fijo - aumentado en mobile para mejor visibilidad */}
+      <div
+        className={`relative ${h || "h-8 w-8 sm:h-11 sm:w-11 md:h-12 md:w-12"}`}
+      >
         {/* Placeholder mientras carga */}
         {!imageLoaded && (
           <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 rounded-lg animate-pulse" />
@@ -43,7 +45,7 @@ export const TechIcon = ({
             src={src}
             alt={alt}
             className={`${
-              h || "h-8 w-8 md:h-12 md:w-12"
+              h || "h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12"
             } object-contain transition-opacity duration-300 ${
               imageLoaded ? "opacity-100" : "opacity-0"
             }`}

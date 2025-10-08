@@ -53,16 +53,11 @@ export const Hero = () => {
       id="hero"
       className="w-full min-h-dvh flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10 relative px-4 sm:px-6"
     >
-      {/* Partículas flotantes de fondo con colores de tema */}
-      <div className="absolute top-20 left-4 sm:left-10 w-24 sm:w-32 h-24 sm:h-32 bg-theme-accent-blue/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-40 right-8 sm:right-20 w-32 sm:w-40 h-32 sm:h-40 bg-theme-accent-purple/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-20 left-1/4 sm:left-1/3 w-28 sm:w-36 h-28 sm:h-36 bg-theme-accent-cyan/10 rounded-full blur-3xl pointer-events-none" />
-
       <motion.section
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="max-w-4xl w-full flex flex-col md:flex-row items-center gap-5 sm:gap-6 md:gap-20 z-10"
+        className="max-w-5xl w-full flex flex-col md:flex-row items-center justify-center gap-5 sm:gap-6 md:gap-20 z-10"
       >
         {/* Imagen de perfil con efectos avanzados */}
         <motion.div
@@ -72,7 +67,7 @@ export const Hero = () => {
             rotate: [0, -5, 5, -5, 0],
             transition: { duration: 0.5 },
           }}
-          className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 flex items-center justify-center flex-shrink-0"
+          className="relative w-36 h-36 flex items-center justify-center flex-shrink-0"
         >
           {/* Anillo animado con colores de tema */}
           <motion.div
@@ -254,7 +249,7 @@ export const Hero = () => {
             ease: "easeInOut",
           },
         }}
-        className="cursor-pointer absolute bottom-3 lg:bottom-12 z-10 mt-2 sm:mt-0"
+        className="cursor-pointer absolute bottom-14 lg:bottom-12 z-10 mt-2 sm:mt-0"
       >
         <Link to="sobre-mi" smooth={true} duration={500} offset={-80}>
           <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
