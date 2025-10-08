@@ -55,8 +55,11 @@ export const Experience = () => {
   };
 
   return (
-    <section id="experiencia" className="w-full max-w-4xl flex flex-col px-4 sm:px-6">
-      {/* Título animado */}
+    <section
+      id="experiencia"
+      className="w-full max-w-5xl flex flex-col px-4 sm:px-6"
+    >
+      {/* Título animado con colores de tema */}
       <motion.section
         variants={titleVariants}
         initial="hidden"
@@ -74,9 +77,9 @@ export const Experience = () => {
             repeatDelay: 5,
           }}
         >
-          <LiaSuitcaseSolid className="text-3xl md:text-4xl text-blue-950 dark:text-blue-600" />
+          <LiaSuitcaseSolid className="text-3xl md:text-4xl text-theme-accent-blue-dark" />
         </motion.div>
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-950 dark:text-blue-600">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-theme-accent-blue-dark">
           {t("experience.title")}
         </h3>
       </motion.section>
@@ -93,25 +96,25 @@ export const Experience = () => {
           variants={itemVariants}
           className="relative flex flex-col gap-8"
         >
-          {/* Línea vertical decorativa */}
+          {/* Línea vertical decorativa con colores de tema */}
           <motion.div
-            className="absolute -left-4 sm:-left-6 top-0 bottom-0 w-0.5 sm:w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-transparent rounded-full"
+            className="absolute -left-4 sm:-left-6 top-0 bottom-0 w-0.5 sm:w-1 bg-gradient-to-b from-theme-accent-blue via-theme-accent-purple to-transparent rounded-full"
             initial={{ height: 0 }}
             whileInView={{ height: "100%" }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2 }}
           />
 
-          {/* Punto decorativo */}
+          {/* Punto decorativo con color de tema */}
           <motion.div
-            className="absolute -left-6 sm:-left-8 top-0 w-3 h-3 sm:w-4 sm:h-4 bg-blue-500 rounded-full"
+            className="absolute -left-6 sm:-left-8 top-0 w-3 h-3 sm:w-4 sm:h-4 bg-theme-accent-blue rounded-full"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 200, delay: 0.3 }}
           >
             <motion.div
-              className="absolute inset-0 bg-blue-500 rounded-full"
+              className="absolute inset-0 bg-theme-accent-blue rounded-full"
               animate={{
                 scale: [1, 1.5, 1],
                 opacity: [1, 0, 1],
@@ -126,16 +129,16 @@ export const Experience = () => {
 
           <div className="flex flex-col gap-2">
             <motion.h4
-              className="text-lg sm:text-xl md:text-2xl font-semibold relative inline-block"
+              className="text-lg sm:text-xl md:text-2xl font-semibold relative inline-block text-theme-text-primary"
               initial={{ x: -30, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
               Reformam Network 2010 SL - Habitium MDF
-              {/* Subrayado animado */}
+              {/* Subrayado animado con colores de tema */}
               <motion.span
-                className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"
+                className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-theme-accent-blue to-theme-accent-purple"
                 initial={{ width: 0 }}
                 whileInView={{ width: "100%" }}
                 viewport={{ once: true }}
@@ -148,7 +151,7 @@ export const Experience = () => {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="text-blue-600 dark:text-blue-400 font-medium text-sm sm:text-base"
+              className="text-theme-accent-blue font-medium text-sm sm:text-base"
             >
               {t("experience.hb.timeLaps")}
             </motion.span>
@@ -160,6 +163,7 @@ export const Experience = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
+              className="text-theme-text-secondary"
             >
               {t("experience.hb.description")}
             </motion.p>
@@ -181,10 +185,10 @@ export const Experience = () => {
                   key={i}
                   custom={i}
                   variants={listItemVariants}
-                  className="flex items-start gap-1.5 sm:gap-2 text-sm sm:text-base"
+                  className="flex items-start gap-1.5 sm:gap-2 text-sm sm:text-base text-theme-text-secondary"
                 >
                   <motion.span
-                    className="text-blue-500 font-bold mt-1"
+                    className="text-theme-accent-blue font-bold mt-1"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
@@ -204,25 +208,25 @@ export const Experience = () => {
           variants={itemVariants}
           className="relative flex flex-col gap-8"
         >
-          {/* Línea vertical decorativa */}
+          {/* Línea vertical decorativa con colores de tema */}
           <motion.div
-            className="absolute -left-4 sm:-left-6 top-0 bottom-0 w-0.5 sm:w-1 bg-gradient-to-b from-purple-500 via-pink-500 to-transparent rounded-full"
+            className="absolute -left-4 sm:-left-6 top-0 bottom-0 w-0.5 sm:w-1 bg-gradient-to-b from-theme-accent-purple via-theme-accent-pink to-transparent rounded-full"
             initial={{ height: 0 }}
             whileInView={{ height: "100%" }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2 }}
           />
 
-          {/* Punto decorativo */}
+          {/* Punto decorativo con color de tema */}
           <motion.div
-            className="absolute -left-6 sm:-left-8 top-0 w-3 h-3 sm:w-4 sm:h-4 bg-purple-500 rounded-full"
+            className="absolute -left-6 sm:-left-8 top-0 w-3 h-3 sm:w-4 sm:h-4 bg-theme-accent-purple rounded-full"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 200, delay: 0.3 }}
           >
             <motion.div
-              className="absolute inset-0 bg-purple-500 rounded-full"
+              className="absolute inset-0 bg-theme-accent-purple rounded-full"
               animate={{
                 scale: [1, 1.5, 1],
                 opacity: [1, 0, 1],
@@ -237,16 +241,16 @@ export const Experience = () => {
 
           <div className="flex flex-col gap-2">
             <motion.h5
-              className="text-xl md:text-2xl font-semibold relative inline-block"
+              className="text-xl md:text-2xl font-semibold relative inline-block text-theme-text-primary"
               initial={{ x: -30, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
               Call Center - Siderman Law
-              {/* Subrayado animado */}
+              {/* Subrayado animado con colores de tema */}
               <motion.span
-                className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500"
+                className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-theme-accent-purple to-theme-accent-pink"
                 initial={{ width: 0 }}
                 whileInView={{ width: "100%" }}
                 viewport={{ once: true }}
@@ -259,7 +263,7 @@ export const Experience = () => {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="text-purple-600 dark:text-purple-400 font-medium text-sm sm:text-base"
+              className="text-theme-accent-purple font-medium text-sm sm:text-base"
             >
               {t("experience.sl.timeLaps")}
             </motion.span>
@@ -271,6 +275,7 @@ export const Experience = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
+              className="text-theme-text-secondary"
             >
               {t("experience.sl.description")}
             </motion.p>
@@ -290,10 +295,10 @@ export const Experience = () => {
                   key={i}
                   custom={i}
                   variants={listItemVariants}
-                  className="flex items-start gap-2"
+                  className="flex items-start gap-2 text-theme-text-secondary"
                 >
                   <motion.span
-                    className="text-purple-500 font-bold mt-1"
+                    className="text-theme-accent-purple font-bold mt-1"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}

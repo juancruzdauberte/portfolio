@@ -46,8 +46,11 @@ export const AboutMe = () => {
   };
 
   return (
-    <section id="sobre-mi" className="w-full max-w-4xl flex flex-col px-4 sm:px-6">
-      {/* Título con animación */}
+    <section
+      id="sobre-mi"
+      className="w-full max-w-5xl flex flex-col px-4 sm:px-6"
+    >
+      {/* Título con animación y colores de tema */}
       <motion.section
         variants={titleVariants}
         initial="hidden"
@@ -65,9 +68,9 @@ export const AboutMe = () => {
             repeatDelay: 5,
           }}
         >
-          <FiUser className="text-3xl md:text-4xl text-blue-950 dark:text-blue-600" />
+          <FiUser className="text-3xl md:text-4xl text-theme-accent-blue-dark" />
         </motion.div>
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-950 dark:text-blue-600">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-theme-accent-blue-dark">
           {t("about.title")}
         </h3>
       </motion.section>
@@ -80,17 +83,17 @@ export const AboutMe = () => {
         className="flex flex-col gap-10 sm:gap-12 md:gap-16"
       >
         {/* Descripción personal */}
-        <motion.section 
+        <motion.section
           variants={itemVariants}
           className="flex flex-col gap-3 sm:gap-4 md:gap-5 mt-3"
         >
           <motion.p
             variants={itemVariants}
-            className="relative"
+            className="relative text-theme-text-primary"
           >
-            {/* Efecto de subrayado animado */}
+            {/* Efecto de subrayado animado con colores de tema */}
             <motion.span
-              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"
+              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-theme-accent-blue to-theme-accent-purple"
               initial={{ width: 0 }}
               whileInView={{ width: "100%" }}
               viewport={{ once: true }}
@@ -98,55 +101,57 @@ export const AboutMe = () => {
             />
             {t("about.description")}
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             variants={itemVariants}
             className="flex flex-col relative"
           >
-            {/* Línea decorativa lateral */}
+            {/* Línea decorativa lateral con color de tema */}
             <motion.div
-              className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 to-blue-600 rounded-full"
+              className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-theme-accent-blue to-theme-accent-blue-dark rounded-full"
               initial={{ height: 0 }}
               whileInView={{ height: "100%" }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             />
-            <p className="text-base sm:text-lg md:text-xl text-blue-400 mb-1 dark:text-blue-200 pl-3 sm:pl-4">
+            <p className="text-base sm:text-lg md:text-xl text-theme-accent-blue mb-1 pl-3 sm:pl-4">
               {t("about.besides")}
             </p>
-            <p className="pl-3 sm:pl-4 text-sm sm:text-base">{t("about.descriptionBesides")}</p>
+            <p className="pl-3 sm:pl-4 text-sm sm:text-base text-theme-text-secondary">
+              {t("about.descriptionBesides")}
+            </p>
           </motion.div>
 
           <motion.div variants={itemVariants}>
             <motion.a
               href={Cv}
               download={"Curriculum Vitae Juan Cruz Dauberte"}
-              className="relative group flex items-center gap-1 border rounded-full border-black p-0.5 w-36 sm:w-40 md:w-48 justify-center dark:border-white overflow-hidden text-sm sm:text-base"
+              className="relative group flex items-center gap-1 border rounded-full border-theme-border-secondary p-0.5 w-36 sm:w-40 md:w-48 justify-center overflow-hidden text-sm sm:text-base transition-colors"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {/* Fondo animado */}
+              {/* Fondo animado con colores de tema */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600"
+                className="absolute inset-0 bg-gradient-to-r from-theme-accent-blue to-theme-accent-purple"
                 initial={{ x: "-100%" }}
                 whileHover={{ x: "0%" }}
                 transition={{ duration: 0.3 }}
               />
-              
+
               {/* Efecto de brillo */}
               <motion.div
-                className="absolute inset-0 bg-white"
+                className="absolute inset-0 bg-white dark:bg-white/20"
                 initial={{ x: "-100%", opacity: 0 }}
-                whileHover={{ 
+                whileHover={{
                   x: "100%",
                   opacity: [0, 0.3, 0],
                 }}
                 transition={{ duration: 0.6 }}
               />
 
-              <PiFilePdf className="relative z-10 group-hover:text-white transition-colors text-xl sm:text-2xl" />
-              <span className="relative z-10 group-hover:text-white transition-colors">
+              <PiFilePdf className="relative z-10 group-hover:text-white transition-colors text-xl sm:text-2xl text-theme-text-primary" />
+              <span className="relative z-10 group-hover:text-white transition-colors text-theme-text-primary">
                 {t("about.download")}
               </span>
             </motion.a>
@@ -161,11 +166,11 @@ export const AboutMe = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h5 className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-700 dark:text-blue-400 relative inline-block">
+            <h5 className="text-lg sm:text-xl md:text-2xl font-semibold text-theme-accent-blue relative inline-block">
               {t("about.titleStudies")}
-              {/* Subrayado animado */}
+              {/* Subrayado animado con color de tema */}
               <motion.span
-                className="absolute bottom-0 left-0 h-0.5 bg-blue-500"
+                className="absolute bottom-0 left-0 h-0.5 bg-theme-accent-blue"
                 initial={{ width: 0 }}
                 whileInView={{ width: "100%" }}
                 viewport={{ once: true }}
@@ -191,29 +196,35 @@ export const AboutMe = () => {
                 title: t("studies.webDevelopment.title"),
                 academy: "Coderhouse",
                 timelaps: t("studies.webDevelopment.timeLaps"),
-                description: "HTML - CSS - BOOTSTRAP - SASS - SEO - GIT - GITHUB",
-                credentialUrl: "https://pub.coderhouse.com/certificates/e308b2ba-a656-45eb-bf88-925ee34aa3dd?v=1",
+                description:
+                  "HTML - CSS - BOOTSTRAP - SASS - SEO - GIT - GITHUB",
+                credentialUrl:
+                  "https://pub.coderhouse.com/certificates/e308b2ba-a656-45eb-bf88-925ee34aa3dd?v=1",
               },
               {
                 title: "Javascript",
                 academy: "Coderhouse",
                 timelaps: t("studies.js.timeLaps"),
                 description: t("studies.js.description"),
-                credentialUrl: "https://pub.coderhouse.com/certificates/46f837e2-56cf-4135-90a7-ed28201f888e?v=1",
+                credentialUrl:
+                  "https://pub.coderhouse.com/certificates/46f837e2-56cf-4135-90a7-ed28201f888e?v=1",
               },
               {
                 title: "React JS",
                 academy: "Coderhouse",
                 timelaps: t("studies.react.timeLaps"),
                 description: t("studies.react.description"),
-                credentialUrl: "https://pub.coderhouse.com/certificates/99644ed7-538e-477d-adbd-679770553ce8?v=1",
+                credentialUrl:
+                  "https://pub.coderhouse.com/certificates/99644ed7-538e-477d-adbd-679770553ce8?v=1",
               },
               {
                 title: t("studies.backI.title"),
                 academy: "Coderhouse",
                 timelaps: t("studies.backI.timeLaps"),
-                description: "API REST - EXPRESS - MONGODB - MONGOOSE - WEBSOCKETS - HANDLEBARS - ROUTER - MULTER",
-                credentialUrl: "https://pub.coderhouse.com/certificates/48cd567f-32a6-46a1-93b5-fe4a0bda97e4?v=1",
+                description:
+                  "API REST - EXPRESS - MONGODB - MONGOOSE - WEBSOCKETS - HANDLEBARS - ROUTER - MULTER",
+                credentialUrl:
+                  "https://pub.coderhouse.com/certificates/48cd567f-32a6-46a1-93b5-fe4a0bda97e4?v=1",
               },
               {
                 title: t("studies.data.title"),
@@ -228,10 +239,7 @@ export const AboutMe = () => {
                 description: t("studies.data2.description"),
               },
             ].map((study, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-              >
+              <motion.div key={index} variants={itemVariants}>
                 <StudiesCard {...study} />
               </motion.div>
             ))}

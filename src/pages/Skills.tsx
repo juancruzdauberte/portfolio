@@ -45,9 +45,9 @@ export const Skills = () => {
   return (
     <section
       id="habilidades"
-      className="w-full max-w-4xl flex flex-col px-4 sm:px-6"
+      className="w-full max-w-5xl flex flex-col px-4 sm:px-6"
     >
-      {/* Título animado */}
+      {/* Título animado con colores de tema */}
       <motion.section
         variants={titleVariants}
         initial="hidden"
@@ -66,13 +66,13 @@ export const Skills = () => {
             repeatDelay: 5,
           }}
         >
-          <GiSkills className="text-3xl md:text-4xl text-blue-950 dark:text-blue-600" />
+          <GiSkills className="text-3xl md:text-4xl text-theme-accent-blue-dark" />
         </motion.div>
-        <h5 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-950 dark:text-blue-600 relative">
+        <h5 className="text-xl sm:text-2xl md:text-3xl font-bold text-theme-accent-blue-dark relative">
           {t("skills.title")}
-          {/* Subrayado animado */}
+          {/* Subrayado animado con colores de tema */}
           <motion.span
-            className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"
+            className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-theme-accent-blue to-theme-accent-purple"
             initial={{ width: 0 }}
             whileInView={{ width: "100%" }}
             viewport={{ once: true }}
@@ -90,19 +90,17 @@ export const Skills = () => {
       >
         {/* Soft Skills */}
         <motion.section variants={itemVariants} className="relative">
-          {/* Línea decorativa lateral */}
-
           <motion.h6
-            className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-700 dark:text-blue-400 mb-1 relative inline-block"
+            className="text-lg sm:text-xl md:text-2xl font-semibold text-theme-accent-blue mb-1 relative inline-block"
             initial={{ x: -20, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
             {t("skills.softSkills.title")}
-            {/* Subrayado animado */}
+            {/* Subrayado animado con colores de tema */}
             <motion.span
-              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-500"
+              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-theme-accent-blue to-theme-accent-cyan"
               initial={{ width: 0 }}
               whileInView={{ width: "100%" }}
               viewport={{ once: true }}
@@ -115,6 +113,7 @@ export const Skills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
+            className="text-theme-text-secondary"
           >
             {t("skills.softSkills.description")}
           </motion.p>
@@ -122,19 +121,17 @@ export const Skills = () => {
 
         {/* Tech Skills */}
         <motion.section variants={itemVariants} className="relative">
-          {/* Línea decorativa lateral */}
-
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-700 dark:text-blue-400 mb-1 relative inline-block"
+            className="text-lg sm:text-xl md:text-2xl font-semibold text-theme-accent-blue mb-1 relative inline-block"
             initial={{ x: -20, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
             {t("skills.techSkills.title")}
-            {/* Subrayado animado */}
+            {/* Subrayado animado con colores de tema */}
             <motion.span
-              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500"
+              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-theme-accent-purple to-theme-accent-pink"
               initial={{ width: 0 }}
               whileInView={{ width: "100%" }}
               viewport={{ once: true }}

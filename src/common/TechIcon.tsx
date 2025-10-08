@@ -43,7 +43,7 @@ export const TechIcon = ({
             src={src}
             alt={alt}
             className={`${
-              h || "h-12 w-12"
+              h || "h-8 w-8 md:h-12 md:w-12"
             } object-contain transition-opacity duration-300 ${
               imageLoaded ? "opacity-100" : "opacity-0"
             }`}

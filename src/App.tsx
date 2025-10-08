@@ -2,7 +2,7 @@ import { useEffect, useState, lazy, Suspense } from "react";
 import { ThemeProvider } from "./context/ThemeContext";
 import { Footer } from "./layout/Footer";
 import { Navbar } from "./layout/Navbar";
-import { Home } from "./pages/Home";
+import { Hero } from "./pages/Hero";
 import { motion, useScroll, useSpring } from "framer-motion";
 
 // Lazy loading de secciones para mejor performance inicial
@@ -21,11 +21,11 @@ const Skills = lazy(() =>
   import("./pages/Skills").then((module) => ({ default: module.Skills }))
 );
 
-// Componente de loading optimizado
+// Componente de loading optimizado con tema
 const SectionLoader = () => (
   <div className="w-full max-w-4xl h-96 flex items-center justify-center">
     <motion.div
-      className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full"
+      className="w-12 h-12 border-4 border-theme-accent-blue border-t-transparent rounded-full"
       animate={{ rotate: 360 }}
       transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
     />
@@ -62,40 +62,44 @@ function App() {
 
   return (
     <ThemeProvider>
-      <section className="min-h-screen flex flex-col text-sm sm:text-base md:text-lg lg:text-xl text-black dark:text-white bg-customWhite dark:bg-customDark transition-colors duration-300 relative">
-        {/* Header optimizado */}
+      <div className="min-h-screen flex flex-col text-sm sm:text-base md:text-lg lg:text-xl text-theme-text-primary bg-theme-bg-primary transition-colors duration-300 relative">
+        {/* Header optimizado y responsivo */}
         <motion.header
-          className={`fixed top-0 w-full z-40 transition-all duration-300 ${
-            scrolled && "dark:bg-black/80 backdrop-blur shadow-lg"
-          }`}
+          className={`fixed top-0 left-0 right-0 w-full z-[90] transition-all duration-300 bg-transparent backdrop-blur-sm`}
           initial={{ y: -100 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
         >
-          {/* Barra de progreso optimizada */}
+          {/* Barra de progreso mejorada */}
           <motion.div
-            className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 origin-left"
+            className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-primary origin-left z-10"
             style={{ scaleX, willChange: "transform" }}
           />
 
-          <div className="py-3 sm:p-3 sm:px-3 sm:py-1.5 w-full">
+          {/* Contenedor del Navbar con padding responsivo */}
+          <div className="w-full py-2.5">
             <Navbar />
           </div>
         </motion.header>
 
+        {/* Espaciador para compensar el header fijo */}
+        <div className="h-16 sm:h-18 md:h-0" />
+
+        {/* Main content */}
         <main className="flex-1 flex flex-col w-full items-center gap-20 sm:gap-28 md:gap-40 px-4 sm:px-6 md:px-8 mb-12 sm:mb-16 relative">
           {/* Home Section - Siempre cargada */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
+            className="w-full"
           >
-            <Home />
+            <Hero />
           </motion.div>
 
-          {/* Separador */}
+          {/* Separador con colores de tema */}
           <motion.div
-            className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"
+            className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-theme-accent-blue to-transparent"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: "50px" }}
@@ -108,7 +112,7 @@ function App() {
           </Suspense>
 
           <motion.div
-            className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent"
+            className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-theme-accent-purple to-transparent"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: "50px" }}
@@ -121,7 +125,7 @@ function App() {
           </Suspense>
 
           <motion.div
-            className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-pink-500 to-transparent"
+            className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-theme-accent-pink to-transparent"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: "50px" }}
@@ -134,7 +138,7 @@ function App() {
           </Suspense>
 
           <motion.div
-            className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent"
+            className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-theme-accent-cyan to-transparent"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: "50px" }}
@@ -147,7 +151,7 @@ function App() {
           </Suspense>
 
           <motion.div
-            className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"
+            className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-theme-accent-blue to-transparent"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: "50px" }}
@@ -155,13 +159,14 @@ function App() {
           />
         </main>
 
+        {/* Footer */}
         <footer className="flex justify-center items-center relative z-10">
           <Footer />
         </footer>
 
         {/* Botón de scroll to top optimizado */}
         <motion.button
-          className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white p-2.5 sm:p-3 rounded-full shadow-lg z-40"
+          className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 bg-gradient-to-r from-theme-accent-blue to-theme-accent-purple text-white p-3 rounded-full shadow-theme-lg z-[80] hover:shadow-neon-hover transition-shadow"
           initial={{ opacity: 0, scale: 0 }}
           animate={{
             opacity: scrolled ? 1 : 0,
@@ -180,16 +185,16 @@ function App() {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            strokeWidth={2.5}
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth={2}
               d="M5 10l7-7m0 0l7 7m-7-7v18"
             />
           </svg>
         </motion.button>
-      </section>
+      </div>
     </ThemeProvider>
   );
 }

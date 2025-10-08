@@ -38,29 +38,30 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="relative w-full mx-auto flex items-center justify-center bg-transparent backdrop-blur-sm py-2 px-4 sm:px-6 md:px-8">
+    <nav className="relative w-full max-w-7xl mx-auto flex items-center justify-center px-4 sm:px-6 md:px-8 py-2">
+      {/* Botón de menú móvil - IZQUIERDA */}
       <AnimatePresence mode="wait">
         {!menuOpen && (
           <motion.button
             key="menu-button"
             onClick={openModal}
-            className="md:hidden text-2xl sm:text-2xl absolute left-0 z-50 p-1.5 text-gray-800 dark:text-gray-200"
+            className="md:hidden absolute left-2 z-50 p-2 rounded-lg hover:bg-theme-bg-tertiary/50 text-theme-text-primary transition-colors"
             aria-label="Abrir menú"
             initial={{ opacity: 0, rotate: -90 }}
             animate={{ opacity: 1, rotate: 0 }}
             exit={{ opacity: 0, rotate: 90 }}
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.3 }}
           >
-            <HiMiniBars3 className="relative z-10" />
+            <HiMiniBars3 className="text-2xl" />
           </motion.button>
         )}
       </AnimatePresence>
 
       {/* Menú desktop - CENTRO */}
       <motion.ul
-        className="hidden md:flex md:flex-row md:gap-6 lg:gap-10 md:items-center text-sm lg:text-base font-medium"
+        className="hidden md:flex flex-row gap-6 lg:gap-8 items-center text-sm lg:text-base font-medium"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, staggerChildren: 0.1 }}
@@ -74,13 +75,15 @@ export const Navbar = () => {
           >
             <Link
               to={item.to}
+              spy={true}
               smooth={true}
               duration={500}
-              offset={-80}
-              className="relative cursor-pointer group"
+              offset={-100}
+              className="relative cursor-pointer group block"
+              activeClass="text-theme-accent-blue"
             >
               <motion.span
-                className="relative z-10 text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                className="relative z-10 text-theme-text-primary hover:text-theme-accent-blue transition-colors duration-200"
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.2 }}
               >
@@ -89,7 +92,7 @@ export const Navbar = () => {
 
               {/* Subrayado animado */}
               <motion.span
-                className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 dark:from-blue-400 dark:to-purple-500"
+                className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-theme-accent-blue to-theme-accent-purple"
                 initial={{ width: 0 }}
                 whileHover={{ width: "100%" }}
                 transition={{ duration: 0.3 }}
@@ -105,10 +108,10 @@ export const Navbar = () => {
         >
           <a
             href="mailto:juandauberte@gmail.com"
-            className="relative cursor-pointer group"
+            className="relative cursor-pointer group block"
           >
             <motion.span
-              className="relative z-10 text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              className="relative z-10 text-theme-text-primary hover:text-theme-accent-blue transition-colors duration-200"
               whileHover={{ y: -2 }}
               transition={{ duration: 0.2 }}
             >
@@ -116,7 +119,7 @@ export const Navbar = () => {
             </motion.span>
 
             <motion.span
-              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 dark:from-blue-400 dark:to-purple-500"
+              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-theme-accent-blue to-theme-accent-purple"
               initial={{ width: 0 }}
               whileHover={{ width: "100%" }}
               transition={{ duration: 0.3 }}
@@ -127,15 +130,15 @@ export const Navbar = () => {
 
       {/* Controles (tema e idioma) - DERECHA */}
       <motion.div
-        className="absolute right-6 flex items-center gap-2 sm:gap-3 md:gap-4"
+        className="absolute right-2 flex items-center md:gap-4"
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
         <motion.button
           onClick={toggleDarkMode}
-          className="relative text-gray-800 dark:text-gray-200 flex items-center"
-          whileHover={{ scale: 1.1 }}
+          className="relative rounded-lg hover:bg-theme-bg-tertiary/50 text-theme-text-primary transition-colors flex items-center justify-center"
+          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.3 }}
           aria-label="Cambiar tema"
@@ -155,24 +158,25 @@ export const Navbar = () => {
         <LanguageSelector />
       </motion.div>
 
-      {/* Modal móvil con animaciones mejoradas */}
+      {/* Modal móvil mejorado */}
       <Modal
         isOpen={menuOpen}
         onRequestClose={closeModal}
         contentLabel="Menú móvil"
-        className="z-60 text-gray-900 dark:text-white bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl h-full absolute flex left-0 top-0 p-6 sm:p-8 w-[300px] sm:w-[340px] max-w-md mx-auto outline-none md:hidden shadow-2xl border-r border-gray-200/30 dark:border-gray-700/30"
-        overlayClassName="z-50 inset-0 fixed bg-black/60 backdrop-blur-sm flex md:hidden"
+        className="fixed left-0 top-0 h-full w-[280px] sm:w-[320px] bg-theme-bg-overlay/98 backdrop-blur-xl shadow-theme-2xl border-r border-theme-border-primary/30 transition-colors z-[100] outline-none overflow-y-auto"
+        overlayClassName="fixed inset-0 bg-black/60 backdrop-blur-sm z-[99]"
+        closeTimeoutMS={300}
       >
         <motion.div
           initial={{ x: "-100%", opacity: 0 }}
           animate={{ x: "0%", opacity: 1 }}
           exit={{ x: "-100%", opacity: 0 }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="w-full h-full flex flex-col gap-6 sm:gap-10 relative"
+          className="w-full h-full flex flex-col p-6 sm:p-8 gap-8"
         >
-          {/* Partículas decorativas */}
+          {/* Partícula decorativa */}
           <motion.div
-            className="absolute top-20 right-4 w-16 h-16 bg-blue-400/20 rounded-full blur-2xl"
+            className="absolute top-20 right-6 w-20 h-20 bg-theme-accent-blue/10 rounded-full blur-2xl pointer-events-none"
             animate={{
               y: [0, -20, 0],
               scale: [1, 1.2, 1],
@@ -184,19 +188,21 @@ export const Navbar = () => {
             }}
           />
 
+          {/* Botón cerrar */}
           <motion.button
             onClick={closeModal}
-            className="text-2xl sm:text-3xl cursor-pointer relative z-10 w-fit p-2 rounded-lg bg-gray-100/50 dark:bg-gray-800/50 hover:bg-gray-200/50 dark:hover:bg-gray-700/50 transition-colors"
+            className="self-start p-2 rounded-lg bg-theme-bg-tertiary/50 hover:bg-theme-bg-tertiary transition-colors text-theme-text-primary"
             aria-label="Cerrar menú"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.3 }}
           >
-            <HiXMark className="relative z-10" />
+            <HiXMark className="text-2xl sm:text-3xl" />
           </motion.button>
 
+          {/* Lista de navegación */}
           <motion.ul
-            className="flex flex-col items-start gap-6 sm:gap-7 text-xl sm:text-2xl font-medium"
+            className="flex flex-col gap-6"
             initial="hidden"
             animate="visible"
             variants={{
@@ -209,37 +215,31 @@ export const Navbar = () => {
               },
             }}
           >
-            {[
-              ...navItems,
-              {
-                to: "",
-                label: t("navbar.contact"),
-                href: "mailto:juandauberte@gmail.com",
-              },
-            ].map((item, index) => (
+            {navItems.map((item, index) => (
               <motion.li
                 key={index}
                 variants={{
                   hidden: { x: -50, opacity: 0 },
                   visible: { x: 0, opacity: 1 },
                 }}
-                whileHover={{ x: 10, scale: 1.02 }}
+                whileHover={{ x: 8, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 200 }}
-                className="w-full"
               >
                 <Link
                   to={item.to}
+                  spy={true}
                   smooth={true}
                   duration={500}
-                  offset={-80}
-                  className="relative group cursor-pointer block py-2"
+                  offset={-100}
+                  className="relative group cursor-pointer block py-2 text-xl sm:text-2xl font-medium"
                   onClick={closeModal}
+                  activeClass="text-theme-accent-blue"
                 >
-                  <span className="relative z-10 text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <span className="relative z-10 text-theme-text-primary group-hover:text-theme-accent-blue transition-colors">
                     {item.label}
                   </span>
                   <motion.span
-                    className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 dark:from-blue-400 dark:to-purple-500"
+                    className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-theme-accent-blue to-theme-accent-purple rounded-full"
                     initial={{ width: 0 }}
                     whileHover={{ width: "100%" }}
                     transition={{ duration: 0.3 }}
@@ -247,6 +247,40 @@ export const Navbar = () => {
                 </Link>
               </motion.li>
             ))}
+
+            {/* Separador */}
+            <motion.div
+              className="h-px bg-gradient-to-r from-transparent via-theme-border-primary to-transparent my-2"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+            />
+
+            {/* Contacto */}
+            <motion.li
+              variants={{
+                hidden: { x: -50, opacity: 0 },
+                visible: { x: 0, opacity: 1 },
+              }}
+              whileHover={{ x: 8, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 200 }}
+            >
+              <a
+                href="mailto:juandauberte@gmail.com"
+                className="relative group cursor-pointer block py-2 text-xl sm:text-2xl font-medium"
+                onClick={closeModal}
+              >
+                <span className="relative z-10 text-theme-text-primary group-hover:text-theme-accent-blue transition-colors">
+                  {t("navbar.contact")}
+                </span>
+                <motion.span
+                  className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-theme-accent-blue to-theme-accent-purple rounded-full"
+                  initial={{ width: 0 }}
+                  whileHover={{ width: "100%" }}
+                  transition={{ duration: 0.3 }}
+                />
+              </a>
+            </motion.li>
           </motion.ul>
         </motion.div>
       </Modal>

@@ -7,7 +7,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import cv from "../../public/download/Curriculum Vitae Juan Cruz Dauberte.pdf";
 import { Link } from "react-scroll";
 
-export const Home = () => {
+export const Hero = () => {
   const { t } = useTranslation();
 
   // Variantes de animación para los elementos
@@ -50,10 +50,10 @@ export const Home = () => {
 
   return (
     <section className="w-full min-h-dvh flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10 relative px-4 sm:px-6">
-      {/* Partículas flotantes de fondo - Contenidas y Responsive */}
-      <div className="absolute top-20 left-4 sm:left-10 w-24 sm:w-32 h-24 sm:h-32 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-40 right-8 sm:right-20 w-32 sm:w-40 h-32 sm:h-40 bg-purple-400/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-20 left-1/4 sm:left-1/3 w-28 sm:w-36 h-28 sm:h-36 bg-cyan-400/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Partículas flotantes de fondo con colores de tema */}
+      <div className="absolute top-20 left-4 sm:left-10 w-24 sm:w-32 h-24 sm:h-32 bg-theme-accent-blue/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-40 right-8 sm:right-20 w-32 sm:w-40 h-32 sm:h-40 bg-theme-accent-purple/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 left-1/4 sm:left-1/3 w-28 sm:w-36 h-28 sm:h-36 bg-theme-accent-cyan/10 rounded-full blur-3xl pointer-events-none" />
 
       <motion.section
         variants={containerVariants}
@@ -64,14 +64,14 @@ export const Home = () => {
         {/* Imagen de perfil con efectos avanzados */}
         <motion.div
           variants={imageVariants}
-          whileHover={{ 
+          whileHover={{
             scale: 1.1,
             rotate: [0, -5, 5, -5, 0],
-            transition: { duration: 0.5 }
+            transition: { duration: 0.5 },
           }}
           className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 flex items-center justify-center flex-shrink-0"
         >
-          {/* Anillo animado detrás de la imagen */}
+          {/* Anillo animado con colores de tema */}
           <motion.div
             animate={{
               rotate: 360,
@@ -81,9 +81,9 @@ export const Home = () => {
               repeat: Infinity,
               ease: "linear",
             }}
-            className="absolute inset-0 border-2 border-transparent border-t-blue-500 border-r-purple-500 rounded-full"
+            className="absolute inset-0 border-2 border-transparent border-t-theme-accent-blue border-r-theme-accent-purple rounded-full"
           />
-          
+
           {/* Segundo anillo */}
           <motion.div
             animate={{
@@ -94,10 +94,10 @@ export const Home = () => {
               repeat: Infinity,
               ease: "linear",
             }}
-            className="absolute inset-0 border-2 border-transparent border-b-cyan-500 border-l-pink-500 rounded-full"
+            className="absolute inset-0 border-2 border-transparent border-b-theme-accent-cyan border-l-theme-accent-pink rounded-full"
           />
 
-          {/* Glow effect */}
+          {/* Glow effect con color de tema */}
           <motion.div
             animate={{
               scale: [1, 1.2, 1],
@@ -108,10 +108,10 @@ export const Home = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute inset-0 bg-blue-500/20 rounded-full blur-xl"
+            className="absolute inset-0 bg-theme-accent-blue/20 rounded-full blur-xl"
           />
 
-          <div className="relative w-full h-full border-2 rounded-full overflow-hidden border-white dark:border-gray-700 shadow-2xl">
+          <div className="relative w-full h-full border-2 rounded-full overflow-hidden border-theme-border-secondary shadow-theme-2xl">
             <img
               src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1745434137/Juann_txw3oo.jpg"
               alt="Foto de perfil de Juan Cruz"
@@ -120,10 +120,13 @@ export const Home = () => {
           </div>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="flex flex-col gap-1.5 sm:gap-2 text-center md:text-left">
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col gap-1.5 sm:gap-2 text-center md:text-left"
+        >
           <h1 className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-base sm:text-lg md:text-xl lg:text-2xl justify-center md:justify-start">
-            <motion.p 
-              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-[length:200%_100%] font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl"
+            <motion.p
+              className="text-transparent bg-clip-text bg-gradient-primary bg-[length:200%_100%] font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl"
               animate={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
@@ -136,9 +139,9 @@ export const Home = () => {
               Juan Cruz Dauberte
             </motion.p>
           </h1>
-          <motion.span 
+          <motion.span
             variants={itemVariants}
-            className="font-semibold text-blue-900 dark:text-blue-100 text-xs sm:text-sm md:text-base lg:text-lg"
+            className="font-semibold text-theme-accent-blue-dark text-xs sm:text-sm md:text-base lg:text-lg"
           >
             {t("home.titles")}
           </motion.span>
@@ -151,41 +154,45 @@ export const Home = () => {
         animate="visible"
         className="flex flex-col gap-3 sm:gap-4 text-center max-w-3xl w-full z-10"
       >
-        <motion.p 
+        <motion.p
           variants={itemVariants}
-          className="text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed"
+          className="text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed text-theme-text-primary"
         >
           {t("home.description")}
         </motion.p>
-        
-        <motion.div 
+
+        <motion.div
           variants={itemVariants}
           className="flex flex-wrap gap-2 sm:gap-3 justify-center"
         >
           {[
-            { 
-              href: "https://www.linkedin.com/in/juancruzdauberte/", 
-              icon: <FaLinkedin />, 
+            {
+              href: "https://www.linkedin.com/in/juancruzdauberte/",
+              icon: <FaLinkedin />,
               text: "Linkedin",
-              color: "from-blue-500 to-blue-700"
+              colorFrom: "from-theme-accent-blue",
+              colorTo: "to-theme-accent-blue-dark",
             },
-            { 
-              href: "https://github.com/juancruzdauberte", 
-              icon: <FaGithub />, 
+            {
+              href: "https://github.com/juancruzdauberte",
+              icon: <FaGithub />,
               text: "GitHub",
-              color: "from-gray-700 to-gray-900"
+              colorFrom: "from-gray-700",
+              colorTo: "to-gray-900 dark:from-gray-600 dark:to-gray-800",
             },
-            { 
-              href: "mailto:juandauberte@gmail.com", 
-              icon: <TbMailShare />, 
+            {
+              href: "mailto:juandauberte@gmail.com",
+              icon: <TbMailShare />,
               text: t("home.contactMe"),
-              color: "from-red-500 to-pink-600"
+              colorFrom: "from-theme-accent-pink",
+              colorTo: "to-theme-accent-pink-light",
             },
-            { 
-              href: cv, 
-              icon: <PiFilePdf size={20} />, 
+            {
+              href: cv,
+              icon: <PiFilePdf size={20} />,
               text: t("about.download"),
-              color: "from-green-500 to-emerald-600"
+              colorFrom: "from-theme-accent-green",
+              colorTo: "to-emerald-600 dark:to-emerald-500",
             },
           ].map((link, index) => (
             <motion.a
@@ -193,8 +200,8 @@ export const Home = () => {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative group flex items-center justify-center gap-1.5 sm:gap-2 border border-black dark:border-white rounded-full px-2.5 py-1 sm:px-3 sm:py-1.5 text-xs sm:text-sm md:text-base overflow-hidden whitespace-nowrap"
-              whileHover={{ 
+              className="relative group flex items-center justify-center gap-1.5 sm:gap-2 border border-theme-border-secondary rounded-full px-2.5 py-1 sm:px-3 sm:py-1.5 text-xs sm:text-sm md:text-base overflow-hidden whitespace-nowrap transition-colors"
+              whileHover={{
                 scale: 1.05,
                 y: -2,
               }}
@@ -203,27 +210,27 @@ export const Home = () => {
             >
               {/* Fondo gradiente animado */}
               <motion.div
-                className={`absolute inset-0 bg-gradient-to-r ${link.color} opacity-0 group-hover:opacity-100`}
+                className={`absolute inset-0 bg-gradient-to-r ${link.colorFrom} ${link.colorTo} opacity-0 group-hover:opacity-100`}
                 initial={{ x: "-100%" }}
                 whileHover={{ x: "0%" }}
                 transition={{ duration: 0.3 }}
               />
-              
+
               {/* Efecto de brillo */}
               <motion.div
-                className="absolute inset-0 bg-white"
+                className="absolute inset-0 bg-white dark:bg-white/20"
                 initial={{ x: "-100%", opacity: 0 }}
-                whileHover={{ 
+                whileHover={{
                   x: "100%",
                   opacity: [0, 0.3, 0],
                 }}
                 transition={{ duration: 0.6 }}
               />
 
-              <span className="relative z-10 group-hover:text-white transition-colors text-base sm:text-lg">
+              <span className="relative z-10 group-hover:text-white transition-colors text-base sm:text-lg text-theme-text-primary">
                 {link.icon}
               </span>
-              <span className="relative z-10 group-hover:text-white transition-colors">
+              <span className="relative z-10 group-hover:text-white transition-colors text-theme-text-primary">
                 {link.text}
               </span>
             </motion.a>
@@ -231,29 +238,26 @@ export const Home = () => {
         </motion.div>
       </motion.section>
 
-      {/* Flecha animada */}
+      {/* Flecha animada con color de tema */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ 
+        animate={{
           opacity: 1,
           y: [0, 15, 0],
         }}
-        transition={{ 
+        transition={{
           opacity: { delay: 1, duration: 0.5 },
-          y: { 
-            repeat: Infinity, 
+          y: {
+            repeat: Infinity,
             duration: 2,
-            ease: "easeInOut"
-          }
+            ease: "easeInOut",
+          },
         }}
         className="cursor-pointer lg:absolute lg:bottom-14 z-10 mt-2 sm:mt-0"
       >
         <Link to="sobre-mi" smooth={true} duration={500} offset={-80}>
-          <motion.div
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <MdKeyboardArrowDown className="text-blue-500 text-3xl sm:text-4xl md:text-5xl" />
+          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+            <MdKeyboardArrowDown className="text-theme-accent-blue text-3xl sm:text-4xl md:text-5xl" />
           </motion.div>
         </Link>
       </motion.div>

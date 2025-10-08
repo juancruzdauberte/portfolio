@@ -47,9 +47,9 @@ export const Projects = () => {
   return (
     <section
       id="proyectos"
-      className="w-full max-w-4xl flex flex-col gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6"
+      className="w-full max-w-5xl flex flex-col gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6"
     >
-      {/* Título animado */}
+      {/* Título animado con colores de tema */}
       <motion.section
         variants={titleVariants}
         initial="hidden"
@@ -67,13 +67,13 @@ export const Projects = () => {
             repeatDelay: 5,
           }}
         >
-          <FiFolder className="text-3xl md:text-4xl text-blue-950 dark:text-blue-600" />
+          <FiFolder className="text-3xl md:text-4xl text-theme-accent-blue-dark" />
         </motion.div>
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-950 dark:text-blue-600 relative">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-theme-accent-blue-dark relative">
           {t("projectCard.title")}
-          {/* Subrayado animado */}
+          {/* Subrayado animado con colores de tema */}
           <motion.span
-            className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"
+            className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-theme-accent-blue to-theme-accent-purple"
             initial={{ width: 0 }}
             whileInView={{ width: "100%" }}
             viewport={{ once: true }}
@@ -100,7 +100,7 @@ export const Projects = () => {
             <SiNodedotjs className="text-green-500" />,
             <SiMysql />,
             <SiTypescript className="text-typescript" />,
-            <SiExpress className="text-gray-600" />,
+            <SiExpress className="text-gray-600 dark:text-gray-400" />,
             <SiJsonwebtokens />,
             <TbBrandOauth />,
             <FaReact className="text-react" />,
@@ -133,7 +133,7 @@ export const Projects = () => {
             <SiNodedotjs className="text-green-500" />,
             <SiMysql />,
             <SiTypescript className="text-typescript" />,
-            <SiExpress className="text-gray-600" />,
+            <SiExpress className="text-gray-600 dark:text-gray-400" />,
             <SiJsonwebtokens />,
             <TbBrandOauth />,
             <FaReact className="text-react" />,
