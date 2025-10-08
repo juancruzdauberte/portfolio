@@ -49,7 +49,10 @@ export const Hero = () => {
   };
 
   return (
-    <section className="w-full min-h-dvh flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10 relative px-4 sm:px-6">
+    <section
+      id="hero"
+      className="w-full min-h-dvh flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10 relative px-4 sm:px-6"
+    >
       {/* Partículas flotantes de fondo con colores de tema */}
       <div className="absolute top-20 left-4 sm:left-10 w-24 sm:w-32 h-24 sm:h-32 bg-theme-accent-blue/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-40 right-8 sm:right-20 w-32 sm:w-40 h-32 sm:h-40 bg-theme-accent-purple/10 rounded-full blur-3xl pointer-events-none" />
@@ -192,7 +195,7 @@ export const Hero = () => {
               icon: <PiFilePdf size={20} />,
               text: t("about.download"),
               colorFrom: "from-theme-accent-green",
-              colorTo: "to-emerald-600 dark:to-emerald-500",
+              colorTo: "to-red-600 dark:to-emerald-500",
             },
           ].map((link, index) => (
             <motion.a
@@ -215,8 +218,6 @@ export const Hero = () => {
                 whileHover={{ x: "0%" }}
                 transition={{ duration: 0.3 }}
               />
-
-              {/* Efecto de brillo */}
               <motion.div
                 className="absolute inset-0 bg-white dark:bg-white/20"
                 initial={{ x: "-100%", opacity: 0 }}
@@ -226,13 +227,13 @@ export const Hero = () => {
                 }}
                 transition={{ duration: 0.6 }}
               />
-
               <span className="relative z-10 group-hover:text-white transition-colors text-base sm:text-lg text-theme-text-primary">
                 {link.icon}
               </span>
               <span className="relative z-10 group-hover:text-white transition-colors text-theme-text-primary">
                 {link.text}
               </span>
+              {/* Efecto de brillo */}
             </motion.a>
           ))}
         </motion.div>
@@ -253,7 +254,7 @@ export const Hero = () => {
             ease: "easeInOut",
           },
         }}
-        className="cursor-pointer lg:absolute lg:bottom-14 z-10 mt-2 sm:mt-0"
+        className="cursor-pointer absolute bottom-3 lg:bottom-12 z-10 mt-2 sm:mt-0"
       >
         <Link to="sobre-mi" smooth={true} duration={500} offset={-80}>
           <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>

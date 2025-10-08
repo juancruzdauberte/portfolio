@@ -31,7 +31,7 @@ export const Navbar = () => {
   }, [menuOpen]);
 
   const navItems = [
-    { to: "sobre-mi", label: t("navbar.aboutMe") },
+    { to: "hero", label: t("navbar.aboutMe") },
     { to: "experiencia", label: t("navbar.experience") },
     { to: "proyectos", label: t("navbar.projects") },
     { to: "habilidades", label: t("navbar.skills") },

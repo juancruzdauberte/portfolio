@@ -31,7 +31,7 @@ export const TechIcon = ({
       onClick={() => setIsHovered(!isHovered)}
     >
       {/* Contenedor con tamaño fijo */}
-      <div className={`relative ${h || "h-12 w-12"}`}>
+      <div className={`relative ${h || "h-8 w-8 md:h-12 md:w-12"}`}>
         {/* Placeholder mientras carga */}
         {!imageLoaded && (
           <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 rounded-lg animate-pulse" />

@@ -128,7 +128,7 @@ export const Footer = () => {
 
       {/* Partículas decorativas con colores de tema */}
       <motion.div
-        className="absolute bottom-4 left-10 w-2 h-2 bg-theme-accent-blue rounded-full"
+        className="absolute bottom-4 left-6 md:left-10 w-2 h-2 bg-theme-accent-blue rounded-full"
         animate={{
           y: [0, -10, 0],
           opacity: [0.3, 0.8, 0.3],
@@ -140,7 +140,7 @@ export const Footer = () => {
         }}
       />
       <motion.div
-        className="absolute bottom-8 right-10 w-2 h-2 bg-theme-accent-purple rounded-full"
+        className="absolute bottom-8 right-6 md:right-10 w-2 h-2 bg-theme-accent-purple rounded-full"
         animate={{
           y: [0, -10, 0],
           opacity: [0.3, 0.8, 0.3],
