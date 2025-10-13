@@ -43,10 +43,7 @@ export const Skills = () => {
   };
 
   return (
-    <section
-      id="habilidades"
-      className="w-full max-w-5xl flex flex-col px-3 sm:px-4 md:px-6"
-    >
+    <section className="w-full max-w-5xl flex flex-col px-3 sm:px-4 md:px-6">
       {/* Título animado con colores de tema */}
       <motion.section
         variants={titleVariants}

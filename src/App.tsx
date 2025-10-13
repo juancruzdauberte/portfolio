@@ -70,6 +70,7 @@ function App() {
         <main className="flex-1 flex flex-col w-full items-center gap-20 sm:gap-28 md:gap-40 px-4 sm:px-6 md:px-8 mb-12 relative">
           {/* Home Section - Siempre cargada */}
           <motion.div
+            id="hero"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -88,9 +89,11 @@ function App() {
           />
 
           {/* About Me - Lazy loaded */}
-          <Suspense fallback={<SectionLoader />}>
-            <AboutMe />
-          </Suspense>
+          <section id="sobre-mi" className="w-full flex justify-center">
+            <Suspense fallback={<SectionLoader />}>
+              <AboutMe />
+            </Suspense>
+          </section>
 
           <motion.div
             className="w-full max-w-5xl h-px bg-gradient-to-r from-transparent via-theme-accent-purple to-transparent"
@@ -101,9 +104,11 @@ function App() {
           />
 
           {/* Experience - Lazy loaded */}
-          <Suspense fallback={<SectionLoader />}>
-            <Experience />
-          </Suspense>
+          <section id="experiencia" className="w-full flex justify-center">
+            <Suspense fallback={<SectionLoader />}>
+              <Experience />
+            </Suspense>
+          </section>
 
           <motion.div
             className="w-full max-w-5xl h-px bg-gradient-to-r from-transparent via-theme-accent-pink to-transparent"
@@ -114,9 +119,11 @@ function App() {
           />
 
           {/* Projects - Lazy loaded */}
-          <Suspense fallback={<SectionLoader />}>
-            <Projects />
-          </Suspense>
+          <section id="proyectos" className="w-full flex justify-center">
+            <Suspense fallback={<SectionLoader />}>
+              <Projects />
+            </Suspense>
+          </section>
 
           <motion.div
             className="w-full max-w-5xl h-px bg-gradient-to-r from-transparent via-theme-accent-cyan to-transparent"
@@ -127,9 +134,11 @@ function App() {
           />
 
           {/* Skills - Lazy loaded */}
-          <Suspense fallback={<SectionLoader />}>
-            <Skills />
-          </Suspense>
+          <section id="habilidades" className="w-full flex justify-center">
+            <Suspense fallback={<SectionLoader />}>
+              <Skills />
+            </Suspense>
+          </section>
 
           <motion.div
             className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-theme-accent-blue to-transparent"

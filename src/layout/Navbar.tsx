@@ -1,4 +1,3 @@
-import { Link } from "react-scroll";
 import { useEffect, useState } from "react";
 import { HiMiniBars3, HiXMark } from "react-icons/hi2";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
@@ -7,11 +6,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import Modal from "react-modal";
 import { useTranslation } from "react-i18next";
 import { LanguageSelector } from "../common/LanguageSelector";
+import { scrollToSection } from "../utils/scrollUtils";
 
 Modal.setAppElement("#root");
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [activeSection, setActiveSection] = useState<string>("");
   const openModal = (): void => setMenuOpen(true);
   const closeModal = (): void => setMenuOpen(false);
 
@@ -30,12 +31,52 @@ export const Navbar = () => {
     };
   }, [menuOpen]);
 
+  // Track active section on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = [
+        "hero",
+        "sobre-mi",
+        "experiencia",
+        "proyectos",
+        "habilidades",
+      ];
+      const scrollPosition = window.scrollY + 100; // Offset for navbar
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Check initial state
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const navItems = [
-    { to: "hero", label: t("navbar.aboutMe") },
+    { to: "sobre-mi", label: t("navbar.aboutMe") },
     { to: "experiencia", label: t("navbar.experience") },
     { to: "proyectos", label: t("navbar.projects") },
     { to: "habilidades", label: t("navbar.skills") },
   ];
+
+  const handleNavClick = (sectionId: string) => {
+    scrollToSection(sectionId, 120); // Ajustado para que se vea mejor el título
+    if (menuOpen) {
+      closeModal();
+    }
+  };
 
   return (
     <nav className="relative w-full max-w-7xl mx-auto flex items-center justify-center px-4 sm:px-6 md:px-8 py-2">
@@ -73,31 +114,25 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
           >
-            <Link
-              to={item.to}
-              spy={true}
-              smooth={true}
-              duration={500}
-              offset={-100}
-              className="relative cursor-pointer group block"
-              activeClass="text-theme-accent-blue"
+            <button
+              type="button"
+              onClick={() => handleNavClick(item.to)}
+              className={`nav-link ${
+                activeSection === item.to ? "active" : ""
+              }`}
             >
               <motion.span
-                className="relative z-10 text-theme-text-primary hover:text-theme-accent-blue transition-colors duration-200"
+                className={`relative z-10 transition-colors duration-200 ${
+                  activeSection === item.to
+                    ? "text-theme-accent-blue"
+                    : "text-theme-text-primary hover:text-theme-accent-blue"
+                }`}
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.2 }}
               >
                 {item.label}
               </motion.span>
-
-              {/* Subrayado animado */}
-              <motion.span
-                className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-theme-accent-blue to-theme-accent-purple"
-                initial={{ width: 0 }}
-                whileHover={{ width: "100%" }}
-                transition={{ duration: 0.3 }}
-              />
-            </Link>
+            </button>
           </motion.li>
         ))}
 
@@ -106,10 +141,7 @@ export const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: navItems.length * 0.1 }}
         >
-          <a
-            href="mailto:juandauberte@gmail.com"
-            className="relative cursor-pointer group block"
-          >
+          <a href="mailto:juandauberte@gmail.com" className="nav-link">
             <motion.span
               className="relative z-10 text-theme-text-primary hover:text-theme-accent-blue transition-colors duration-200"
               whileHover={{ y: -2 }}
@@ -225,26 +257,31 @@ export const Navbar = () => {
                 whileHover={{ x: 8, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 200 }}
               >
-                <Link
-                  to={item.to}
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  offset={-100}
-                  className="relative group cursor-pointer block py-2 text-xl sm:text-2xl font-medium"
-                  onClick={closeModal}
-                  activeClass="text-theme-accent-blue"
+                <button
+                  type="button"
+                  onClick={() => handleNavClick(item.to)}
+                  className={`nav-link-mobile ${
+                    activeSection === item.to ? "active" : ""
+                  }`}
                 >
-                  <span className="relative z-10 text-theme-text-primary group-hover:text-theme-accent-blue transition-colors">
+                  <span
+                    className={`relative z-10 transition-colors ${
+                      activeSection === item.to
+                        ? "text-theme-accent-blue"
+                        : "text-theme-text-primary group-hover:text-theme-accent-blue"
+                    }`}
+                  >
                     {item.label}
                   </span>
                   <motion.span
                     className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-theme-accent-blue to-theme-accent-purple rounded-full"
                     initial={{ width: 0 }}
-                    whileHover={{ width: "100%" }}
+                    animate={{
+                      width: activeSection === item.to ? "100%" : "0%",
+                    }}
                     transition={{ duration: 0.3 }}
                   />
-                </Link>
+                </button>
               </motion.li>
             ))}
 
@@ -267,7 +304,7 @@ export const Navbar = () => {
             >
               <a
                 href="mailto:juandauberte@gmail.com"
-                className="relative group cursor-pointer block py-2 text-xl sm:text-2xl font-medium"
+                className="nav-link-mobile"
                 onClick={closeModal}
               >
                 <span className="relative z-10 text-theme-text-primary group-hover:text-theme-accent-blue transition-colors">

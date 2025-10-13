@@ -5,73 +5,90 @@
 /* ============================================
    VARIABLES CSS - SISTEMA DE TEMAS OPTIMIZADO V2
    ============================================ */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Compensa el navbar fijo */
+}
 
 :root {
   /* Esquema de color para elementos nativos del navegador */
   color-scheme: light dark;
-  
+
   /* Tipografía base */
   font-family: "Sora", system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  
+
   /* Configuración de renderizado optimizado */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
   /* === LIGHT MODE COLORS === */
-  
+
   /* Backgrounds */
   --bg-primary: 241 240 253; /* #f1f0fd - Fondo principal suave */
   --bg-secondary: 255 255 255; /* Blanco puro para tarjetas */
   --bg-tertiary: 249 250 251; /* gray-50 - Backgrounds alternativos */
   --bg-overlay: 255 255 255; /* Para modales y overlays */
-  
+
   /* Texts */
   --text-primary: 17 24 39; /* gray-900 - Texto principal con buen contraste */
   --text-secondary: 55 65 81; /* gray-700 - Texto secundario legible */
   --text-tertiary: 107 114 128; /* gray-500 - Texto terciario/hints */
   --text-muted: 156 163 175; /* gray-400 - Texto deshabilitado */
-  
+
   /* Borders */
   --border-primary: 229 231 235; /* gray-200 - Bordes suaves */
   --border-secondary: 209 213 219; /* gray-300 - Bordes más definidos */
   --border-focus: 59 130 246; /* blue-500 - Bordes en foco */
-  
+
   /* Accent Colors - Brand */
   --accent-blue: 59 130 246; /* blue-500 */
   --accent-blue-light: 96 165 250; /* blue-400 */
   --accent-blue-dark: 37 99 235; /* blue-600 */
-  
+
   --accent-purple: 139 92 246; /* purple-500 */
   --accent-purple-light: 168 85 247; /* purple-400 */
   --accent-purple-dark: 124 58 237; /* purple-600 */
-  
+
   --accent-pink: 236 72 153; /* pink-500 */
   --accent-pink-light: 244 114 182; /* pink-400 */
-  
+
   --accent-cyan: 6 182 212; /* cyan-500 */
   --accent-green: 34 197 94; /* green-500 */
-  
+
   /* Status Colors */
   --status-success: 34 197 94; /* green-500 */
   --status-warning: 234 179 8; /* yellow-500 */
   --status-error: 239 68 68; /* red-500 */
   --status-info: 59 130 246; /* blue-500 */
-  
+
   /* Sombras optimizadas para light mode */
   --shadow-color: 0 0 0;
   --shadow-opacity: 0.08;
   --shadow-opacity-md: 0.12;
   --shadow-opacity-lg: 0.16;
-  
+
   /* Gradientes optimizados */
-  --gradient-primary: linear-gradient(90deg, rgb(59 130 246) 0%, rgb(139 92 246) 50%, rgb(236 72 153) 100%);
-  --gradient-secondary: linear-gradient(135deg, rgb(59 130 246) 0%, rgb(139 92 246) 100%);
-  --gradient-hover: linear-gradient(135deg, rgb(59 130 246 / 0.1) 0%, rgb(139 92 246 / 0.1) 100%);
-  
+  --gradient-primary: linear-gradient(
+    90deg,
+    rgb(59 130 246) 0%,
+    rgb(139 92 246) 50%,
+    rgb(236 72 153) 100%
+  );
+  --gradient-secondary: linear-gradient(
+    135deg,
+    rgb(59 130 246) 0%,
+    rgb(139 92 246) 100%
+  );
+  --gradient-hover: linear-gradient(
+    135deg,
+    rgb(59 130 246 / 0.1) 0%,
+    rgb(139 92 246 / 0.1) 100%
+  );
+
   /* === PERFORMANCE === */
   --animation-duration-fast: 150ms;
   --animation-duration-normal: 300ms;
@@ -82,105 +99,131 @@
 /* Dark mode optimizado con mejor contraste */
 .dark {
   color-scheme: dark;
-  
+
   /* === DARK MODE COLORS === */
-  
+
   /* Backgrounds - Mayor contraste y profundidad */
   --bg-primary: 3 7 18; /* #030712 - gray-950 Fondo oscuro profundo */
   --bg-secondary: 15 23 42; /* slate-900 - Tarjetas con mejor contraste */
   --bg-tertiary: 30 41 59; /* slate-800 - Backgrounds alternativos */
   --bg-overlay: 17 24 39; /* gray-900 - Para modales */
-  
+
   /* Texts - Optimizado para legibilidad en dark */
   --text-primary: 248 250 252; /* slate-50 - Texto brillante pero no puro blanco */
   --text-secondary: 226 232 240; /* slate-200 - Texto secundario con buen contraste */
   --text-tertiary: 203 213 225; /* slate-300 - Texto terciario legible */
   --text-muted: 148 163 184; /* slate-400 - Texto muted visible */
-  
+
   /* Borders - Más visibles en dark */
   --border-primary: 51 65 85; /* slate-700 - Bordes sutiles pero visibles */
   --border-secondary: 71 85 105; /* slate-600 - Bordes definidos */
   --border-focus: 96 165 250; /* blue-400 - Bordes en foco más suaves */
-  
+
   /* Accent Colors - Versiones más suaves para dark mode */
   --accent-blue: 96 165 250; /* blue-400 - Más suave para ojos */
   --accent-blue-light: 147 197 253; /* blue-300 */
   --accent-blue-dark: 59 130 246; /* blue-500 */
-  
+
   --accent-purple: 168 85 247; /* purple-400 */
   --accent-purple-light: 192 132 252; /* purple-300 */
   --accent-purple-dark: 139 92 246; /* purple-500 */
-  
+
   --accent-pink: 244 114 182; /* pink-400 */
   --accent-pink-light: 249 168 212; /* pink-300 */
-  
+
   --accent-cyan: 34 211 238; /* cyan-400 */
   --accent-green: 74 222 128; /* green-400 */
-  
+
   /* Status Colors - Versiones para dark */
   --status-success: 74 222 128; /* green-400 */
   --status-warning: 250 204 21; /* yellow-400 */
   --status-error: 248 113 113; /* red-400 */
   --status-info: 96 165 250; /* blue-400 */
-  
+
   /* Sombras optimizadas para dark mode */
   --shadow-color: 0 0 0;
   --shadow-opacity: 0.4;
   --shadow-opacity-md: 0.5;
   --shadow-opacity-lg: 0.6;
-  
+
   /* Gradientes ajustados para dark mode */
-  --gradient-primary: linear-gradient(90deg, rgb(96 165 250) 0%, rgb(168 85 247) 50%, rgb(244 114 182) 100%);
-  --gradient-secondary: linear-gradient(135deg, rgb(96 165 250) 0%, rgb(168 85 247) 100%);
-  --gradient-hover: linear-gradient(135deg, rgb(96 165 250 / 0.15) 0%, rgb(168 85 247 / 0.15) 100%);
+  --gradient-primary: linear-gradient(
+    90deg,
+    rgb(96 165 250) 0%,
+    rgb(168 85 247) 50%,
+    rgb(244 114 182) 100%
+  );
+  --gradient-secondary: linear-gradient(
+    135deg,
+    rgb(96 165 250) 0%,
+    rgb(168 85 247) 100%
+  );
+  --gradient-hover: linear-gradient(
+    135deg,
+    rgb(96 165 250 / 0.15) 0%,
+    rgb(168 85 247 / 0.15) 100%
+  );
 }
 
 /* Soporte para preferencia del sistema */
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
     color-scheme: dark;
-    
+
     --bg-primary: 3 7 18;
     --bg-secondary: 15 23 42;
     --bg-tertiary: 30 41 59;
     --bg-overlay: 17 24 39;
-    
+
     --text-primary: 248 250 252;
     --text-secondary: 226 232 240;
     --text-tertiary: 203 213 225;
     --text-muted: 148 163 184;
-    
+
     --border-primary: 51 65 85;
     --border-secondary: 71 85 105;
     --border-focus: 96 165 250;
-    
+
     --accent-blue: 96 165 250;
     --accent-blue-light: 147 197 253;
     --accent-blue-dark: 59 130 246;
-    
+
     --accent-purple: 168 85 247;
     --accent-purple-light: 192 132 252;
     --accent-purple-dark: 139 92 246;
-    
+
     --accent-pink: 244 114 182;
     --accent-pink-light: 249 168 212;
-    
+
     --accent-cyan: 34 211 238;
     --accent-green: 74 222 128;
-    
+
     --status-success: 74 222 128;
     --status-warning: 250 204 21;
     --status-error: 248 113 113;
     --status-info: 96 165 250;
-    
+
     --shadow-color: 0 0 0;
     --shadow-opacity: 0.4;
     --shadow-opacity-md: 0.5;
     --shadow-opacity-lg: 0.6;
-    
-    --gradient-primary: linear-gradient(90deg, rgb(96 165 250) 0%, rgb(168 85 247) 50%, rgb(244 114 182) 100%);
-    --gradient-secondary: linear-gradient(135deg, rgb(96 165 250) 0%, rgb(168 85 247) 100%);
-    --gradient-hover: linear-gradient(135deg, rgb(96 165 250 / 0.15) 0%, rgb(168 85 247 / 0.15) 100%);
+
+    --gradient-primary: linear-gradient(
+      90deg,
+      rgb(96 165 250) 0%,
+      rgb(168 85 247) 50%,
+      rgb(244 114 182) 100%
+    );
+    --gradient-secondary: linear-gradient(
+      135deg,
+      rgb(96 165 250) 0%,
+      rgb(168 85 247) 100%
+    );
+    --gradient-hover: linear-gradient(
+      135deg,
+      rgb(96 165 250 / 0.15) 0%,
+      rgb(168 85 247 / 0.15) 100%
+    );
   }
 }
 
@@ -206,17 +249,14 @@ body,
   height: 100%;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   overflow-y: auto;
   overflow-x: hidden;
   background-color: rgb(var(--bg-primary));
   color: rgb(var(--text-primary));
-  transition: background-color var(--animation-duration-normal) var(--animation-timing),
-              color var(--animation-duration-normal) var(--animation-timing);
+  transition: background-color var(--animation-duration-normal)
+      var(--animation-timing),
+    color var(--animation-duration-normal) var(--animation-timing);
 }
 
 /* Optimización de imágenes */
@@ -232,7 +272,8 @@ video {
    ============================================ */
 
 @keyframes shine {
-  0%, 60% {
+  0%,
+  60% {
     background-position: -200% center;
   }
   100% {
@@ -241,7 +282,8 @@ video {
 }
 
 @keyframes pulse-soft {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -250,7 +292,8 @@ video {
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) translateZ(0);
   }
   50% {
@@ -279,7 +322,8 @@ video {
 }
 
 @keyframes scale-pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1) translateZ(0);
   }
   50% {
@@ -288,7 +332,8 @@ video {
 }
 
 @keyframes gradient-shift {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {
@@ -297,15 +342,16 @@ video {
 }
 
 @keyframes glow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 5px rgb(var(--accent-blue) / 0.5),
-                0 0 10px rgb(var(--accent-blue) / 0.3),
-                0 0 15px rgb(var(--accent-blue) / 0.2);
+      0 0 10px rgb(var(--accent-blue) / 0.3),
+      0 0 15px rgb(var(--accent-blue) / 0.2);
   }
   50% {
     box-shadow: 0 0 10px rgb(var(--accent-blue) / 0.8),
-                0 0 20px rgb(var(--accent-blue) / 0.5),
-                0 0 30px rgb(var(--accent-blue) / 0.3);
+      0 0 20px rgb(var(--accent-blue) / 0.5),
+      0 0 30px rgb(var(--accent-blue) / 0.3);
   }
 }
 
@@ -372,8 +418,9 @@ video {
 
   /* Efectos de hover optimizados */
   .hover-lift {
-    transition: transform var(--animation-duration-normal) var(--animation-timing),
-                box-shadow var(--animation-duration-normal) var(--animation-timing);
+    transition: transform var(--animation-duration-normal)
+        var(--animation-timing),
+      box-shadow var(--animation-duration-normal) var(--animation-timing);
   }
 
   .hover-lift:hover {
@@ -401,8 +448,8 @@ video {
   /* Sombra de neón adaptable */
   .neon-shadow {
     box-shadow: 0 0 10px rgb(var(--accent-blue) / 0.5),
-                0 0 20px rgb(var(--accent-blue) / 0.3),
-                0 0 30px rgb(var(--accent-blue) / 0.2);
+      0 0 20px rgb(var(--accent-blue) / 0.3),
+      0 0 30px rgb(var(--accent-blue) / 0.2);
   }
 
   /* Borde gradiente usando variables */
@@ -410,8 +457,10 @@ video {
     border: 2px solid transparent;
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    background-image: 
-      linear-gradient(rgb(var(--bg-primary)), rgb(var(--bg-primary))),
+    background-image: linear-gradient(
+        rgb(var(--bg-primary)),
+        rgb(var(--bg-primary))
+      ),
       var(--gradient-primary);
   }
 
@@ -483,6 +532,94 @@ video {
   .accent-pink {
     color: rgb(var(--accent-pink));
   }
+
+  /* ============================================
+     NAV-LINK - Estilado para enlaces de navegación
+     ============================================ */
+  .nav-link {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    color: rgb(var(--text-primary));
+    text-decoration: none;
+    transition: color var(--animation-duration-normal) var(--animation-timing);
+  }
+
+  .nav-link:hover {
+    color: rgb(var(--accent-blue));
+  }
+
+  /* Estado activo */
+  .nav-link.active {
+    color: rgb(var(--accent-blue));
+  }
+
+  /* Subrayado animado con pseudo-elemento */
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      rgb(var(--accent-blue)),
+      rgb(var(--accent-purple))
+    );
+    transition: width var(--animation-duration-normal) var(--animation-timing);
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  /* Variante para links en menú móvil */
+  .nav-link-mobile {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    padding: 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: rgb(var(--text-primary));
+    text-decoration: none;
+    transition: all var(--animation-duration-normal) var(--animation-timing);
+  }
+
+  .nav-link-mobile:hover {
+    color: rgb(var(--accent-blue));
+    transform: translateX(8px);
+  }
+
+  .nav-link-mobile::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      rgb(var(--accent-blue)),
+      rgb(var(--accent-purple))
+    );
+    border-radius: 2px;
+    transition: width var(--animation-duration-normal) var(--animation-timing);
+  }
+
+  .nav-link-mobile:hover::after,
+  .nav-link-mobile.active::after {
+    width: 100%;
+  }
+
+  /* Responsive para móviles */
+  @media (max-width: 640px) {
+    .nav-link-mobile {
+      font-size: 1.5rem;
+    }
+  }
 }
 
 /* ============================================
@@ -494,8 +631,8 @@ button,
 a,
 .transition-colors {
   transition: color var(--animation-duration-fast) var(--animation-timing),
-              background-color var(--animation-duration-fast) var(--animation-timing),
-              border-color var(--animation-duration-fast) var(--animation-timing);
+    background-color var(--animation-duration-fast) var(--animation-timing),
+    border-color var(--animation-duration-fast) var(--animation-timing);
 }
 
 input,
@@ -517,7 +654,7 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  
+
   /* Deshabilitar will-change para mejor performance */
   * {
     will-change: auto !important;
@@ -535,56 +672,58 @@ select {
     --animation-duration-normal: 200ms;
     --animation-duration-slow: 300ms;
   }
-  
+
   /* Reducir espaciado */
   .gap-10 {
     gap: 2rem;
   }
-  
+
   /* Ajustar tamaños de fuente */
   h1 {
     font-size: clamp(1.5rem, 5vw, 2rem);
   }
-  
+
   h2 {
     font-size: clamp(1.25rem, 4vw, 1.75rem);
   }
-  
+
   h3 {
     font-size: clamp(1.125rem, 3.5vw, 1.5rem);
   }
-  
+
   /* Mejorar tap targets (mínimo 44x44px) */
   button,
   a {
     min-height: 44px;
     min-width: 44px;
   }
-  
+
   /* Optimizar padding */
   section {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   /* Simplificar animaciones complejas */
   @keyframes float {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0);
     }
     50% {
       transform: translateY(-10px);
     }
   }
-  
+
   /* Reducir blur para mejor rendimiento */
   .blur-3xl {
     filter: blur(40px);
   }
-  
+
   /* Simplificar sombras */
   .shadow-lg {
-    box-shadow: 0 4px 10px rgb(var(--shadow-color) / calc(var(--shadow-opacity) * 0.5));
+    box-shadow: 0 4px 10px
+      rgb(var(--shadow-color) / calc(var(--shadow-opacity) * 0.5));
   }
 }
 
@@ -602,7 +741,7 @@ select {
   a {
     padding: 0.75rem 1rem;
   }
-  
+
   nav a,
   nav button {
     margin: 0.5rem;
@@ -614,11 +753,11 @@ select {
   body {
     font-size: 14px;
   }
-  
+
   .text-lg {
     font-size: 1rem;
   }
-  
+
   .text-xl {
     font-size: 1.125rem;
   }
@@ -645,7 +784,7 @@ select {
     contain: layout style paint;
     will-change: auto;
   }
-  
+
   .animate-container:hover,
   .animate-container:focus-within {
     will-change: transform, opacity;
@@ -663,7 +802,7 @@ select {
     --border-primary: 0 0 0;
     --shadow-opacity: 0.2;
   }
-  
+
   .dark {
     --text-primary: 255 255 255;
     --bg-primary: 0 0 0;
@@ -682,7 +821,7 @@ select {
     transition: none !important;
     box-shadow: none !important;
   }
-  
+
   body {
     background: white !important;
     color: black !important;

@@ -4,8 +4,9 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { PiFilePdf } from "react-icons/pi";
 import { TbMailShare } from "react-icons/tb";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import cv from "../../public/download/Curriculum Vitae Juan Cruz Dauberte.pdf";
-import { Link } from "react-scroll";
+import { scrollToSection } from "../utils/scrollUtils";
+
+const cv = "/download/Curriculum Vitae Juan Cruz Dauberte.pdf";
 
 export const Hero = () => {
   const { t } = useTranslation();
@@ -50,7 +51,6 @@ export const Hero = () => {
 
   return (
     <section
-      id="hero"
       className="w-full min-h-dvh flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10 relative px-4 sm:px-6"
     >
       <motion.section
@@ -251,11 +251,16 @@ export const Hero = () => {
         }}
         className="cursor-pointer absolute bottom-14 lg:bottom-12 z-10 mt-2 sm:mt-0"
       >
-        <Link to="sobre-mi" smooth={true} duration={500} offset={-80}>
+        <button
+          type="button"
+          onClick={() => scrollToSection("sobre-mi", 120)}
+          className="cursor-pointer"
+          aria-label="Scroll to About Me section"
+        >
           <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
             <MdKeyboardArrowDown className="text-theme-accent-blue text-3xl sm:text-4xl md:text-5xl" />
           </motion.div>
-        </Link>
+        </button>
       </motion.div>
     </section>
   );

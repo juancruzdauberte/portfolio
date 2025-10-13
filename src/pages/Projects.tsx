@@ -46,7 +46,6 @@ export const Projects = () => {
 
   return (
     <section
-      id="proyectos"
       className="w-full max-w-5xl flex flex-col gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6"
     >
       {/* Título animado con colores de tema */}

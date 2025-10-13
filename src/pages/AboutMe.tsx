@@ -1,5 +1,5 @@
 import { FiUser } from "react-icons/fi";
-import Cv from "../../public/download/Curriculum Vitae Juan Cruz Dauberte.pdf";
+const Cv = "/download/Curriculum Vitae Juan Cruz Dauberte.pdf";
 import { PiFilePdf } from "react-icons/pi";
 import { StudiesCard } from "../common/StudiesCard";
 import { motion } from "framer-motion";
@@ -47,7 +47,6 @@ export const AboutMe = () => {
 
   return (
     <section
-      id="sobre-mi"
       className="w-full max-w-5xl flex flex-col px-4 sm:px-6"
     >
       {/* Título con animación y colores de tema */}

@@ -56,7 +56,6 @@ export const Experience = () => {
 
   return (
     <section
-      id="experiencia"
       className="w-full max-w-5xl flex flex-col px-4 sm:px-6"
     >
       {/* Título animado con colores de tema */}
