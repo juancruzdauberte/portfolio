@@ -41,7 +41,7 @@ export const Navbar = () => {
         "proyectos",
         "habilidades",
       ];
-      const scrollPosition = window.scrollY + 100; // Offset for navbar
+      const scrollPosition = window.scrollY + 200;
 
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
@@ -72,7 +72,7 @@ export const Navbar = () => {
   ];
 
   const handleNavClick = (sectionId: string) => {
-    scrollToSection(sectionId, 120); // Ajustado para que se vea mejor el título
+    scrollToSection(sectionId, 100);
     if (menuOpen) {
       closeModal();
     }

@@ -7,11 +7,11 @@ export const Technologies = () => {
   const frontEndTechnologies = [
     {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      alt: "React Js",
+      alt: "React.js",
     },
     {
       src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1758482854/nextjs-icon-svgrepo-com_pkvcfh.png",
-      alt: "Next Js",
+      alt: "Next.js",
     },
     {
       src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1745432721/react-query-seeklogo_axk8ly.png",
@@ -47,11 +47,16 @@ export const Technologies = () => {
   const backEndTechnologies = [
     {
       src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1745926364/nodejsicon_dioqsc.png",
-      alt: "Node Js",
+      alt: "Node.js",
+    },
+
+    {
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1762707744/Nest.js_npsh4b.png",
+      alt: "NestJS",
     },
     {
       src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1745953822/icon-express_foa4dc.png",
-      alt: "Express",
+      alt: "Express.js",
     },
     {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",

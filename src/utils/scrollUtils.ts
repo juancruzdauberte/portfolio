@@ -10,7 +10,7 @@
  */
 export const scrollToSection = (
   sectionId: string,
-  offset: number = -80,
+  offset: number = 200,
   maxRetries: number = 10
 ): void => {
   console.log(`[scrollToSection] Attempting to scroll to: ${sectionId}`);

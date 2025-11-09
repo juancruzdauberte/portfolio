@@ -7,7 +7,7 @@
    ============================================ */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Compensa el navbar fijo */
+  scroll-padding-top: 100px; /* Compensa el navbar fijo */
 }
 
 :root {
