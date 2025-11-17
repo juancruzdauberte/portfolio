@@ -20,6 +20,7 @@ export const Technologies = () => {
     {
       src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1754677841/zustand_pnlukv.png",
       alt: "Zustand",
+      h: "h-11",
     },
     {
       src: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
@@ -67,10 +68,6 @@ export const Technologies = () => {
       alt: "JavaScript",
     },
     {
-      src: "https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/files/python-logo-only.svg",
-      alt: "Python",
-    },
-    {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
       alt: "MongoDB",
     },
@@ -104,6 +101,32 @@ export const Technologies = () => {
     },
   ];
 
+  const dataAnalyticsTechnologies = [
+    {
+      src: "https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/files/python-logo-only.svg",
+      alt: "Python",
+    },
+    {
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391325/pandas_jk8hyh.png",
+      alt: "Pandas",
+      h: "h-10",
+    },
+    {
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391596/powerBi_jhknwp.png",
+      alt: "Power BI",
+    },
+    {
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391596/matplotlib_1_cqrt3f.png",
+      alt: "Matplotlib",
+      h: "h-11",
+    },
+    {
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391596/numpy_mtj0fd.png",
+      alt: "NumPy",
+      h: "h-11",
+    },
+  ];
+
   const versionControlTechnologies = [
     {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
@@ -132,6 +155,15 @@ export const Technologies = () => {
         <p className="font-semibold text-lg">Back-End - BaaS</p>
         <InfiniteCarousel
           technologies={backEndTechnologies}
+          duration={30}
+          direction="right"
+        />
+      </section>
+
+      <section className="flex flex-col gap-3">
+        <p className="font-semibold text-lg">{t("dataAnalytics")}</p>
+        <InfiniteCarousel
+          technologies={dataAnalyticsTechnologies}
           duration={30}
           direction="right"
         />
