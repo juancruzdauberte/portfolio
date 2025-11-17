@@ -118,10 +118,10 @@ export const Technologies = () => {
     {
       src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391596/matplotlib_1_cqrt3f.png",
       alt: "Matplotlib",
-      h: "h-11",
+      h: "h-14",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391596/numpy_mtj0fd.png",
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763396468/numpy2_k3zrlj.png",
       alt: "NumPy",
       h: "h-11",
     },
