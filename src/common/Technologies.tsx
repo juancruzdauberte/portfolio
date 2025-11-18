@@ -99,12 +99,22 @@ export const Technologies = () => {
       src: "https://www.svgrepo.com/show/375433/firestore.svg",
       alt: "Firestore",
     },
+
+    {
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480653/Firebase_p4vykc.png",
+      alt: "Firebase",
+    },
   ];
 
   const dataAnalyticsTechnologies = [
     {
       src: "https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/files/python-logo-only.svg",
       alt: "Python",
+    },
+
+    {
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480303/Jupyter_mnsmd4.png",
+      alt: "Jupyter ",
     },
     {
       src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391325/pandas_jk8hyh.png",
@@ -116,18 +126,16 @@ export const Technologies = () => {
       alt: "Power BI",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391596/matplotlib_1_cqrt3f.png",
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480391/Matplotlib_2_a36sxe.png",
       alt: "Matplotlib",
-      h: "h-14",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763396468/numpy2_k3zrlj.png",
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480304/NumPy_vb72ih.png",
       alt: "NumPy",
-      h: "h-11",
     },
   ];
 
-  const versionControlTechnologies = [
+  const othersTechnologies = [
     {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
       alt: "Git",
@@ -135,6 +143,22 @@ export const Technologies = () => {
     {
       src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1745926580/githubicon_om10uz.png",
       alt: "GitHub",
+    },
+    {
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480513/AWS_b9fhva.png",
+      alt: "AWS",
+    },
+    {
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480581/Docker_hnvejl.png",
+      alt: "Docker",
+    },
+    {
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480425/Swagger_jaghlj.png",
+      alt: "Swagger",
+    },
+    {
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480246/GitHub_Actions_fvdjik.png",
+      alt: "GitHub Actions",
     },
   ];
 
@@ -171,9 +195,9 @@ export const Technologies = () => {
 
       {/* Version Control Carousel */}
       <section className="flex flex-col gap-3">
-        <p className="font-semibold text-lg">{t("versionControl")}</p>
+        <p className="font-semibold text-lg">{t("others")}</p>
         <InfiniteCarousel
-          technologies={versionControlTechnologies}
+          technologies={othersTechnologies}
           duration={15}
           direction="left"
         />
