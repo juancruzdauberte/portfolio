@@ -11,6 +11,7 @@ type Props = {
   codeUrlBack?: string;
   previewUrl?: string;
   description: string;
+  deployText?: string;
   img: string;
   technologies: React.ReactNode[];
 };
@@ -22,6 +23,7 @@ export const ProjectCard = ({
   previewUrl,
   description,
   img,
+  deployText,
   technologies,
 }: Props) => {
   const { t } = useTranslation();
@@ -137,8 +139,8 @@ export const ProjectCard = ({
                 transition={transitions.fast}
               />
 
-              <LuCodeXml className="text-base sm:text-xl relative z-10 group-hover/btn:text-white transition-colors text-theme-text-primary" />
-              <span className="relative z-10 group-hover/btn:text-white transition-colors text-theme-text-primary">
+              <LuCodeXml className="text-base sm:text-xl relative z-10 transition-colors text-theme-text-primary" />
+              <span className="relative z-10 transition-colors text-theme-text-primary">
                 Front
               </span>
             </motion.a>
@@ -160,8 +162,8 @@ export const ProjectCard = ({
                 transition={transitions.fast}
               />
 
-              <LuCodeXml className="text-xl relative z-10 group-hover/btn:text-white transition-colors text-theme-text-primary" />
-              <span className="relative z-10 group-hover/btn:text-white transition-colors text-theme-text-primary">
+              <LuCodeXml className="text-xl relative z-10 transition-colors text-theme-text-primary" />
+              <span className="relative z-10 transition-colors text-theme-text-primary">
                 Back
               </span>
             </motion.a>
@@ -183,9 +185,9 @@ export const ProjectCard = ({
                 transition={transitions.fast}
               />
 
-              <IoIosLink className="text-base sm:text-xl relative z-10 group-hover/btn:text-white transition-colors text-theme-text-primary" />
-              <span className="relative z-10 group-hover/btn:text-white transition-colors text-theme-text-primary">
-                Deploy
+              <IoIosLink className="text-base sm:text-xl relative z-10 transition-colors text-theme-text-primary" />
+              <span className="relative z-10 transition-colors text-theme-text-primary">
+                {deployText ? deployText : "Deploy"}
               </span>
             </motion.a>
           )}

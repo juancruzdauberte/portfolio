@@ -1,10 +1,6 @@
 import { FiFolder } from "react-icons/fi";
 import { ProjectCard } from "../common/ProjectCard";
-import {
-  RiSupabaseFill,
-  RiTailwindCssFill,
-  RiNextjsFill,
-} from "react-icons/ri";
+import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
 import {
   SiReactquery,
   SiTypescript,
@@ -17,6 +13,21 @@ import { TbBrandOauth } from "react-icons/tb";
 import { FaReact } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+
+const PowerBiIcon = ({ className }: { className: string }) => (
+  <svg
+    stroke="currentColor"
+    fill="#F2C811" // Color oficial amarillo de PowerBI
+    strokeWidth="0"
+    viewBox="0 0 24 24"
+    height="1em"
+    width="1em"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M24 0h-6.545v24h6.545V0zm-8.727 9.23h-6.546v14.77h6.546V9.23zm-8.728 5.54H0v9.23h6.545v-9.23z"></path>
+  </svg>
+);
 
 export const Projects = () => {
   const { t } = useTranslation();
@@ -45,9 +56,7 @@ export const Projects = () => {
   };
 
   return (
-    <section
-      className="w-full max-w-5xl flex flex-col gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6"
-    >
+    <section className="w-full max-w-5xl flex flex-col gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6">
       {/* Título animado con colores de tema */}
       <motion.section
         variants={titleVariants}
@@ -142,18 +151,12 @@ export const Projects = () => {
         />
 
         <ProjectCard
-          description={t("projectCard.hb.description")}
-          title="Habits Record"
-          img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1745010998/Screenshot_1_equkwa.jpg"
-          codeUrlFront="https://github.com/juancruzdauberte/habits-record"
-          previewUrl="https://habits-record-sable.vercel.app/"
-          technologies={[
-            <FaReact className="text-react" />,
-            <SiTypescript className="text-typescript" />,
-            <RiSupabaseFill className="text-supabase" />,
-            <RiTailwindCssFill className="text-tailwind" />,
-            <SiReactquery className="text-red-400" />,
-          ]}
+          description={t("projectCard.dhAnalytics.description")}
+          title="Dreamhouse Baradero Analytics"
+          img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1763663114/057ff8a1-4c5b-4071-adaf-2513e6e3426e.png"
+          previewUrl="https://github.com/juancruzdauberte/dreamhouse-analytics/blob/main/dashboard/dashboard.md"
+          technologies={[<SiMysql />, <PowerBiIcon className={"h-6"} />]}
+          deployText={t("projectCard.dhAnalytics.deployText")}
         />
       </motion.section>
     </section>
