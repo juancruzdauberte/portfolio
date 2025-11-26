@@ -133,6 +133,14 @@ export const Technologies = () => {
       src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480304/NumPy_vb72ih.png",
       alt: "NumPy",
     },
+    {
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1764125473/geopandas_mgphju.png",
+      alt: "Geopandas",
+    },
+    {
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1764125381/Ploty_fqoynk.png",
+      alt: "Plotly",
+    },
   ];
 
   const othersTechnologies = [

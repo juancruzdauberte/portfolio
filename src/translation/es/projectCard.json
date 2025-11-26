@@ -17,6 +17,11 @@
     "hb": {
       "description": "Sitio web basado en el libro Habitos Átomicos de James Clear. La aplicación permite registrar tus hábitos y chequear si los has cumplido o no. Aún se encuentra en desarrollo."
     },
+    "wooded": {
+      "description": "Realicé un análisis de datos sobre el dataset de árboles en espacios verdes de la Ciudad Autónoma de Buenos Aires. En el mismo se pueden visualizar gráficos de barras, mapa de árbol, gráfico de víolin y mapas coropléticos.",
+      "deployText": "Ver análisis",
+      "title": "Análisis de árboles en espacios verdes de CABA"
+    },
     "technologies": "Tecnologías utilizadas:",
     "progress": "En curso"
   }

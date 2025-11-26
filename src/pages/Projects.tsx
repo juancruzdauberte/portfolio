@@ -13,21 +13,7 @@ import { TbBrandOauth } from "react-icons/tb";
 import { FaReact } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-
-const PowerBiIcon = ({ className }: { className: string }) => (
-  <svg
-    stroke="currentColor"
-    fill="#F2C811" // Color oficial amarillo de PowerBI
-    strokeWidth="0"
-    viewBox="0 0 24 24"
-    height="1em"
-    width="1em"
-    className={className}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M24 0h-6.545v24h6.545V0zm-8.727 9.23h-6.546v14.77h6.546V9.23zm-8.728 5.54H0v9.23h6.545v-9.23z"></path>
-  </svg>
-);
+import { TechIcon } from "../common/TechIcon";
 
 export const Projects = () => {
   const { t } = useTranslation();
@@ -155,8 +141,50 @@ export const Projects = () => {
           title="Dreamhouse Baradero Analytics"
           img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1763663114/057ff8a1-4c5b-4071-adaf-2513e6e3426e.png"
           previewUrl="https://github.com/juancruzdauberte/dreamhouse-analytics/blob/main/dashboard/dashboard.md"
-          technologies={[<SiMysql />, <PowerBiIcon className={"h-6"} />]}
+          technologies={[
+            <SiMysql />,
+            <TechIcon
+              src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391596/powerBi_jhknwp.png"
+              alt="PowerBi"
+              h="h-8"
+            />,
+          ]}
           deployText={t("projectCard.dhAnalytics.deployText")}
+        />
+
+        <ProjectCard
+          description={t("projectCard.wooded.description")}
+          title={t("projectCard.wooded.title")}
+          img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1764126201/arbolado_hkkrqe.png"
+          previewUrl="https://github.com/juancruzdauberte/arbolado_caba_espacios_verdes/blob/main/README.md"
+          technologies={[
+            <TechIcon
+              src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/files/python-logo-only.svg"
+              alt="Python"
+              h="h-8"
+            />,
+            <TechIcon
+              src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391325/pandas_jk8hyh.png"
+              alt="Pandas"
+              h="h-8"
+            />,
+            <TechIcon
+              src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1764125473/geopandas_mgphju.png"
+              alt="Geopandas"
+              h="h-8"
+            />,
+            <TechIcon
+              src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480391/Matplotlib_2_a36sxe.png"
+              alt="Matplotlib"
+              h="h-8"
+            />,
+            <TechIcon
+              src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1764125381/Ploty_fqoynk.png"
+              alt="Plotly"
+              h="h-7"
+            />,
+          ]}
+          deployText={t("projectCard.wooded.deployText")}
         />
       </motion.section>
     </section>

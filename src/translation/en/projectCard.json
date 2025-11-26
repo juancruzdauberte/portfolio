@@ -17,6 +17,11 @@
     "hb": {
       "description": "Website based on the book Atomic Habits by James Clear. The application allows users to track their habits and check whether they have completed them or not. It is still under development."
     },
+    "wooded": {
+      "description": "I performed a data analysis on the dataset of trees in green spaces in the Autonomous City of Buenos Aires. This analysis includes bar graphs, tree maps, violin graphs, and choropleth maps.",
+      "deployText": "View analysis",
+      "title": "Analysis of trees in green spaces of CABA"
+    },
     "technologies": "Technologies used:",
     "progress": "In progress"
   }
