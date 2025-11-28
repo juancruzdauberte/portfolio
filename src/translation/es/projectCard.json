@@ -10,6 +10,9 @@
     "dh": {
       "description": "Realicé una landing page para una casa quinta ubicada en Baradero, provincia de Buenos Aires. Su funcionalidad es mostrar la casa con los servicios y comodidades que ofrece para la reserva de la misma."
     },
+    "dhBo": {
+      "description": "Realicé el back office para una casa quinta ubicada en Baradero, provincia de Buenos Aires. Su funcionalidad es permitir la gestión de reservas, ingresos y egresos. Así mismo actualizando el calendario de disponibilidad de su landing page y su dashboard analítico."
+    },
     "dhAnalytics": {
       "description": "Realicé un dashboard analítico para una casa quinta ubicada en Baradero, provincia de Buenos Aires. La funcionalidad del mismo es mostrar estadísticas de reservas, ingresos y egresos en un rango de fechas determinado o por canal de reserva.",
       "deployText": "Ver dashboard"

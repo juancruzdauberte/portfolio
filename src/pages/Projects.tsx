@@ -118,6 +118,23 @@ export const Projects = () => {
         />
 
         <ProjectCard
+          description={t("projectCard.dhBo.description")}
+          title="Dreamhouse Baradero Back Office"
+          img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1764358463/dh-back-office_exhfx6.png"
+          codeUrlFront="https://github.com/juancruzdauberte/dreamhouse-back-office"
+          technologies={[
+            <SiNodedotjs className="text-green-500" />,
+            <SiTypescript className="text-typescript" />,
+            <RiNextjsFill />,
+            <SiMysql />,
+            <SiJsonwebtokens />,
+            <TbBrandOauth />,
+            <FaReact className="text-react" />,
+            <RiTailwindCssFill className="text-tailwind" />,
+          ]}
+        />
+
+        <ProjectCard
           description={t("projectCard.tbs.description")}
           title="The Black Sheep"
           img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1754687196/Screenshot_1_juci2x.png"

@@ -10,6 +10,9 @@
     "dh": {
       "description": "I created a landing page for a airbnb house located in Baradero, Buenos Aires province. This aim is to showcase the house, the services and amenities it offers for booking purposes."
     },
+    "dhBo": {
+      "description": "I developed the back office system for a country house located in Baradero, Buenos Aires province. Its functionality allows for the management of reservations, income, and expenses. It also updates the availability calendar on their landing page and their analytics dashboard."
+    },
     "dhAnalytics": {
       "description": "I created an analytical dashboard for a country house located in Baradero, Buenos Aires province. Its function is to display statistics on reservations, income, and expenses within a specific date range or by booking channel.",
       "deployText": "View dashboard"
