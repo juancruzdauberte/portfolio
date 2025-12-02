@@ -50,9 +50,7 @@ export const Hero = () => {
   };
 
   return (
-    <section
-      className="w-full min-h-dvh flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10 relative px-4 sm:px-6"
-    >
+    <section className="w-full min-h-dvh flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10 relative px-4 sm:px-6">
       <motion.section
         variants={containerVariants}
         initial="hidden"
@@ -222,10 +220,10 @@ export const Hero = () => {
                 }}
                 transition={{ duration: 0.6 }}
               />
-              <span className="relative z-10 group-hover:text-white transition-colors text-base sm:text-lg text-theme-text-primary">
+              <span className="relative z-10 transition-colors text-base sm:text-lg text-theme-text-primary">
                 {link.icon}
               </span>
-              <span className="relative z-10 group-hover:text-white transition-colors text-theme-text-primary">
+              <span className="relative z-10 transition-colors text-theme-text-primary">
                 {link.text}
               </span>
               {/* Efecto de brillo */}

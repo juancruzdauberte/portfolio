@@ -46,9 +46,7 @@ export const AboutMe = () => {
   };
 
   return (
-    <section
-      className="w-full max-w-5xl flex flex-col px-4 sm:px-6"
-    >
+    <section className="w-full max-w-5xl flex flex-col px-4 sm:px-6">
       {/* Título con animación y colores de tema */}
       <motion.section
         variants={titleVariants}
@@ -149,8 +147,8 @@ export const AboutMe = () => {
                 transition={{ duration: 0.6 }}
               />
 
-              <PiFilePdf className="relative z-10 group-hover:text-white transition-colors text-xl sm:text-2xl text-theme-text-primary" />
-              <span className="relative z-10 group-hover:text-white transition-colors text-theme-text-primary">
+              <PiFilePdf className="relative z-10 transition-colors text-xl sm:text-2xl text-theme-text-primary" />
+              <span className="relative z-10 transition-colors text-theme-text-primary">
                 {t("about.download")}
               </span>
             </motion.a>

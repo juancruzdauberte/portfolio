@@ -27,9 +27,9 @@ export const StudiesCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      whileHover={{ 
+      whileHover={{
         y: -8,
-        transition: { duration: 0.3 }
+        transition: { duration: 0.3 },
       }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -161,12 +161,12 @@ export const StudiesCard = ({
               transition={{ duration: 0.6 }}
             />
 
-            <span className="relative z-10 group-hover/btn:text-white transition-colors text-theme-text-primary">
+            <span className="relative z-10 transition-colors text-theme-text-primary">
               {t("studies.certificate")}
             </span>
             <GoArrowUpRight
               size={16}
-              className="relative z-10 group-hover/btn:text-white transition-colors text-theme-text-primary"
+              className="relative z-10 transition-colors text-theme-text-primary"
             />
           </motion.a>
         )}
