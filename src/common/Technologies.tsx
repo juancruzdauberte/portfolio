@@ -126,6 +126,10 @@ export const Technologies = () => {
       alt: "Power BI",
     },
     {
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1765845410/tableau-icon_gysxda.png",
+      alt: "Tableau",
+    },
+    {
       src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480391/Matplotlib_2_a36sxe.png",
       alt: "Matplotlib",
     },
