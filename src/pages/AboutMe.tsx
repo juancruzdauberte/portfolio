@@ -46,7 +46,7 @@ export const AboutMe = () => {
   };
 
   return (
-    <section className="w-full max-w-5xl flex flex-col px-4 sm:px-6">
+    <section className="w-full max-w-6xl flex flex-col px-4 sm:px-6">
       {/* Título con animación y colores de tema */}
       <motion.section
         variants={titleVariants}
@@ -177,7 +177,7 @@ export const AboutMe = () => {
           </motion.div>
 
           <motion.div
-            className="flex flex-wrap gap-6 sm:gap-8 md:gap-10 mt-3 justify-center lg:justify-start"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-3"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -190,19 +190,9 @@ export const AboutMe = () => {
                 timelaps: t("studies.analystIt.timeLaps"),
               },
               {
-                title: t("studies.webDevelopment.title"),
-                academy: "Coderhouse",
-                timelaps: t("studies.webDevelopment.timeLaps"),
-                description:
-                  "HTML - CSS - BOOTSTRAP - SASS - SEO - GIT - GITHUB",
-                credentialUrl:
-                  "https://pub.coderhouse.com/certificates/e308b2ba-a656-45eb-bf88-925ee34aa3dd?v=1",
-              },
-              {
                 title: "Javascript",
                 academy: "Coderhouse",
                 timelaps: t("studies.js.timeLaps"),
-                description: t("studies.js.description"),
                 credentialUrl:
                   "https://pub.coderhouse.com/certificates/46f837e2-56cf-4135-90a7-ed28201f888e?v=1",
               },
@@ -210,30 +200,33 @@ export const AboutMe = () => {
                 title: "React JS",
                 academy: "Coderhouse",
                 timelaps: t("studies.react.timeLaps"),
-                description: t("studies.react.description"),
                 credentialUrl:
                   "https://pub.coderhouse.com/certificates/99644ed7-538e-477d-adbd-679770553ce8?v=1",
               },
               {
-                title: t("studies.backI.title"),
+                title: t("studies.back.title"),
                 academy: "Coderhouse",
-                timelaps: t("studies.backI.timeLaps"),
-                description:
-                  "API REST - EXPRESS - MONGODB - MONGOOSE - WEBSOCKETS - HANDLEBARS - ROUTER - MULTER",
-                credentialUrl:
-                  "https://pub.coderhouse.com/certificates/48cd567f-32a6-46a1-93b5-fe4a0bda97e4?v=1",
+                timelaps: t("studies.back.timeLaps"),
+                credentials: [
+                  {
+                    label: "Backend I",
+                    url: "https://pub.coderhouse.com/certificates/48cd567f-32a6-46a1-93b5-fe4a0bda97e4?v=1",
+                  },
+                  {
+                    label: "Backend II",
+                    url: "https://pub.coderhouse.com/certificates/68a9ef03-ce5c-4e75-b6c5-f496b440052d?v=1",
+                  },
+                ],
               },
               {
                 title: t("studies.data.title"),
                 academy: t("studies.data.academy"),
                 timelaps: t("studies.data.timeLaps"),
-                description: t("studies.data.description"),
               },
               {
                 title: t("studies.data2.title"),
                 academy: t("studies.data2.academy"),
                 timelaps: t("studies.data2.timeLaps"),
-                description: t("studies.data2.description"),
               },
             ].map((study, index) => (
               <motion.div key={index} variants={itemVariants}>

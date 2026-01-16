@@ -1,14 +1,26 @@
 import { GoArrowUpRight } from "react-icons/go";
-import { motion } from "framer-motion";
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  AnimatePresence,
+} from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
+import { FiChevronDown } from "react-icons/fi";
+
+type Credential = {
+  label: string;
+  url: string;
+};
 
 type Props = {
   title: string;
   timelaps: string;
   academy: string;
   description?: string;
-  credentialUrl?: string;
+  credentialUrl?: string; // Legacy support
+  credentials?: Credential[]; // New support
 };
 
 export const StudiesCard = ({
@@ -17,159 +29,190 @@ export const StudiesCard = ({
   academy,
   description,
   credentialUrl,
+  credentials = [],
 }: Props) => {
   const { t } = useTranslation();
-  const [isHovered, setIsHovered] = useState(false);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Combine legacy and new credentials
+  const allCredentials = [
+    ...(credentialUrl
+      ? [{ label: t("studies.certificate"), url: credentialUrl }]
+      : []),
+    ...credentials,
+  ];
+
+  function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
+    const { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
+      whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.5 }}
-      whileHover={{
-        y: -8,
-        transition: { duration: 0.3 },
-      }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      className="relative p-1 w-full max-w-[400px] h-full group"
+      onMouseMove={handleMouseMove}
+      className="group relative w-full h-full overflow-visible rounded-xl border border-white/10 bg-theme-bg-secondary/30 backdrop-blur-md transition-shadow hover:shadow-2xl hover:shadow-theme-accent-purple/10"
     >
-      {/* Borde gradiente animado con colores de tema */}
+      {/* Spotlight Effect - Gradient follower (Desktop) */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-theme-accent-blue via-theme-accent-purple to-theme-accent-pink rounded-lg"
-        animate={{
-          backgroundPosition: isHovered ? ["0% 50%", "100% 50%"] : "0% 50%",
-        }}
+        className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100 rounded-xl overflow-hidden hidden sm:block"
         style={{
-          backgroundSize: "200% 200%",
+          background: useMotionTemplate`
+            radial-gradient(
+              650px circle at ${mouseX}px ${mouseY}px,
+              rgba(120, 119, 198, 0.15),
+              transparent 80%
+            )
+          `,
+        }}
+      />
+
+      {/* Mobile Ambience - Subtle moving gradient (Mobile only) */}
+      <motion.div
+        className="pointer-events-none absolute inset-0 z-0 block sm:hidden rounded-xl overflow-hidden"
+        style={{
+          background:
+            "linear-gradient(105deg, transparent 20%, rgba(255, 255, 255, 0.05) 50%, transparent 80%)",
+          backgroundSize: "200% 100%",
+        }}
+        animate={{
+          backgroundPosition: ["100% 0%", "-100% 0%"],
         }}
         transition={{
-          duration: 2,
+          duration: 3,
+          repeat: Infinity,
           ease: "linear",
+          repeatDelay: 3,
         }}
       />
 
-      {/* Efecto de brillo en los bordes */}
-      <motion.div
-        className="absolute inset-0 rounded-lg"
-        animate={{
-          boxShadow: isHovered
-            ? [
-                "0 0 20px rgba(var(--accent-blue), 0.3)",
-                "0 0 40px rgba(var(--accent-purple), 0.4)",
-                "0 0 20px rgba(var(--accent-blue), 0.3)",
-              ]
-            : "0 0 0px rgba(var(--accent-blue), 0)",
-        }}
-        transition={{ duration: 2, repeat: isHovered ? Infinity : 0 }}
-      />
+      {/* Decorative Blur blob 1 */}
+      <div className="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-theme-accent-purple/30 blur-3xl transition-all duration-500 group-hover:bg-theme-accent-purple/40 pointer-events-none" />
+      {/* Decorative Blur blob 2 */}
+      <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-theme-accent-blue/30 blur-3xl transition-all duration-500 group-hover:bg-theme-accent-blue/40 pointer-events-none" />
 
-      <div className="relative bg-theme-bg-secondary px-4 sm:px-6 py-3 sm:py-4 flex flex-col gap-2 sm:gap-3 w-full h-full rounded-lg transition-colors">
-        {/* Partículas decorativas con color de tema */}
-        <motion.div
-          className="absolute top-2 right-2 w-2 h-2 bg-theme-accent-blue rounded-full"
-          animate={{
-            scale: [1, 1.5, 1],
-            opacity: [0.5, 1, 0.5],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
+      <div className="relative flex h-full flex-col p-6">
+        {/* Header Section */}
+        <div className="mb-4">
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.1 }}
+            className="mb-2 flex items-center justify-between"
+          >
+            <span className="inline-block rounded-full bg-theme-accent-blue/10 px-3 py-1 text-xs font-semibold text-theme-accent-blue ring-1 ring-inset ring-theme-accent-blue/20">
+              {timelaps}
+            </span>
+            <motion.div
+              whileHover={{ rotate: 90 }}
+              className="rounded-full p-1 text-theme-text-tertiary transition-colors group-hover:text-theme-text-primary"
+            >
+              <div className="h-1.5 w-1.5 rounded-full bg-current" />
+            </motion.div>
+          </motion.div>
 
-        <motion.h5
-          className="text-theme-accent-blue font-semibold text-lg sm:text-xl relative"
-          initial={{ x: -20, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-        >
-          {title}
-          {/* Subrayado animado con colores de tema */}
-          <motion.span
-            className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-theme-accent-blue to-theme-accent-purple"
-            initial={{ width: 0 }}
-            animate={{ width: isHovered ? "100%" : "0%" }}
-            transition={{ duration: 0.3 }}
-          />
-        </motion.h5>
-
-        <motion.span
-          className="text-base sm:text-lg text-theme-text-secondary"
-          initial={{ x: -20, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-        >
-          {timelaps}
-        </motion.span>
-
-        <motion.span
-          className="text-base sm:text-lg font-semibold text-theme-text-primary"
-          initial={{ x: -20, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-        >
-          {academy}
-        </motion.span>
-
-        {description && (
-          <motion.p
-            className="text-sm text-theme-text-tertiary"
+          <motion.h3
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.2 }}
+            className="text-xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-theme-text-primary to-theme-text-primary/70 group-hover:to-theme-accent-purple transition-all duration-300"
           >
-            {description}
-          </motion.p>
-        )}
+            {title}
+          </motion.h3>
 
-        {credentialUrl && (
-          <motion.a
-            className="relative group/btn flex text-xs sm:text-sm max-w-32 sm:max-w-36 gap-1 items-center justify-center border border-theme-border-secondary rounded-full p-0.5 sm:p-1 overflow-hidden transition-colors"
-            href={credentialUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="mt-1 text-sm font-medium text-theme-accent-purple"
           >
-            {/* Fondo animado con colores de tema */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-theme-accent-blue to-theme-accent-purple"
-              initial={{ x: "-100%" }}
-              whileHover={{ x: "0%" }}
-              transition={{ duration: 0.3 }}
-            />
+            {academy}
+          </motion.div>
+        </div>
 
-            {/* Efecto de brillo */}
-            <motion.div
-              className="absolute inset-0 bg-white dark:bg-white/20"
-              initial={{ x: "-100%", opacity: 0 }}
-              whileHover={{
-                x: "100%",
-                opacity: [0, 0.3, 0],
-              }}
-              transition={{ duration: 0.6 }}
-            />
+        {/* Content Section */}
+        <div className="flex flex-1 flex-col justify-between gap-4">
+          {description && (
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="text-sm leading-relaxed text-theme-text-secondary/90"
+            >
+              {description}
+            </motion.p>
+          )}
 
-            <span className="relative z-10 transition-colors text-theme-text-primary">
-              {t("studies.certificate")}
-            </span>
-            <GoArrowUpRight
-              size={16}
-              className="relative z-10 transition-colors text-theme-text-primary"
-            />
-          </motion.a>
-        )}
+          {/* Footer / Action */}
+          {allCredentials.length > 0 && (
+            <div className="mt-2 pt-4 border-t border-white/5 relative z-20">
+              {allCredentials.length === 1 ? (
+                <motion.a
+                  href={allCredentials[0].url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/btn inline-flex items-center gap-2 text-sm font-medium text-theme-text-primary transition-colors hover:text-theme-accent-blue"
+                  whileHover={{ x: 5 }}
+                >
+                  <span>
+                    {allCredentials[0].label || t("studies.certificate")}
+                  </span>
+                  <GoArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5" />
+                </motion.a>
+              ) : (
+                <div className="relative">
+                  <button
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    onBlur={() => setTimeout(() => setIsMenuOpen(false), 200)}
+                    className="group/btn inline-flex items-center gap-2 text-sm font-medium text-theme-text-primary transition-colors hover:text-theme-accent-blue outline-none"
+                  >
+                    <span>{t("studies.certificate")}s</span>
+                    <FiChevronDown
+                      className={`h-4 w-4 transition-transform duration-300 ${
+                        isMenuOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  <AnimatePresence>
+                    {isMenuOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute bottom-full left-0 mb-2 w-48 rounded-lg border border-white/10 bg-theme-bg-secondary/95 backdrop-blur-xl shadow-xl p-1 flex flex-col gap-1 overflow-hidden z-50"
+                      >
+                        {allCredentials.map((cred, idx) => (
+                          <a
+                            key={idx}
+                            href={cred.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-between rounded-md px-3 py-3 text-sm text-theme-text-secondary hover:bg-white/5 hover:text-theme-text-primary transition-colors active:bg-white/10"
+                          >
+                            <span className="truncate">
+                              {cred.label ||
+                                `${t("studies.certificate")} ${idx + 1}`}
+                            </span>
+                            <GoArrowUpRight className="h-3 w-3 opacity-50" />
+                          </a>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </motion.div>
   );

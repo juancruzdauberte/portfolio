@@ -2,36 +2,28 @@
   "studies": {
     "certificate": "View certificate",
     "analystIt": {
-      "title": "IT Analyst",
+      "title": "Bachelor's degree in Computer Science",
       "timeLaps": "February 2022 - Currently",
       "academy": "National University of San Antonio de Areco (UNSAdA)"
     },
-    "webDevelopment": {
-      "title": " Web Development",
-      "timeLaps": "August 2024 - October 2024"
-    },
     "js": {
-      "timeLaps": "October 2024 - January 2025",
-      "description": "ASYNCHRONOUS - NODE JS - NPM - DOM - ARRAY - OBJECTS - HIGHER ORDER FUNCTIONS"
+      "timeLaps": "October 2024 - January 2025"
     },
     "react": {
-      "timeLaps": "January 2025 - March 2025",
-      "description": "HOOKS - STATES - ROUTING - TAILWIND - FIRESTORE/FIREBASE"
+      "timeLaps": "January 2025 - March 2025"
     },
-    "backI": {
-      "title": "Backend Development I",
+    "back": {
+      "title": "Backend Development",
       "timeLaps": "March 2025 - June 2025"
     },
     "data": {
       "title": "Data Management and Analysis",
-      "description": "DATA ANALYSIS - POWER BI - SQL - PYTHON - PANDAS - NUMPY - MACHINE LEARNING - VISUALIZACIÓN DE DATOS - MODELADO DE DATOS - PREPARACIÓN DE DATOS",
-      "timeLaps": "August 2025 - Currently",
+      "timeLaps": "August 2025 - December 2025",
       "academy": "University of Buenos Aires"
     },
     "data2": {
       "title": "Data Science",
-      "description": "DATA ANALYSIS - POWER BI - SQL - PYTHON - PANDAS - NUMPY - MACHINE LEARNING - DATA VISUALIZATION - DATA MODELING - DATA PREPARATION",
-      "timeLaps": "Agosto 2025 - Actualmente",
+      "timeLaps": "August 2025 - Actually",
       "academy": "National University of San Martin"
     }
   }

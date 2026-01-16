@@ -2,35 +2,27 @@
   "studies": {
     "certificate": "Ver certificado",
     "analystIt": {
-      "title": "Analista en Informática",
+      "title": "Licenciatura en Informática",
       "timeLaps": "Febrero 2022 - Actualmente",
       "academy": "Universidad Nacional San Antonio de Areco (UNSAdA)"
     },
-    "webDevelopment": {
-      "title": "Desarrollo Web",
-      "timeLaps": "Agosto 2024 - Octubre 2024"
-    },
     "js": {
-      "timeLaps": "Octubre 2024 - Enero 2025",
-      "description": "ASINCRONISMO - NODE JS - NPM - DOM - ARRAY - OBJETOS - FUNCIONES DE ORDEN SUPERIOR"
+      "timeLaps": "Octubre 2024 - Enero 2025"
     },
     "react": {
-      "timeLaps": "Enero 2025 - Marzo 2025",
-      "description": "HOOKS - ESTADOS - ROUTING - TAILWIND - FIRESTORE/FIREBASE"
+      "timeLaps": "Enero 2025 - Marzo 2025"
     },
-    "backI": {
-      "title": "Desarrollo Backend I",
+    "back": {
+      "title": "Desarrollo Backend",
       "timeLaps": "Marzo 2025 - Junio 2025"
     },
     "data": {
       "title": "Gestion y Análisis de Datos",
-      "description": "ANÁLISIS DE DATOS - POWER BI - SQL - PYTHON - PANDAS - NUMPY - MACHINE LEARNING - VISUALIZACIÓN DE DATOS - MODELADO DE DATOS - PREPARACIÓN DE DATOS",
-      "timeLaps": "Agosto 2025 - Actualmente",
+      "timeLaps": "Agosto 2025 - Diciembre 2025",
       "academy": "Universidad De Buenos Aires"
     },
     "data2": {
       "title": "Ciencia de Datos",
-      "description": "ANÁLISIS DE DATOS - POWER BI - SQL - PYTHON - PANDAS - NUMPY - MACHINE LEARNING - VISUALIZACIÓN DE DATOS - MODELADO DE DATOS - PREPARACIÓN DE DATOS",
       "timeLaps": "Agosto 2025 - Actualmente",
       "academy": "Universidad Nacional de San Martín"
     }
