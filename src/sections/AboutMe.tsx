@@ -1,13 +1,15 @@
 import { FiUser } from "react-icons/fi";
-const Cv = "/download/Curriculum Vitae Juan Cruz Dauberte.pdf";
 import { PiFilePdf } from "react-icons/pi";
 import { StudiesCard } from "../common/StudiesCard";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+const cvEs = "/download/Curriculum Vitae Juan Cruz Dauberte.pdf";
+const cvEn = "/download/Curriculum Vitae Juan Cruz Dauberte Inglés.pdf";
 
 export const AboutMe = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
+  const currentCv = i18n.language === "en" ? cvEn : cvEs;
   // Variantes de animación
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -47,7 +49,6 @@ export const AboutMe = () => {
 
   return (
     <section className="w-full max-w-6xl flex flex-col px-4 sm:px-6">
-      {/* Título con animación y colores de tema */}
       <motion.section
         variants={titleVariants}
         initial="hidden"
@@ -79,7 +80,6 @@ export const AboutMe = () => {
         viewport={{ once: true, amount: 0.2 }}
         className="flex flex-col gap-10 sm:gap-12 md:gap-16"
       >
-        {/* Descripción personal */}
         <motion.section
           variants={itemVariants}
           className="flex flex-col gap-3 sm:gap-4 md:gap-5 mt-3"
@@ -88,7 +88,6 @@ export const AboutMe = () => {
             variants={itemVariants}
             className="relative text-theme-text-primary"
           >
-            {/* Efecto de subrayado animado con colores de tema */}
             <motion.span
               className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-theme-accent-blue to-theme-accent-purple"
               initial={{ width: 0 }}
@@ -103,7 +102,6 @@ export const AboutMe = () => {
             variants={itemVariants}
             className="flex flex-col relative"
           >
-            {/* Línea decorativa lateral con color de tema */}
             <motion.div
               className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-theme-accent-blue to-theme-accent-blue-dark rounded-full"
               initial={{ height: 0 }}
@@ -121,14 +119,13 @@ export const AboutMe = () => {
 
           <motion.div variants={itemVariants}>
             <motion.a
-              href={Cv}
+              href={currentCv}
               download={"Curriculum Vitae Juan Cruz Dauberte"}
               className="relative group flex items-center gap-1 border rounded-full border-theme-border-secondary p-0.5 w-36 sm:w-40 md:w-48 justify-center overflow-hidden text-sm sm:text-base transition-colors"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {/* Fondo animado con colores de tema */}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-theme-accent-blue to-theme-accent-purple"
                 initial={{ x: "-100%" }}
@@ -136,7 +133,6 @@ export const AboutMe = () => {
                 transition={{ duration: 0.3 }}
               />
 
-              {/* Efecto de brillo */}
               <motion.div
                 className="absolute inset-0 bg-white dark:bg-white/20"
                 initial={{ x: "-100%", opacity: 0 }}
@@ -155,7 +151,6 @@ export const AboutMe = () => {
           </motion.div>
         </motion.section>
 
-        {/* Sección de estudios */}
         <motion.section variants={itemVariants}>
           <motion.div
             initial={{ x: -20, opacity: 0 }}
@@ -165,7 +160,6 @@ export const AboutMe = () => {
           >
             <h5 className="text-lg sm:text-xl md:text-2xl font-semibold text-theme-accent-blue relative inline-block">
               {t("about.titleStudies")}
-              {/* Subrayado animado con color de tema */}
               <motion.span
                 className="absolute bottom-0 left-0 h-0.5 bg-theme-accent-blue"
                 initial={{ width: 0 }}

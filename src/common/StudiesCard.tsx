@@ -60,7 +60,6 @@ export const StudiesCard = ({
       onMouseMove={handleMouseMove}
       className="group relative w-full h-full overflow-visible rounded-xl border border-white/10 bg-theme-bg-secondary/30 backdrop-blur-md transition-shadow hover:shadow-2xl hover:shadow-theme-accent-purple/10"
     >
-      {/* Spotlight Effect - Gradient follower (Desktop) */}
       <motion.div
         className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100 rounded-xl overflow-hidden hidden sm:block"
         style={{
@@ -74,7 +73,6 @@ export const StudiesCard = ({
         }}
       />
 
-      {/* Mobile Ambience - Subtle moving gradient (Mobile only) */}
       <motion.div
         className="pointer-events-none absolute inset-0 z-0 block sm:hidden rounded-xl overflow-hidden"
         style={{
@@ -93,13 +91,10 @@ export const StudiesCard = ({
         }}
       />
 
-      {/* Decorative Blur blob 1 */}
       <div className="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-theme-accent-purple/30 blur-3xl transition-all duration-500 group-hover:bg-theme-accent-purple/40 pointer-events-none" />
-      {/* Decorative Blur blob 2 */}
       <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-theme-accent-blue/30 blur-3xl transition-all duration-500 group-hover:bg-theme-accent-blue/40 pointer-events-none" />
 
       <div className="relative flex h-full flex-col p-6">
-        {/* Header Section */}
         <div className="mb-4">
           <motion.div
             initial={{ opacity: 0, x: -10 }}

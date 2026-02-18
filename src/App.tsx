@@ -2,23 +2,24 @@ import { lazy, Suspense } from "react";
 import { ThemeProvider } from "./context/ThemeContext";
 import { Footer } from "./layout/Footer";
 import { Navbar } from "./layout/Navbar";
-import { Hero } from "./pages/Hero";
+import { Hero } from "./sections/Hero";
 import { motion, useScroll, useSpring } from "framer-motion";
 
-// Lazy loading de secciones para mejor performance inicial
 const AboutMe = lazy(() =>
-  import("./pages/AboutMe").then((module) => ({ default: module.AboutMe }))
+  import("./sections/AboutMe").then((module) => ({ default: module.AboutMe })),
 );
 const Experience = lazy(() =>
-  import("./pages/Experience").then((module) => ({
+  import("./sections/Experience").then((module) => ({
     default: module.Experience,
-  }))
+  })),
 );
 const Projects = lazy(() =>
-  import("./pages/Projects").then((module) => ({ default: module.Projects }))
+  import("./sections/Projects").then((module) => ({
+    default: module.Projects,
+  })),
 );
 const Skills = lazy(() =>
-  import("./pages/Skills").then((module) => ({ default: module.Skills }))
+  import("./sections/Skills").then((module) => ({ default: module.Skills })),
 );
 
 // Componente de loading optimizado con tema
