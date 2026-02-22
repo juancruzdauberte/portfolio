@@ -182,6 +182,8 @@ export const AboutMe = () => {
                 title: t("studies.analystIt.title"),
                 academy: t("studies.analystIt.academy"),
                 timelaps: t("studies.analystIt.timeLaps"),
+                credentialUrl:
+                  "https://res.cloudinary.com/dttpgbmdx/image/upload/v1771765837/Certificado_titulo_en_tramite_cexzpp.png",
               },
               {
                 title: "Javascript",
