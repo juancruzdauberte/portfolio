@@ -15,7 +15,11 @@ html {
   color-scheme: light dark;
 
   /* Tipografía base */
-  font-family: "Sora", system-ui, -apple-system, sans-serif;
+  font-family:
+    "Sora",
+    system-ui,
+    -apple-system,
+    sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -26,67 +30,69 @@ html {
   -moz-osx-font-smoothing: grayscale;
 
   /* === LIGHT MODE COLORS === */
+  /* Palette: #0A1931 | #1A3D63 | #4A7FA7 | #B3CFE5 | #F6FAFD */
 
   /* Backgrounds */
-  --bg-primary: 241 240 253; /* #f1f0fd - Fondo principal suave */
-  --bg-secondary: 255 255 255; /* Blanco puro para tarjetas */
-  --bg-tertiary: 249 250 251; /* gray-50 - Backgrounds alternativos */
-  --bg-overlay: 255 255 255; /* Para modales y overlays */
+  --bg-primary: 246 250 253; /* #F6FAFD - fondo principal off-white */
+  --bg-secondary: 255 255 255; /* blanco puro para tarjetas */
+  --bg-tertiary: 237 244 250; /* tinte claro de #B3CFE5 */
+  --bg-overlay: 255 255 255; /* modales y overlays */
 
   /* Texts */
-  --text-primary: 17 24 39; /* gray-900 - Texto principal con buen contraste */
-  --text-secondary: 55 65 81; /* gray-700 - Texto secundario legible */
-  --text-tertiary: 107 114 128; /* gray-500 - Texto terciario/hints */
-  --text-muted: 156 163 175; /* gray-400 - Texto deshabilitado */
+  --text-primary: 10 25 49; /* #0A1931 - navy más oscuro */
+  --text-secondary: 26 61 99; /* #1A3D63 - azul oscuro */
+  --text-tertiary: 74 127 167; /* #4A7FA7 - azul medio */
+  --text-muted: 179 207 229; /* #B3CFE5 - azul claro */
 
   /* Borders */
-  --border-primary: 229 231 235; /* gray-200 - Bordes suaves */
-  --border-secondary: 209 213 219; /* gray-300 - Bordes más definidos */
-  --border-focus: 59 130 246; /* blue-500 - Bordes en foco */
+  --border-primary: 179 207 229; /* #B3CFE5 - bordes suaves */
+  --border-secondary: 74 127 167; /* #4A7FA7 - bordes definidos */
+  --border-focus: 74 127 167; /* #4A7FA7 - foco */
 
-  /* Accent Colors - Brand */
-  --accent-blue: 59 130 246; /* blue-500 */
-  --accent-blue-light: 96 165 250; /* blue-400 */
-  --accent-blue-dark: 37 99 235; /* blue-600 */
+  /* Accent Colors - Brand (blue palette only) */
+  --accent-blue: 74 127 167; /* #4A7FA7 - acento principal */
+  --accent-blue-light: 179 207 229; /* #B3CFE5 */
+  --accent-blue-dark: 26 61 99; /* #1A3D63 */
 
-  --accent-purple: 139 92 246; /* purple-500 */
-  --accent-purple-light: 168 85 247; /* purple-400 */
-  --accent-purple-dark: 124 58 237; /* purple-600 */
+  /* Remapped to blue equivalents for gradient continuity */
+  --accent-purple: 26 61 99; /* #1A3D63 */
+  --accent-purple-light: 74 127 167; /* #4A7FA7 */
+  --accent-purple-dark: 10 25 49; /* #0A1931 */
 
-  --accent-pink: 236 72 153; /* pink-500 */
-  --accent-pink-light: 244 114 182; /* pink-400 */
+  --accent-pink: 74 127 167; /* #4A7FA7 */
+  --accent-pink-light: 179 207 229; /* #B3CFE5 */
 
-  --accent-cyan: 6 182 212; /* cyan-500 */
-  --accent-green: 34 197 94; /* green-500 */
+  --accent-cyan: 74 127 167; /* #4A7FA7 */
+  --accent-green: 34 197 94; /* green-500 — kept for semantic status */
 
-  /* Status Colors */
+  /* Status Colors — kept semantic (not remapped) */
   --status-success: 34 197 94; /* green-500 */
   --status-warning: 234 179 8; /* yellow-500 */
   --status-error: 239 68 68; /* red-500 */
-  --status-info: 59 130 246; /* blue-500 */
+  --status-info: 74 127 167; /* #4A7FA7 */
 
-  /* Sombras optimizadas para light mode */
-  --shadow-color: 0 0 0;
+  /* Shadows */
+  --shadow-color: 10 25 49; /* #0A1931 - navy shadow */
   --shadow-opacity: 0.08;
   --shadow-opacity-md: 0.12;
-  --shadow-opacity-lg: 0.16;
+  --shadow-opacity-lg: 0.18;
 
-  /* Gradientes optimizados */
+  /* Gradients — monochromatic blue */
   --gradient-primary: linear-gradient(
     90deg,
-    rgb(59 130 246) 0%,
-    rgb(139 92 246) 50%,
-    rgb(236 72 153) 100%
+    rgb(74 127 167) 0%,
+    rgb(26 61 99) 50%,
+    rgb(10 25 49) 100%
   );
   --gradient-secondary: linear-gradient(
     135deg,
-    rgb(59 130 246) 0%,
-    rgb(139 92 246) 100%
+    rgb(179 207 229) 0%,
+    rgb(74 127 167) 100%
   );
   --gradient-hover: linear-gradient(
     135deg,
-    rgb(59 130 246 / 0.1) 0%,
-    rgb(139 92 246 / 0.1) 100%
+    rgb(74 127 167 / 0.1) 0%,
+    rgb(26 61 99 / 0.1) 100%
   );
 
   /* === PERFORMANCE === */
@@ -101,67 +107,69 @@ html {
   color-scheme: dark;
 
   /* === DARK MODE COLORS === */
+  /* Palette: #0A1931 | #1A3D63 | #4A7FA7 | #B3CFE5 | #F6FAFD */
 
-  /* Backgrounds - Mayor contraste y profundidad */
-  --bg-primary: 3 7 18; /* #030712 - gray-950 Fondo oscuro profundo */
-  --bg-secondary: 15 23 42; /* slate-900 - Tarjetas con mejor contraste */
-  --bg-tertiary: 30 41 59; /* slate-800 - Backgrounds alternativos */
-  --bg-overlay: 17 24 39; /* gray-900 - Para modales */
+  /* Backgrounds */
+  --bg-primary: 10 25 49; /* #0A1931 - fondo oscuro más profundo */
+  --bg-secondary: 16 38 74; /* entre #0A1931 y #1A3D63 - tarjetas */
+  --bg-tertiary: 26 61 99; /* #1A3D63 - fondos alternativos */
+  --bg-overlay: 10 25 49; /* #0A1931 - modales */
 
-  /* Texts - Optimizado para legibilidad en dark */
-  --text-primary: 248 250 252; /* slate-50 - Texto brillante pero no puro blanco */
-  --text-secondary: 226 232 240; /* slate-200 - Texto secundario con buen contraste */
-  --text-tertiary: 203 213 225; /* slate-300 - Texto terciario legible */
-  --text-muted: 148 163 184; /* slate-400 - Texto muted visible */
+  /* Texts */
+  --text-primary: 246 250 253; /* #F6FAFD - texto brilliant */
+  --text-secondary: 179 207 229; /* #B3CFE5 - texto secundario */
+  --text-tertiary: 74 127 167; /* #4A7FA7 - texto terciario */
+  --text-muted: 74 127 167; /* #4A7FA7 - texto muted */
 
-  /* Borders - Más visibles en dark */
-  --border-primary: 51 65 85; /* slate-700 - Bordes sutiles pero visibles */
-  --border-secondary: 71 85 105; /* slate-600 - Bordes definidos */
-  --border-focus: 96 165 250; /* blue-400 - Bordes en foco más suaves */
+  /* Borders */
+  --border-primary: 26 61 99; /* #1A3D63 - bordes sutiles */
+  --border-secondary: 74 127 167; /* #4A7FA7 - bordes definidos */
+  --border-focus: 179 207 229; /* #B3CFE5 - foco brillante */
 
-  /* Accent Colors - Versiones más suaves para dark mode */
-  --accent-blue: 96 165 250; /* blue-400 - Más suave para ojos */
-  --accent-blue-light: 147 197 253; /* blue-300 */
-  --accent-blue-dark: 59 130 246; /* blue-500 */
+  /* Accent Colors - bright blues on dark bg */
+  --accent-blue: 179 207 229; /* #B3CFE5 - acento brillante */
+  --accent-blue-light: 246 250 253; /* #F6FAFD */
+  --accent-blue-dark: 74 127 167; /* #4A7FA7 */
 
-  --accent-purple: 168 85 247; /* purple-400 */
-  --accent-purple-light: 192 132 252; /* purple-300 */
-  --accent-purple-dark: 139 92 246; /* purple-500 */
+  /* Remapped to blue equivalents */
+  --accent-purple: 74 127 167; /* #4A7FA7 */
+  --accent-purple-light: 179 207 229; /* #B3CFE5 */
+  --accent-purple-dark: 26 61 99; /* #1A3D63 */
 
-  --accent-pink: 244 114 182; /* pink-400 */
-  --accent-pink-light: 249 168 212; /* pink-300 */
+  --accent-pink: 74 127 167; /* #4A7FA7 */
+  --accent-pink-light: 179 207 229; /* #B3CFE5 */
 
-  --accent-cyan: 34 211 238; /* cyan-400 */
-  --accent-green: 74 222 128; /* green-400 */
+  --accent-cyan: 179 207 229; /* #B3CFE5 */
+  --accent-green: 74 222 128; /* green-400 — kept semantic */
 
-  /* Status Colors - Versiones para dark */
+  /* Status Colors */
   --status-success: 74 222 128; /* green-400 */
   --status-warning: 250 204 21; /* yellow-400 */
   --status-error: 248 113 113; /* red-400 */
-  --status-info: 96 165 250; /* blue-400 */
+  --status-info: 179 207 229; /* #B3CFE5 */
 
-  /* Sombras optimizadas para dark mode */
+  /* Shadows */
   --shadow-color: 0 0 0;
-  --shadow-opacity: 0.4;
-  --shadow-opacity-md: 0.5;
-  --shadow-opacity-lg: 0.6;
+  --shadow-opacity: 0.5;
+  --shadow-opacity-md: 0.6;
+  --shadow-opacity-lg: 0.7;
 
-  /* Gradientes ajustados para dark mode */
+  /* Gradients — monochromatic blue, light on dark */
   --gradient-primary: linear-gradient(
     90deg,
-    rgb(96 165 250) 0%,
-    rgb(168 85 247) 50%,
-    rgb(244 114 182) 100%
+    rgb(74 127 167) 0%,
+    rgb(179 207 229) 50%,
+    rgb(246 250 253) 100%
   );
   --gradient-secondary: linear-gradient(
     135deg,
-    rgb(96 165 250) 0%,
-    rgb(168 85 247) 100%
+    rgb(26 61 99) 0%,
+    rgb(74 127 167) 100%
   );
   --gradient-hover: linear-gradient(
     135deg,
-    rgb(96 165 250 / 0.15) 0%,
-    rgb(168 85 247 / 0.15) 100%
+    rgb(179 207 229 / 0.15) 0%,
+    rgb(74 127 167 / 0.15) 100%
   );
 }
 
@@ -170,59 +178,59 @@ html {
   :root:not(.light) {
     color-scheme: dark;
 
-    --bg-primary: 3 7 18;
-    --bg-secondary: 15 23 42;
-    --bg-tertiary: 30 41 59;
-    --bg-overlay: 17 24 39;
+    --bg-primary: 10 25 49;
+    --bg-secondary: 16 38 74;
+    --bg-tertiary: 26 61 99;
+    --bg-overlay: 10 25 49;
 
-    --text-primary: 248 250 252;
-    --text-secondary: 226 232 240;
-    --text-tertiary: 203 213 225;
-    --text-muted: 148 163 184;
+    --text-primary: 246 250 253;
+    --text-secondary: 179 207 229;
+    --text-tertiary: 74 127 167;
+    --text-muted: 74 127 167;
 
-    --border-primary: 51 65 85;
-    --border-secondary: 71 85 105;
-    --border-focus: 96 165 250;
+    --border-primary: 26 61 99;
+    --border-secondary: 74 127 167;
+    --border-focus: 179 207 229;
 
-    --accent-blue: 96 165 250;
-    --accent-blue-light: 147 197 253;
-    --accent-blue-dark: 59 130 246;
+    --accent-blue: 179 207 229;
+    --accent-blue-light: 246 250 253;
+    --accent-blue-dark: 74 127 167;
 
-    --accent-purple: 168 85 247;
-    --accent-purple-light: 192 132 252;
-    --accent-purple-dark: 139 92 246;
+    --accent-purple: 74 127 167;
+    --accent-purple-light: 179 207 229;
+    --accent-purple-dark: 26 61 99;
 
-    --accent-pink: 244 114 182;
-    --accent-pink-light: 249 168 212;
+    --accent-pink: 74 127 167;
+    --accent-pink-light: 179 207 229;
 
-    --accent-cyan: 34 211 238;
+    --accent-cyan: 179 207 229;
     --accent-green: 74 222 128;
 
     --status-success: 74 222 128;
     --status-warning: 250 204 21;
     --status-error: 248 113 113;
-    --status-info: 96 165 250;
+    --status-info: 179 207 229;
 
     --shadow-color: 0 0 0;
-    --shadow-opacity: 0.4;
-    --shadow-opacity-md: 0.5;
-    --shadow-opacity-lg: 0.6;
+    --shadow-opacity: 0.5;
+    --shadow-opacity-md: 0.6;
+    --shadow-opacity-lg: 0.7;
 
     --gradient-primary: linear-gradient(
       90deg,
-      rgb(96 165 250) 0%,
-      rgb(168 85 247) 50%,
-      rgb(244 114 182) 100%
+      rgb(74 127 167) 0%,
+      rgb(179 207 229) 50%,
+      rgb(246 250 253) 100%
     );
     --gradient-secondary: linear-gradient(
       135deg,
-      rgb(96 165 250) 0%,
-      rgb(168 85 247) 100%
+      rgb(26 61 99) 0%,
+      rgb(74 127 167) 100%
     );
     --gradient-hover: linear-gradient(
       135deg,
-      rgb(96 165 250 / 0.15) 0%,
-      rgb(168 85 247 / 0.15) 100%
+      rgb(179 207 229 / 0.15) 0%,
+      rgb(74 127 167 / 0.15) 100%
     );
   }
 }
@@ -254,8 +262,8 @@ body {
   overflow-x: hidden;
   background-color: rgb(var(--bg-primary));
   color: rgb(var(--text-primary));
-  transition: background-color var(--animation-duration-normal)
-      var(--animation-timing),
+  transition:
+    background-color var(--animation-duration-normal) var(--animation-timing),
     color var(--animation-duration-normal) var(--animation-timing);
 }
 
@@ -344,12 +352,14 @@ video {
 @keyframes glow {
   0%,
   100% {
-    box-shadow: 0 0 5px rgb(var(--accent-blue) / 0.5),
+    box-shadow:
+      0 0 5px rgb(var(--accent-blue) / 0.5),
       0 0 10px rgb(var(--accent-blue) / 0.3),
       0 0 15px rgb(var(--accent-blue) / 0.2);
   }
   50% {
-    box-shadow: 0 0 10px rgb(var(--accent-blue) / 0.8),
+    box-shadow:
+      0 0 10px rgb(var(--accent-blue) / 0.8),
       0 0 20px rgb(var(--accent-blue) / 0.5),
       0 0 30px rgb(var(--accent-blue) / 0.3);
   }
@@ -418,8 +428,8 @@ video {
 
   /* Efectos de hover optimizados */
   .hover-lift {
-    transition: transform var(--animation-duration-normal)
-        var(--animation-timing),
+    transition:
+      transform var(--animation-duration-normal) var(--animation-timing),
       box-shadow var(--animation-duration-normal) var(--animation-timing);
   }
 
@@ -447,7 +457,8 @@ video {
 
   /* Sombra de neón adaptable */
   .neon-shadow {
-    box-shadow: 0 0 10px rgb(var(--accent-blue) / 0.5),
+    box-shadow:
+      0 0 10px rgb(var(--accent-blue) / 0.5),
       0 0 20px rgb(var(--accent-blue) / 0.3),
       0 0 30px rgb(var(--accent-blue) / 0.2);
   }
@@ -457,10 +468,8 @@ video {
     border: 2px solid transparent;
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    background-image: linear-gradient(
-        rgb(var(--bg-primary)),
-        rgb(var(--bg-primary))
-      ),
+    background-image:
+      linear-gradient(rgb(var(--bg-primary)), rgb(var(--bg-primary))),
       var(--gradient-primary);
   }
 
@@ -556,7 +565,7 @@ video {
 
   /* Subrayado animado con pseudo-elemento */
   .nav-link::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -594,7 +603,7 @@ video {
   }
 
   .nav-link-mobile::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -630,7 +639,8 @@ video {
 button,
 a,
 .transition-colors {
-  transition: color var(--animation-duration-fast) var(--animation-timing),
+  transition:
+    color var(--animation-duration-fast) var(--animation-timing),
     background-color var(--animation-duration-fast) var(--animation-timing),
     border-color var(--animation-duration-fast) var(--animation-timing);
 }

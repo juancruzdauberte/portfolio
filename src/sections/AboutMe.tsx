@@ -179,25 +179,14 @@ export const AboutMe = () => {
           >
             {[
               {
-                title: t("studies.analystIt.title"),
-                academy: t("studies.analystIt.academy"),
-                timelaps: t("studies.analystIt.timeLaps"),
-                credentialUrl:
-                  "https://res.cloudinary.com/dttpgbmdx/image/upload/v1771765837/Certificado_titulo_en_tramite_cexzpp.png",
+                title: t("studies.data2.title"),
+                academy: t("studies.data2.academy"),
+                timelaps: t("studies.data2.timeLaps"),
               },
               {
-                title: "Javascript",
-                academy: "Coderhouse",
-                timelaps: t("studies.js.timeLaps"),
-                credentialUrl:
-                  "https://pub.coderhouse.com/certificates/46f837e2-56cf-4135-90a7-ed28201f888e?v=1",
-              },
-              {
-                title: "React JS",
-                academy: "Coderhouse",
-                timelaps: t("studies.react.timeLaps"),
-                credentialUrl:
-                  "https://pub.coderhouse.com/certificates/99644ed7-538e-477d-adbd-679770553ce8?v=1",
+                title: t("studies.data.title"),
+                academy: t("studies.data.academy"),
+                timelaps: t("studies.data.timeLaps"),
               },
               {
                 title: t("studies.back.title"),
@@ -215,14 +204,25 @@ export const AboutMe = () => {
                 ],
               },
               {
-                title: t("studies.data.title"),
-                academy: t("studies.data.academy"),
-                timelaps: t("studies.data.timeLaps"),
+                title: "React JS",
+                academy: "Coderhouse",
+                timelaps: t("studies.react.timeLaps"),
+                credentialUrl:
+                  "https://pub.coderhouse.com/certificates/99644ed7-538e-477d-adbd-679770553ce8?v=1",
               },
               {
-                title: t("studies.data2.title"),
-                academy: t("studies.data2.academy"),
-                timelaps: t("studies.data2.timeLaps"),
+                title: "Javascript",
+                academy: "Coderhouse",
+                timelaps: t("studies.js.timeLaps"),
+                credentialUrl:
+                  "https://pub.coderhouse.com/certificates/46f837e2-56cf-4135-90a7-ed28201f888e?v=1",
+              },
+              {
+                title: t("studies.analystIt.title"),
+                academy: t("studies.analystIt.academy"),
+                timelaps: t("studies.analystIt.timeLaps"),
+                credentialUrl:
+                  "https://res.cloudinary.com/dttpgbmdx/image/upload/v1771765837/Certificado_titulo_en_tramite_cexzpp.png",
               },
             ].map((study, index) => (
               <motion.div key={index} variants={itemVariants}>
