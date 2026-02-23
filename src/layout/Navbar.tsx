@@ -59,15 +59,16 @@ export const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check initial state
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { to: "sobre-mi", label: t("navbar.aboutMe") },
     { to: "experiencia", label: t("navbar.experience") },
     { to: "proyectos", label: t("navbar.projects") },
+    { to: "sobre-mi", label: t("navbar.aboutMe") },
+
     { to: "habilidades", label: t("navbar.skills") },
   ];
 

@@ -89,21 +89,6 @@ function App() {
             transition={{ duration: 0.8 }}
           />
 
-          {/* About Me - Lazy loaded */}
-          <section id="sobre-mi" className="w-full flex justify-center">
-            <Suspense fallback={<SectionLoader />}>
-              <AboutMe />
-            </Suspense>
-          </section>
-
-          <motion.div
-            className="w-full max-w-5xl h-px bg-gradient-to-r from-transparent via-theme-accent-purple to-transparent"
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true, margin: "50px" }}
-            transition={{ duration: 0.8 }}
-          />
-
           {/* Experience - Lazy loaded */}
           <section id="experiencia" className="w-full flex justify-center">
             <Suspense fallback={<SectionLoader />}>
@@ -128,6 +113,21 @@ function App() {
 
           <motion.div
             className="w-full max-w-5xl h-px bg-gradient-to-r from-transparent via-theme-accent-cyan to-transparent"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, margin: "50px" }}
+            transition={{ duration: 0.8 }}
+          />
+
+          {/* About Me - Lazy loaded */}
+          <section id="sobre-mi" className="w-full flex justify-center">
+            <Suspense fallback={<SectionLoader />}>
+              <AboutMe />
+            </Suspense>
+          </section>
+
+          <motion.div
+            className="w-full max-w-5xl h-px bg-gradient-to-r from-transparent via-theme-accent-purple to-transparent"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: "50px" }}

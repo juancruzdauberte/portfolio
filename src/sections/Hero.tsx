@@ -123,7 +123,7 @@ export const Hero = () => {
 
           <div className="relative w-full h-full border-2 rounded-full overflow-hidden border-theme-bg-secondary shadow-theme-2xl ring-2 ring-theme-border-primary/50">
             <img
-              src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1745434137/Juann_txw3oo.jpg"
+              src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1771854226/juan_kg7knw.jpg"
               alt="Foto de perfil de Juan Cruz"
               className="object-cover w-full h-full"
             />
@@ -231,7 +231,7 @@ export const Hero = () => {
       >
         <button
           type="button"
-          onClick={() => scrollToSection("sobre-mi", 120)}
+          onClick={() => scrollToSection("experiencia", 120)}
           className="cursor-pointer"
           aria-label="Scroll to About Me section"
         >

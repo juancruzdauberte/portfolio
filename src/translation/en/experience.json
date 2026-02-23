@@ -3,17 +3,55 @@
     "title": "Work Experience",
     "hb": {
       "description": "Customer service and order manager with distributors via email. Catalog content creator.",
+
       "timeLaps": "March 2024 – December 2024",
-      "orders": "Order issue management.",
-      "catalog": "Catalog content creator.",
-      "communication": "Communication with customers, distributors, and transport agencies.",
-      "trelloPresta": "Teamwork through the Trello and PrestaShop platforms."
+      "bullets": [
+        "Home Office.",
+        "Order issue management.",
+        "Catalog content creator.",
+        "Communication with customers, distributors, and transport agencies.",
+        "Teamwork through the Trello and PrestaShop platforms."
+      ]
     },
     "sl": {
-      "timeLaps": "February 2025 - Currently",
+      "timeLaps": "February 2025 - March 2025",
       "description": "Customer service assistant via phone",
-      "communication": "Clear and precise communication with clients.",
-      "ic": "First appointment record."
+      "bullets": [
+        "Home Office.",
+        "Clear and precise communication with clients.",
+        "First appointment record."
+      ]
+    },
+    "dh": {
+      "timeLaps": "November 2025 - February 2026",
+      "description": "Design and implementation of a complete web platform and landing page for a temporary rental business.",
+      "bullets": [
+        "Design and implementation of a responsive website.",
+        "Design and implementation of an administrative system for complete management.",
+        "Implementation of good SEO practices and website performance optimization to increase site visibility.",
+        "Automation and optimization of workflow processes, digitalization and organization of reservations, document generation.",
+        "Data analysis and visualization through dashboards for decision making."
+      ]
+    },
+    "cec": {
+      "timeLaps": "September 2025 - December 2025",
+
+      "description": "Development of a complete web platform and kitchen system, optimizing order preparation and delivery flow.",
+      "bullets": [
+        "Implementation of a financial module for exact cash control, income/expense tracking and business performance analysis.",
+        "Design of a secure architecture with access control by roles for employees, protecting operational and financial information.",
+        "Complete digitalization of the order taking and tracking process",
+        "Admin panel for stock control, product categories and daily menu configuration."
+      ]
+    },
+    "tbs": {
+      "timeLaps": "October 2025 - January 2026",
+      "description": "Development of a complete web platform for travel planning and financial control.",
+      "bullets": [
+        "Complete digitalization of the travel planning process.",
+        "Travel management module with tracking of states, passengers, associated services and documentation per file.",
+        "Financial tracking that allows visualizing income, expenses and profitability per trip, with support for operations in different currencies."
+      ]
     }
   }
 }

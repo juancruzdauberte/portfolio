@@ -10,8 +10,8 @@
  */
 export const scrollToSection = (
   sectionId: string,
-  offset: number = 200,
-  maxRetries: number = 10
+  offset: number = 100,
+  maxRetries: number = 10,
 ): void => {
   console.log(`[scrollToSection] Attempting to scroll to: ${sectionId}`);
   let retries = 0;
@@ -20,7 +20,7 @@ export const scrollToSection = (
     const element = document.getElementById(sectionId);
     console.log(
       `[scrollToSection] Attempt ${retries + 1}/${maxRetries}, element:`,
-      element
+      element,
     );
 
     if (element) {
@@ -55,11 +55,11 @@ export const scrollToSection = (
       setTimeout(attemptScroll, 100);
     } else {
       console.error(
-        `[scrollToSection] Could not find element with ID "${sectionId}" after ${maxRetries} attempts`
+        `[scrollToSection] Could not find element with ID "${sectionId}" after ${maxRetries} attempts`,
       );
       console.log(
         "[scrollToSection] Available IDs:",
-        Array.from(document.querySelectorAll("[id]")).map((el) => el.id)
+        Array.from(document.querySelectorAll("[id]")).map((el) => el.id),
       );
     }
   };
@@ -84,7 +84,7 @@ export const elementExists = (sectionId: string): boolean => {
  */
 export const waitForElement = (
   sectionId: string,
-  timeout: number = 5000
+  timeout: number = 5000,
 ): Promise<HTMLElement | null> => {
   return new Promise((resolve) => {
     const element = document.getElementById(sectionId);

@@ -4,16 +4,54 @@
     "hb": {
       "description": "Atención al cliente y gestor de pedidos con distribuidores vía email. Creador de contenido en catálogo.",
       "timeLaps": "Marzo 2024 - Diciembre 2024",
-      "orders": "Gestión en incidencia de pedidos.",
-      "catalog": "Creador de contenido en catálogo.",
-      "communication": "Comunicación con clientes, distribuidores y agencias de transporte.",
-      "trelloPresta": "Trabajo en equipo mediante la plataforma Trello y Prestashop."
+      "bullets": [
+        "Home Office.",
+        "Gestión en incidencia de pedidos.",
+        "Creador de contenido en catálogo.",
+        "Comunicación con clientes, distribuidores y agencias de transporte.",
+        "Trabajo en equipo mediante la plataforma Trello y Prestashop."
+      ]
     },
     "sl": {
-      "timeLaps": "Febrero 2025 - Actualmente",
+      "timeLaps": "Febrero 2025 - Mayo 2025",
       "description": "Asistente de atención al cliente vía telefónica.",
-      "communication": "Comunicación clara y precisa con clientes.",
-      "ic": "Registro de citas iniciales."
+      "bullets": [
+        "Home Office.",
+        "Gestión en incidencia de pedidos.",
+        "Creador de contenido en catálogo.",
+        "Comunicación con clientes, distribuidores y agencias de transporte.",
+        "Trabajo en equipo mediante la plataforma Trello y Prestashop."
+      ]
+    },
+    "dh": {
+      "timeLaps": "Noviembre 2025 - Febrero 2026",
+      "description": "Diseño e implementación de plataforma web integral y landing page para negocio de alquileres temporarios. ",
+      "bullets": [
+        "Diseño e implementación de sitio web responsive.",
+        "Diseño e implementación de un sistema administrativo para gestión integral.",
+        "Implementación de buenas prácticas SEO y optimización de rendimiento web para aumentar la visibilidad del sitio.",
+        "Automatización y optimización de flujos de trabajo, digitalización y organización de reservas, generación de documentos.",
+        "Analisis y visualización de datos mediante dashboards para la toma de decisiones."
+      ]
+    },
+    "cec": {
+      "timeLaps": "Septiembre 2025 - Diciembre 2025",
+      "description": "Desarrollo de una plataforma web integral y un sistema de cocina, optimizando el flujo de preparación y entrega de pedidos.",
+      "bullets": [
+        "Implementación de un módulo financiero para control exacto del dinero, seguimiento de ingresos/egresos y análisis del desempeño empresarial.",
+        "Diseño de una arquitectura segura con control de acceso por roles para empleados, protegiendo información operativa y financiera.",
+        "Digitalización completa del proceso de toma y seguimiento de pedidos",
+        "Panel de administración para control de stock, categorías de productos y configuración del menú diario."
+      ]
+    },
+    "tbs": {
+      "timeLaps": "Octubre 2025 - Enero 2026",
+      "description": "Desarrollo de una plataforma web integral para agenda de viajes y control financiero.",
+      "bullets": [
+        "Digitalización completa del proceso de agenda de viajes.",
+        "Módulo de gestión de viajes con seguimiento de estados, pasajeros, servicios asociados y documentación por expediente.",
+        "Seguimiento financiero que permite visualizar ingresos, gastos y rentabilidad por viaje, con soporte para operaciones en diferentes monedas."
+      ]
     }
   }
 }
