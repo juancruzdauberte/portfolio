@@ -187,6 +187,8 @@ export const AboutMe = () => {
                 title: t("studies.data.title"),
                 academy: t("studies.data.academy"),
                 timelaps: t("studies.data.timeLaps"),
+                credentialUrl:
+                  "https://res.cloudinary.com/dttpgbmdx/image/upload/v1773949685/Certificado_Diplo_Datos_UBA_scxj9e.jpg",
               },
               {
                 title: t("studies.back.title"),
