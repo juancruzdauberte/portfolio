@@ -7,7 +7,7 @@ export const Technologies = () => {
   const frontEndTechnologies = [
     {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      alt: "React.js",
+      alt: "React.js & Native",
     },
     {
       src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1758482854/nextjs-icon-svgrepo-com_pkvcfh.png",
@@ -72,6 +72,10 @@ export const Technologies = () => {
       alt: "MongoDB",
     },
     {
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1776277365/mongoose_icon_oaoklw.png",
+      alt: "Mongoose",
+    },
+    {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
       alt: "PostgreSQL",
     },
@@ -88,9 +92,10 @@ export const Technologies = () => {
       alt: "Java",
     },
     {
-      src: "https://mongoosejs.com/docs/images/mongoose5_62x30_transparent.png",
-      alt: "Mongoose",
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1776277117/spring_framework_t6nzee.png",
+      alt: "Spring",
     },
+
     {
       src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1745927113/supabase-icon_w2upjk.png",
       alt: "Supabase",
