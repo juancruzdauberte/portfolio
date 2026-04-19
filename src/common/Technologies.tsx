@@ -162,6 +162,14 @@ export const Technologies = () => {
       alt: "GitHub",
     },
     {
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480246/GitHub_Actions_fvdjik.png",
+      alt: "GitHub Actions",
+    },
+    {
+      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1776571328/linux_qoc6rv.png",
+      alt: "Linux",
+    },
+    {
       src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480513/AWS_b9fhva.png",
       alt: "AWS",
     },
@@ -172,10 +180,6 @@ export const Technologies = () => {
     {
       src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480425/Swagger_jaghlj.png",
       alt: "Swagger",
-    },
-    {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480246/GitHub_Actions_fvdjik.png",
-      alt: "GitHub Actions",
     },
   ];
 
