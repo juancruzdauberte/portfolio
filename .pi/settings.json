@@ -1,0 +1,31 @@
+{
+	"model": "amazon-bedrock/us.anthropic.claude-sonnet-4-6",
+	"subagents": {
+		"agentOverrides": {
+			"context-builder": {
+				"model": "amazon-bedrock/anthropic.claude-sonnet-4-5-20250929-v1:0"
+			},
+			"delegate": {
+				"model": "amazon-bedrock/anthropic.claude-sonnet-4-5-20250929-v1:0"
+			},
+			"oracle": {
+				"model": "amazon-bedrock/anthropic.claude-sonnet-4-5-20250929-v1:0"
+			},
+			"planner": {
+				"model": "amazon-bedrock/anthropic.claude-sonnet-4-5-20250929-v1:0"
+			},
+			"researcher": {
+				"model": "amazon-bedrock/anthropic.claude-sonnet-4-5-20250929-v1:0"
+			},
+			"reviewer": {
+				"model": "amazon-bedrock/anthropic.claude-sonnet-4-5-20250929-v1:0"
+			},
+			"scout": {
+				"model": "amazon-bedrock/anthropic.claude-sonnet-4-5-20250929-v1:0"
+			},
+			"worker": {
+				"model": "amazon-bedrock/anthropic.claude-sonnet-4-5-20250929-v1:0"
+			}
+		}
+	}
+}
