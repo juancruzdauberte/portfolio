@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useId } from "react";
 
 export const TechIcon = ({
   src,
@@ -10,67 +10,53 @@ export const TechIcon = ({
   alt: string;
   h?: string;
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
-
-  const handleImageLoad = () => {
-    setImageLoaded(true);
-  };
-
-  const handleImageError = () => {
-    setImageError(true);
-    setImageLoaded(true);
-  };
+  const tooltipId = useId();
 
   return (
-    <div
-      className="relative flex items-center justify-center cursor-pointer group"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={() => setIsHovered(!isHovered)}
+    <button
+      type="button"
+      aria-label={alt}
+      aria-describedby={isActive ? tooltipId : undefined}
+      className="relative flex items-center justify-center group cursor-pointer rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-theme-border-focus focus-visible:ring-offset-1 focus-visible:ring-offset-theme-bg-primary"
+      onMouseEnter={() => setIsActive(true)}
+      onMouseLeave={() => setIsActive(false)}
+      onFocus={() => setIsActive(true)}
+      onBlur={() => setIsActive(false)}
     >
-      {/* Contenedor con tamaño fijo - aumentado en mobile para mejor visibilidad */}
-      <div
-        className={`relative ${h || "h-8 w-8 sm:h-11 sm:w-11 md:h-12 md:w-12"}`}
-      >
-        {/* Placeholder mientras carga */}
+      <div className={`relative ${h || "h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12"}`}>
         {!imageLoaded && (
           <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 rounded-lg animate-pulse" />
         )}
-
-        {/* Imagen */}
         {!imageError && (
           <motion.img
             src={src}
-            alt={alt}
-            className={`${
-              h || "h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12"
-            } object-contain transition-opacity duration-300 ${
-              imageLoaded ? "opacity-100" : "opacity-0"
-            }`}
+            alt=""
+            aria-hidden="true"
+            className={`${h || "h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12"} object-contain transition-opacity duration-300 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
             loading="lazy"
             decoding="async"
-            onLoad={handleImageLoad}
-            onError={handleImageError}
+            onLoad={() => setImageLoaded(true)}
+            onError={() => { setImageError(true); setImageLoaded(true); }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           />
         )}
-
-        {/* Fallback si falla la carga */}
         {imageError && (
-          <div className="absolute inset-0 flex items-center justify-center bg-gray-300 dark:bg-gray-600 rounded-lg text-xs text-gray-600 dark:text-gray-300">
+          <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center bg-gray-300 dark:bg-gray-600 rounded-lg text-xs text-gray-600 dark:text-gray-300">
             {alt.substring(0, 2)}
           </div>
         )}
       </div>
 
-      {/* Tooltip con animación */}
       <AnimatePresence>
-        {isHovered && imageLoaded && (
+        {isActive && imageLoaded && (
           <motion.div
+            id={tooltipId}
+            role="tooltip"
             initial={{ opacity: 0, y: 10, scale: 0.2 }}
             animate={{ opacity: 1, y: -25, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.8 }}
@@ -81,7 +67,6 @@ export const TechIcon = ({
               <div className="bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-500 dark:to-blue-700 text-white text-xs font-medium px-3 py-1 rounded-lg shadow-lg whitespace-nowrap">
                 {alt}
               </div>
-              {/* Flecha */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full">
                 <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-blue-800 dark:border-t-blue-700" />
               </div>
@@ -90,10 +75,10 @@ export const TechIcon = ({
         )}
       </AnimatePresence>
 
-      {/* Efecto de glow en hover */}
       <AnimatePresence>
-        {isHovered && imageLoaded && (
+        {isActive && imageLoaded && (
           <motion.div
+            aria-hidden="true"
             className="absolute inset-0 rounded-full blur-xl -z-10 bg-blue-500/20"
             initial={{ opacity: 0, scale: 1 }}
             animate={{ opacity: 0.3, scale: 1.5 }}
@@ -102,6 +87,6 @@ export const TechIcon = ({
           />
         )}
       </AnimatePresence>
-    </div>
+    </button>
   );
 };

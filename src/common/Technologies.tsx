@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { InfiniteCarousel } from "./InfiniteCarousel";
-
+import { cloudinaryOptimize } from "../utils/cloudinary";
 export const Technologies = () => {
   const { t } = useTranslation();
 
@@ -10,15 +10,15 @@ export const Technologies = () => {
       alt: "React.js & Native",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1758482854/nextjs-icon-svgrepo-com_pkvcfh.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1758482854/nextjs-icon-svgrepo-com_pkvcfh.png"),
       alt: "Next.js",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1745432721/react-query-seeklogo_axk8ly.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1745432721/react-query-seeklogo_axk8ly.png"),
       alt: "TanStack",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1754677841/zustand_pnlukv.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1754677841/zustand_pnlukv.png"),
       alt: "Zustand",
       h: "h-11",
     },
@@ -47,16 +47,16 @@ export const Technologies = () => {
 
   const backEndTechnologies = [
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1745926364/nodejsicon_dioqsc.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1745926364/nodejsicon_dioqsc.png"),
       alt: "Node.js",
     },
 
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1762707744/Nest.js_npsh4b.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1762707744/Nest.js_npsh4b.png"),
       alt: "NestJS",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1745953822/icon-express_foa4dc.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1745953822/icon-express_foa4dc.png"),
       alt: "Express.js",
     },
     {
@@ -72,7 +72,7 @@ export const Technologies = () => {
       alt: "MongoDB",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1776277365/mongoose_icon_oaoklw.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1776277365/mongoose_icon_oaoklw.png"),
       alt: "Mongoose",
     },
     {
@@ -80,7 +80,7 @@ export const Technologies = () => {
       alt: "PostgreSQL",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1747828893/sql-server_fsqzxk.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1747828893/sql-server_fsqzxk.png"),
       alt: "SQL Server",
     },
     {
@@ -92,12 +92,12 @@ export const Technologies = () => {
       alt: "Java",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1776277117/spring_framework_t6nzee.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1776277117/spring_framework_t6nzee.png"),
       alt: "Spring",
     },
 
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1745927113/supabase-icon_w2upjk.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1745927113/supabase-icon_w2upjk.png"),
       alt: "Supabase",
     },
     {
@@ -106,7 +106,7 @@ export const Technologies = () => {
     },
 
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480653/Firebase_p4vykc.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480653/Firebase_p4vykc.png"),
       alt: "Firebase",
     },
   ];
@@ -118,36 +118,36 @@ export const Technologies = () => {
     },
 
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480303/Jupyter_mnsmd4.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480303/Jupyter_mnsmd4.png"),
       alt: "Jupyter ",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391325/pandas_jk8hyh.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391325/pandas_jk8hyh.png"),
       alt: "Pandas",
       h: "h-10",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391596/powerBi_jhknwp.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391596/powerBi_jhknwp.png"),
       alt: "Power BI",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1765845410/tableau-icon_gysxda.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1765845410/tableau-icon_gysxda.png"),
       alt: "Tableau",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480391/Matplotlib_2_a36sxe.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480391/Matplotlib_2_a36sxe.png"),
       alt: "Matplotlib",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480304/NumPy_vb72ih.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480304/NumPy_vb72ih.png"),
       alt: "NumPy",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1764125473/geopandas_mgphju.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1764125473/geopandas_mgphju.png"),
       alt: "Geopandas",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1764125381/Ploty_fqoynk.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1764125381/Ploty_fqoynk.png"),
       alt: "Plotly",
     },
   ];
@@ -158,71 +158,81 @@ export const Technologies = () => {
       alt: "Git",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1745926580/githubicon_om10uz.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1745926580/githubicon_om10uz.png"),
       alt: "GitHub",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480246/GitHub_Actions_fvdjik.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480246/GitHub_Actions_fvdjik.png"),
       alt: "GitHub Actions",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1776571328/linux_qoc6rv.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1776571328/linux_qoc6rv.png"),
       alt: "Linux",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480513/AWS_b9fhva.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480513/AWS_b9fhva.png"),
       alt: "AWS",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480581/Docker_hnvejl.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480581/Docker_hnvejl.png"),
       alt: "Docker",
     },
     {
-      src: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480425/Swagger_jaghlj.png",
+      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480425/Swagger_jaghlj.png"),
       alt: "Swagger",
     },
   ];
 
   return (
-    <section className="flex flex-col gap-10">
+    <section className="flex flex-col gap-10" aria-label="Technologies">
       {/* Front-End Carousel */}
-      <section className="flex flex-col gap-3">
-        <p className="font-semibold text-lg">Front-End</p>
+      <div className="flex flex-col gap-3 -mx-4 sm:-mx-6 md:mx-0">
+        <h3 className="font-semibold text-lg px-7 sm:px-10 md:px-6">Front-End</h3>
         <InfiniteCarousel
           technologies={frontEndTechnologies}
           duration={25}
           direction="left"
+          label="Front-End technologies"
         />
-      </section>
+      </div>
 
       {/* Back-End Carousel */}
-      <section className="flex flex-col gap-3">
-        <p className="font-semibold text-lg">Back-End - BaaS</p>
+      <div className="flex flex-col gap-3 -mx-4 sm:-mx-6 md:mx-0">
+        <h3 className="font-semibold text-lg px-7 sm:px-10 md:px-6">
+          Back-End - BaaS
+        </h3>
         <InfiniteCarousel
           technologies={backEndTechnologies}
           duration={30}
           direction="right"
+          label="Back-End and BaaS technologies"
         />
-      </section>
+      </div>
 
-      <section className="flex flex-col gap-3">
-        <p className="font-semibold text-lg">{t("dataAnalytics")}</p>
+      <div className="flex flex-col gap-3 -mx-4 sm:-mx-6 md:mx-0">
+        <h3 className="font-semibold text-lg px-7 sm:px-10 md:px-6">
+          {t("dataAnalytics")}
+        </h3>
         <InfiniteCarousel
           technologies={dataAnalyticsTechnologies}
           duration={30}
           direction="right"
+          label="Data analytics technologies"
         />
-      </section>
+      </div>
 
-      {/* Version Control Carousel */}
-      <section className="flex flex-col gap-3">
-        <p className="font-semibold text-lg">{t("others")}</p>
+      {/* Others Carousel */}
+      <div className="flex flex-col gap-3 -mx-4 sm:-mx-6 md:mx-0">
+        <h3 className="font-semibold text-lg px-7 sm:px-10 md:px-6">
+          {t("others")}
+        </h3>
         <InfiniteCarousel
           technologies={othersTechnologies}
           duration={15}
           direction="left"
+          label="Other tools and technologies"
         />
-      </section>
+      </div>
     </section>
   );
 };

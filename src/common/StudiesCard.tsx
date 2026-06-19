@@ -6,7 +6,7 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { MouseEvent, useState } from "react";
+import { MouseEvent, useState, useRef, useEffect } from "react";
 import { FiChevronDown } from "react-icons/fi";
 
 type Credential = {
@@ -35,6 +35,11 @@ export const StudiesCard = ({
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [focusedIndex, setFocusedIndex] = useState<number>(-1);
+
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const itemRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Combine legacy and new credentials
   const allCredentials = [
@@ -44,11 +49,60 @@ export const StudiesCard = ({
     ...credentials,
   ];
 
+  // Imperatively focus the item when focusedIndex changes
+  useEffect(() => {
+    if (isMenuOpen && focusedIndex >= 0 && itemRefs.current[focusedIndex]) {
+      itemRefs.current[focusedIndex]?.focus();
+    }
+  }, [focusedIndex, isMenuOpen]);
+
   function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
     const { left, top } = currentTarget.getBoundingClientRect();
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
   }
+
+  const handleContainerBlur = (e: React.FocusEvent<HTMLDivElement>) => {
+    if (!containerRef.current?.contains(e.relatedTarget as Node)) {
+      setIsMenuOpen(false);
+      setFocusedIndex(-1);
+    }
+  };
+
+  const handleTriggerKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      setIsMenuOpen(true);
+      setFocusedIndex(0);
+    } else if (e.key === "Escape") {
+      setIsMenuOpen(false);
+      setFocusedIndex(-1);
+    }
+  };
+
+  const handleItemKeyDown =
+    (idx: number) => (e: React.KeyboardEvent<HTMLAnchorElement>) => {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        setFocusedIndex((prev) => Math.min(prev + 1, allCredentials.length - 1));
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        if (idx === 0) {
+          setIsMenuOpen(false);
+          setFocusedIndex(-1);
+          triggerRef.current?.focus();
+        } else {
+          setFocusedIndex((prev) => prev - 1);
+        }
+      } else if (e.key === "Escape") {
+        setIsMenuOpen(false);
+        setFocusedIndex(-1);
+        triggerRef.current?.focus();
+      } else if (e.key === "Tab") {
+        setIsMenuOpen(false);
+        setFocusedIndex(-1);
+      }
+    };
 
   return (
     <motion.div
@@ -58,7 +112,7 @@ export const StudiesCard = ({
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.5 }}
       onMouseMove={handleMouseMove}
-      className="group relative w-full h-full overflow-visible rounded-xl border border-white/10 bg-theme-bg-secondary/30 backdrop-blur-md transition-shadow hover:shadow-2xl hover:shadow-theme-accent-purple/10"
+      className="group relative w-full h-full overflow-hidden sm:overflow-visible rounded-xl border border-white/10 bg-theme-bg-secondary/30 backdrop-blur-md transition-shadow hover:shadow-2xl hover:shadow-theme-accent-purple/10"
     >
       <motion.div
         className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100 rounded-xl overflow-hidden hidden sm:block"
@@ -162,11 +216,18 @@ export const StudiesCard = ({
                   <GoArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5" />
                 </motion.a>
               ) : (
-                <div className="relative">
+                <div
+                  ref={containerRef}
+                  onBlur={handleContainerBlur}
+                  className="relative"
+                >
                   <button
+                    ref={triggerRef}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    onBlur={() => setTimeout(() => setIsMenuOpen(false), 200)}
-                    className="group/btn inline-flex items-center gap-2 text-sm font-medium text-theme-text-primary transition-colors hover:text-theme-accent-blue outline-none"
+                    onKeyDown={handleTriggerKeyDown}
+                    aria-haspopup="listbox"
+                    aria-expanded={isMenuOpen}
+                    className="group/btn inline-flex items-center gap-2 text-sm font-medium text-theme-text-primary transition-colors hover:text-theme-accent-blue focus-visible:ring-2 focus-visible:ring-theme-border-focus rounded"
                   >
                     <span>{t("studies.certificate")}s</span>
                     <FiChevronDown
@@ -178,29 +239,34 @@ export const StudiesCard = ({
 
                   <AnimatePresence>
                     {isMenuOpen && (
-                      <motion.div
+                      <motion.ul
+                        role="listbox"
                         initial={{ opacity: 0, y: 10, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute bottom-full left-0 mb-2 w-48 rounded-lg border border-white/10 bg-theme-bg-secondary/95 backdrop-blur-xl shadow-xl p-1 flex flex-col gap-1 overflow-hidden z-50"
+                        className="absolute bottom-full left-0 mb-2 w-48 rounded-lg border border-white/10 bg-theme-bg-secondary/95 backdrop-blur-xl shadow-xl p-1 flex flex-col gap-1 overflow-hidden z-50 list-none"
                       >
                         {allCredentials.map((cred, idx) => (
-                          <a
-                            key={idx}
-                            href={cred.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-between rounded-md px-3 py-3 text-sm text-theme-text-secondary hover:bg-white/5 hover:text-theme-text-primary transition-colors active:bg-white/10"
-                          >
-                            <span className="truncate">
-                              {cred.label ||
-                                `${t("studies.certificate")} ${idx + 1}`}
-                            </span>
-                            <GoArrowUpRight className="h-3 w-3 opacity-50" />
-                          </a>
+                          <li key={idx} role="option" aria-selected={false}>
+                            <a
+                              ref={(el) => { itemRefs.current[idx] = el; }}
+                              href={cred.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              tabIndex={isMenuOpen ? 0 : -1}
+                              onKeyDown={handleItemKeyDown(idx)}
+                              className="flex items-center justify-between rounded-md px-3 py-3 text-sm text-theme-text-secondary hover:bg-white/5 hover:text-theme-text-primary transition-colors active:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-border-focus"
+                            >
+                              <span className="truncate">
+                                {cred.label ||
+                                  `${t("studies.certificate")} ${idx + 1}`}
+                              </span>
+                              <GoArrowUpRight className="h-3 w-3 opacity-50" />
+                            </a>
+                          </li>
                         ))}
-                      </motion.div>
+                      </motion.ul>
                     )}
                   </AnimatePresence>
                 </div>

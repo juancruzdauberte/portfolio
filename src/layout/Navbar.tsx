@@ -7,6 +7,7 @@ import Modal from "react-modal";
 import { useTranslation } from "react-i18next";
 import { LanguageSelector } from "../common/LanguageSelector";
 import { scrollToSection } from "../utils/scrollUtils";
+import { useReducedMotion, motionSafe } from "../hooks/usePerformance";
 
 Modal.setAppElement("#root");
 
@@ -18,6 +19,7 @@ export const Navbar = () => {
 
   const { t } = useTranslation();
   const { darkMode, toggleDarkMode } = useTheme();
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     if (menuOpen) {
@@ -33,35 +35,44 @@ export const Navbar = () => {
 
   // Track active section on scroll
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = [
-        "hero",
-        "sobre-mi",
-        "experiencia",
-        "proyectos",
-        "habilidades",
-      ];
-      const scrollPosition = window.scrollY + 200;
+    let rafId: number | null = null;
 
-      for (const sectionId of sections) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
-            setActiveSection(sectionId);
-            break;
+    const handleScroll = () => {
+      if (rafId !== null) return; // already scheduled
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
+        const sections = [
+          "hero",
+          "sobre-mi",
+          "experiencia",
+          "proyectos",
+          "habilidades",
+        ];
+        const scrollPosition = window.scrollY + 200;
+
+        for (const sectionId of sections) {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            const { offsetTop, offsetHeight } = element;
+            if (
+              scrollPosition >= offsetTop &&
+              scrollPosition < offsetTop + offsetHeight
+            ) {
+              setActiveSection(sectionId);
+              break;
+            }
           }
         }
-      }
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   const navItems = [
@@ -89,6 +100,8 @@ export const Navbar = () => {
             onClick={openModal}
             className="md:hidden absolute left-2 z-50 p-2 rounded-lg hover:bg-theme-bg-tertiary/50 text-theme-text-primary transition-colors"
             aria-label="Abrir menú"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
             initial={{ opacity: 0, rotate: -90 }}
             animate={{ opacity: 1, rotate: 0 }}
             exit={{ opacity: 0, rotate: 90 }}
@@ -163,7 +176,7 @@ export const Navbar = () => {
 
       {/* Controles (tema e idioma) - DERECHA */}
       <motion.div
-        className="absolute right-2 flex items-center md:gap-4"
+        className="absolute right-2 flex items-center gap-2 md:gap-4"
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
@@ -174,7 +187,7 @@ export const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.3 }}
-          aria-label="Cambiar tema"
+          aria-label={darkMode ? t("navbar.switchToLight") : t("navbar.switchToDark")}
         >
           <motion.div
             animate={{ rotate: darkMode ? 180 : 0 }}
@@ -196,6 +209,7 @@ export const Navbar = () => {
         isOpen={menuOpen}
         onRequestClose={closeModal}
         contentLabel="Menú móvil"
+        id="mobile-menu"
         className="fixed left-0 top-0 h-full w-[280px] sm:w-[320px] bg-theme-bg-overlay/98 backdrop-blur-xl shadow-theme-2xl border-r border-theme-border-primary/30 transition-colors z-[100] outline-none overflow-y-auto"
         overlayClassName="fixed inset-0 bg-black/60 backdrop-blur-sm z-[99]"
         closeTimeoutMS={300}
@@ -209,16 +223,13 @@ export const Navbar = () => {
         >
           {/* Partícula decorativa */}
           <motion.div
+            aria-hidden="true"
             className="absolute top-20 right-6 w-20 h-20 bg-theme-accent-blue/10 rounded-full blur-2xl pointer-events-none"
-            animate={{
-              y: [0, -20, 0],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            {...motionSafe(
+              { y: [0, -20, 0], scale: [1, 1.2, 1] },
+              { duration: 3, repeat: Infinity, ease: "easeInOut" },
+              prefersReducedMotion
+            )}
           />
 
           {/* Botón cerrar */}

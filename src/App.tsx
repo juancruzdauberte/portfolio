@@ -4,6 +4,8 @@ import { Footer } from "./layout/Footer";
 import { Navbar } from "./layout/Navbar";
 import { Hero } from "./sections/Hero";
 import { motion, useScroll, useSpring } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { useReducedMotion, motionSafe } from "./hooks/usePerformance";
 
 const AboutMe = lazy(() =>
   import("./sections/AboutMe").then((module) => ({ default: module.AboutMe })),
@@ -23,18 +25,21 @@ const Skills = lazy(() =>
 );
 
 // Componente de loading optimizado con tema
-const SectionLoader = () => (
-  <div className="w-full max-w-4xl h-96 flex items-center justify-center">
-    <motion.div
-      className="w-12 h-12 border-4 border-theme-accent-blue border-t-transparent rounded-full"
-      animate={{ rotate: 360 }}
-      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-    />
-  </div>
-);
+const SectionLoader = () => {
+  const prefersReducedMotion = useReducedMotion();
+  return (
+    <div className="w-full max-w-4xl h-96 flex items-center justify-center">
+      <motion.div
+        className="w-12 h-12 border-4 border-theme-accent-blue border-t-transparent rounded-full"
+        {...motionSafe({ rotate: 360 }, { duration: 1, repeat: Infinity, ease: "linear" }, prefersReducedMotion)}
+      />
+    </div>
+  );
+};
 
 function App() {
   const { scrollYProgress } = useScroll();
+  const { t } = useTranslation();
 
   // Usar useSpring para animación más suave
   const scaleX = useSpring(scrollYProgress, {
@@ -45,7 +50,14 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen flex flex-col text-sm sm:text-base md:text-lg lg:text-xl text-theme-text-primary bg-theme-bg-primary transition-colors duration-300 relative">
+      <div className="min-h-screen flex flex-col text-sm sm:text-base md:text-lg lg:text-xl text-theme-text-primary bg-theme-bg-primary transition-colors duration-300 relative overflow-x-hidden">
+        {/* Skip to content — visually hidden, revealed on keyboard focus (A-7, WCAG 2.4.1) */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-1/2 focus:-translate-x-1/2 focus:z-[200] focus:px-5 focus:py-2.5 focus:rounded-lg focus:bg-theme-bg-secondary focus:text-theme-text-primary focus:text-sm focus:font-semibold focus:ring-2 focus:ring-theme-border-focus focus:outline-none focus:shadow-theme-md"
+        >
+          {t("skipToContent")}
+        </a>
         {/* Header optimizado y responsivo */}
         <motion.header
           className={`fixed top-0 left-0 right-0 w-full z-[90] transition-all duration-300 bg-transparent backdrop-blur-sm`}
@@ -68,7 +80,11 @@ function App() {
         {/* Espaciador para compensar el header fijo */}
 
         {/* Main content */}
-        <main className="flex-1 flex flex-col w-full items-center gap-20 sm:gap-28 md:gap-40 px-4 sm:px-6 md:px-8 mb-12 relative">
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className="flex-1 flex flex-col w-full items-center gap-20 sm:gap-28 md:gap-40 px-4 sm:px-6 md:px-8 mb-12 relative outline-none"
+        >
           {/* Home Section - Siempre cargada */}
           <motion.div
             id="hero"

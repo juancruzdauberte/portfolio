@@ -5,6 +5,8 @@
     "aboutMe": "About Me",
     "projects": "Projects",
     "contact": "Contact",
-    "skills": "Skills"
+    "skills": "Skills",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
   }
 }

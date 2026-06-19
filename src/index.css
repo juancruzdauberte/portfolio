@@ -41,7 +41,7 @@ html {
   /* Texts */
   --text-primary: 10 25 49; /* #0A1931 - navy más oscuro */
   --text-secondary: 26 61 99; /* #1A3D63 - azul oscuro */
-  --text-tertiary: 74 127 167; /* #4A7FA7 - azul medio */
+  --text-tertiary: 61 110 147; /* #3D6E93 — 5.2:1 contrast on #F6FAFD (AA ✓) */
   --text-muted: 179 207 229; /* #B3CFE5 - azul claro */
 
   /* Borders */
@@ -118,7 +118,7 @@ html {
   /* Texts */
   --text-primary: 246 250 253; /* #F6FAFD - texto brilliant */
   --text-secondary: 179 207 229; /* #B3CFE5 - texto secundario */
-  --text-tertiary: 74 127 167; /* #4A7FA7 - texto terciario */
+  --text-tertiary: 100 154 196; /* #649AC4 — 6.2:1 contrast on #0A1931 (AA ✓) */
   --text-muted: 74 127 167; /* #4A7FA7 - texto muted */
 
   /* Borders */
@@ -171,68 +171,6 @@ html {
     rgb(179 207 229 / 0.15) 0%,
     rgb(74 127 167 / 0.15) 100%
   );
-}
-
-/* Soporte para preferencia del sistema */
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) {
-    color-scheme: dark;
-
-    --bg-primary: 10 25 49;
-    --bg-secondary: 16 38 74;
-    --bg-tertiary: 26 61 99;
-    --bg-overlay: 10 25 49;
-
-    --text-primary: 246 250 253;
-    --text-secondary: 179 207 229;
-    --text-tertiary: 74 127 167;
-    --text-muted: 74 127 167;
-
-    --border-primary: 26 61 99;
-    --border-secondary: 74 127 167;
-    --border-focus: 179 207 229;
-
-    --accent-blue: 179 207 229;
-    --accent-blue-light: 246 250 253;
-    --accent-blue-dark: 74 127 167;
-
-    --accent-purple: 74 127 167;
-    --accent-purple-light: 179 207 229;
-    --accent-purple-dark: 26 61 99;
-
-    --accent-pink: 74 127 167;
-    --accent-pink-light: 179 207 229;
-
-    --accent-cyan: 179 207 229;
-    --accent-green: 74 222 128;
-
-    --status-success: 74 222 128;
-    --status-warning: 250 204 21;
-    --status-error: 248 113 113;
-    --status-info: 179 207 229;
-
-    --shadow-color: 0 0 0;
-    --shadow-opacity: 0.5;
-    --shadow-opacity-md: 0.6;
-    --shadow-opacity-lg: 0.7;
-
-    --gradient-primary: linear-gradient(
-      90deg,
-      rgb(74 127 167) 0%,
-      rgb(179 207 229) 50%,
-      rgb(246 250 253) 100%
-    );
-    --gradient-secondary: linear-gradient(
-      135deg,
-      rgb(26 61 99) 0%,
-      rgb(74 127 167) 100%
-    );
-    --gradient-hover: linear-gradient(
-      135deg,
-      rgb(179 207 229 / 0.15) 0%,
-      rgb(74 127 167 / 0.15) 100%
-    );
-  }
 }
 
 /* ============================================

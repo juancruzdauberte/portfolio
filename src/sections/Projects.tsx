@@ -13,10 +13,13 @@ import { TbBrandOauth } from "react-icons/tb";
 import { FaReact } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { useReducedMotion, motionSafe } from "../hooks/usePerformance";
 import { TechIcon } from "../common/TechIcon";
+import { cloudinaryOptimize } from "../utils/cloudinary";
 
 export const Projects = () => {
   const { t } = useTranslation();
+  const prefersReducedMotion = useReducedMotion();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -34,7 +37,7 @@ export const Projects = () => {
       scale: 1,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 200,
         damping: 15,
       },
@@ -42,9 +45,9 @@ export const Projects = () => {
   };
 
   return (
-    <section className="w-full max-w-5xl flex flex-col gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6">
+    <section className="w-full max-w-5xl flex flex-col gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6" aria-label="Projects">
       {/* Título animado con colores de tema */}
-      <motion.section
+      <motion.div
         variants={titleVariants}
         initial="hidden"
         whileInView="visible"
@@ -52,18 +55,16 @@ export const Projects = () => {
         className="flex items-center gap-2"
       >
         <motion.div
-          animate={{
-            rotate: [0, 10, -10, 10, 0],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            repeatDelay: 5,
-          }}
+          {...motionSafe(
+            { rotate: [0, 10, -10, 10, 0] },
+            { duration: 2, repeat: Infinity, repeatDelay: 5 },
+            prefersReducedMotion
+          )}
+          aria-hidden="true"
         >
           <FiFolder className="text-3xl md:text-4xl text-theme-accent-blue-dark" />
         </motion.div>
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-theme-accent-blue-dark relative">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-theme-accent-blue-dark relative">
           {t("projectCard.title")}
           {/* Subrayado animado con colores de tema */}
           <motion.span
@@ -73,10 +74,10 @@ export const Projects = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
           />
-        </h3>
-      </motion.section>
+        </h2>
+      </motion.div>
 
-      <motion.section
+      <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -86,77 +87,77 @@ export const Projects = () => {
         <ProjectCard
           description={t("projectCard.cec.description")}
           title="Como En Casa"
-          img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1754500072/Screenshot_3_xi7may.png"
+          img={cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1754500072/Screenshot_3_xi7may.png")}
           codeUrlFront="https://github.com/juancruzdauberte/ComoEnCasa-front"
           codeUrlBack="https://github.com/juancruzdauberte/comoencasa-back"
           previewUrl="https://como-en-casa-front.vercel.app/login"
           technologies={[
-            <SiNodedotjs className="text-green-500" />,
-            <SiMysql />,
-            <SiTypescript className="text-typescript" />,
-            <SiExpress className="text-gray-600 dark:text-gray-400" />,
-            <SiJsonwebtokens />,
-            <TbBrandOauth />,
-            <FaReact className="text-react" />,
-            <RiTailwindCssFill className="text-tailwind" />,
-            <SiReactquery className="text-red-400" />,
+            <span aria-label="Node.js"><SiNodedotjs className="text-green-500" aria-hidden="true" /></span>,
+            <span aria-label="MySQL"><SiMysql aria-hidden="true" /></span>,
+            <span aria-label="TypeScript"><SiTypescript className="text-typescript" aria-hidden="true" /></span>,
+            <span aria-label="Express.js"><SiExpress className="text-gray-600 dark:text-gray-400" aria-hidden="true" /></span>,
+            <span aria-label="JSON Web Tokens"><SiJsonwebtokens aria-hidden="true" /></span>,
+            <span aria-label="OAuth"><TbBrandOauth aria-hidden="true" /></span>,
+            <span aria-label="React"><FaReact className="text-react" aria-hidden="true" /></span>,
+            <span aria-label="Tailwind CSS"><RiTailwindCssFill className="text-tailwind" aria-hidden="true" /></span>,
+            <span aria-label="React Query"><SiReactquery className="text-red-400" aria-hidden="true" /></span>,
           ]}
         />
 
         <ProjectCard
           description={t("projectCard.dh.description")}
           title="Dreamhouse Baradero"
-          img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1758483307/Screenshot_1_hg1irr.png"
+          img={cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1758483307/Screenshot_1_hg1irr.png")}
           previewUrl="https://www.dreamhousebaradero.com"
           technologies={[
-            <SiNodedotjs className="text-green-500" />,
-            <SiTypescript className="text-typescript" />,
-            <RiNextjsFill />,
-            <FaReact className="text-react" />,
-            <RiTailwindCssFill className="text-tailwind" />,
+            <span aria-label="Node.js"><SiNodedotjs className="text-green-500" aria-hidden="true" /></span>,
+            <span aria-label="TypeScript"><SiTypescript className="text-typescript" aria-hidden="true" /></span>,
+            <span aria-label="Next.js"><RiNextjsFill aria-hidden="true" /></span>,
+            <span aria-label="React"><FaReact className="text-react" aria-hidden="true" /></span>,
+            <span aria-label="Tailwind CSS"><RiTailwindCssFill className="text-tailwind" aria-hidden="true" /></span>,
           ]}
         />
 
         <ProjectCard
           description={t("projectCard.dhBo.description")}
           title="Dreamhouse Baradero Back Office"
-          img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1764358463/dh-back-office_exhfx6.png"
+          img={cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1764358463/dh-back-office_exhfx6.png")}
           codeUrlFront="https://github.com/juancruzdauberte/dreamhouse-back-office"
           technologies={[
-            <SiNodedotjs className="text-green-500" />,
-            <SiTypescript className="text-typescript" />,
-            <RiNextjsFill />,
-            <SiMysql />,
-            <SiJsonwebtokens />,
-            <TbBrandOauth />,
-            <FaReact className="text-react" />,
-            <RiTailwindCssFill className="text-tailwind" />,
+            <span aria-label="Node.js"><SiNodedotjs className="text-green-500" aria-hidden="true" /></span>,
+            <span aria-label="TypeScript"><SiTypescript className="text-typescript" aria-hidden="true" /></span>,
+            <span aria-label="Next.js"><RiNextjsFill aria-hidden="true" /></span>,
+            <span aria-label="MySQL"><SiMysql aria-hidden="true" /></span>,
+            <span aria-label="JSON Web Tokens"><SiJsonwebtokens aria-hidden="true" /></span>,
+            <span aria-label="OAuth"><TbBrandOauth aria-hidden="true" /></span>,
+            <span aria-label="React"><FaReact className="text-react" aria-hidden="true" /></span>,
+            <span aria-label="Tailwind CSS"><RiTailwindCssFill className="text-tailwind" aria-hidden="true" /></span>,
           ]}
         />
 
         <ProjectCard
           description={t("projectCard.tbs.description")}
           title="The Black Sheep"
-          img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1754687196/Screenshot_1_juci2x.png"
+          img={cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1754687196/Screenshot_1_juci2x.png")}
           codeUrlFront="https://github.com/franles/tbsfrontend"
           codeUrlBack="https://github.com/franles/TheBlackSheep"
           technologies={[
-            <SiNodedotjs className="text-green-500" />,
-            <SiMysql />,
-            <SiTypescript className="text-typescript" />,
-            <SiExpress className="text-gray-600 dark:text-gray-400" />,
-            <SiJsonwebtokens />,
-            <TbBrandOauth />,
-            <FaReact className="text-react" />,
-            <RiTailwindCssFill className="text-tailwind" />,
-            <SiReactquery className="text-red-400" />,
+            <span aria-label="Node.js"><SiNodedotjs className="text-green-500" aria-hidden="true" /></span>,
+            <span aria-label="MySQL"><SiMysql aria-hidden="true" /></span>,
+            <span aria-label="TypeScript"><SiTypescript className="text-typescript" aria-hidden="true" /></span>,
+            <span aria-label="Express.js"><SiExpress className="text-gray-600 dark:text-gray-400" aria-hidden="true" /></span>,
+            <span aria-label="JSON Web Tokens"><SiJsonwebtokens aria-hidden="true" /></span>,
+            <span aria-label="OAuth"><TbBrandOauth aria-hidden="true" /></span>,
+            <span aria-label="React"><FaReact className="text-react" aria-hidden="true" /></span>,
+            <span aria-label="Tailwind CSS"><RiTailwindCssFill className="text-tailwind" aria-hidden="true" /></span>,
+            <span aria-label="React Query"><SiReactquery className="text-red-400" aria-hidden="true" /></span>,
           ]}
         />
 
         <ProjectCard
           description={t("projectCard.dhAnalytics.description")}
           title="Dreamhouse Baradero Analytics"
-          img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1763663114/057ff8a1-4c5b-4071-adaf-2513e6e3426e.png"
+          img={cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763663114/057ff8a1-4c5b-4071-adaf-2513e6e3426e.png")}
           previewUrl="https://github.com/juancruzdauberte/dreamhouse-analytics/blob/main/dashboard/dashboard.md"
           technologies={[
             <SiMysql />,
@@ -172,7 +173,7 @@ export const Projects = () => {
         <ProjectCard
           description={t("projectCard.wooded.description")}
           title={t("projectCard.wooded.title")}
-          img="https://res.cloudinary.com/dttpgbmdx/image/upload/v1764126201/arbolado_hkkrqe.png"
+          img={cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1764126201/arbolado_hkkrqe.png")}
           previewUrl="https://github.com/juancruzdauberte/arbolado_caba_espacios_verdes/blob/main/README.md"
           technologies={[
             <TechIcon
@@ -203,7 +204,7 @@ export const Projects = () => {
           ]}
           deployText={t("projectCard.wooded.deployText")}
         />
-      </motion.section>
+      </motion.div>
     </section>
   );
 };

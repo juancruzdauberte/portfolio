@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { useReducedMotion, motionSafe } from "../hooks/usePerformance";
+import { cloudinaryOptimize } from "../utils/cloudinary";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { PiFilePdf } from "react-icons/pi";
 import { TbMailShare } from "react-icons/tb";
@@ -11,6 +13,7 @@ const cvEn = "/download/Curriculum Vitae Juan Cruz Dauberte Inglés.pdf";
 
 export const Hero = () => {
   const { t, i18n } = useTranslation();
+  const prefersReducedMotion = useReducedMotion();
 
   const currentCv = i18n.language === "en" ? cvEn : cvEs;
 
@@ -64,7 +67,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="w-full min-h-dvh flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10 relative px-4 sm:px-6">
+    <section className="w-full min-h-dvh flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10 relative px-4 sm:px-6" aria-label="Hero">
       <motion.section
         variants={containerVariants}
         initial="hidden"
@@ -79,53 +82,52 @@ export const Hero = () => {
             rotate: [0, -2, 2, -2, 0],
             transition: { duration: 0.5 },
           }}
-          className="relative w-32 h-32 sm:w-48 sm:h-48 md:w-56 md:h-56 flex items-center justify-center flex-shrink-0"
+          className="relative w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 flex items-center justify-center flex-shrink-0"
         >
           {/* Anillo animado con colores de tema */}
           <motion.div
-            animate={{
-              rotate: 360,
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "linear",
-            }}
+            aria-hidden="true"
+            {...motionSafe(
+              { rotate: 360 },
+              { duration: 8, repeat: Infinity, ease: "linear" },
+              prefersReducedMotion
+            )}
             className="absolute inset-0 border-2 border-transparent border-t-theme-accent-blue border-r-theme-accent-purple rounded-full"
           />
 
           {/* Segundo anillo */}
           <motion.div
-            animate={{
-              rotate: -360,
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "linear",
-            }}
+            aria-hidden="true"
+            {...motionSafe(
+              { rotate: -360 },
+              { duration: 10, repeat: Infinity, ease: "linear" },
+              prefersReducedMotion
+            )}
             className="absolute inset-0 border-2 border-transparent border-b-theme-accent-cyan border-l-theme-accent-pink rounded-full"
           />
 
           {/* Glow effect con color de tema */}
           <motion.div
-            animate={{
-              scale: [1, 1.1, 1],
-              opacity: [0.4, 0.6, 0.4],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            aria-hidden="true"
+            {...motionSafe(
+              { scale: [1, 1.1, 1], opacity: [0.4, 0.6, 0.4] },
+              { duration: 3, repeat: Infinity, ease: "easeInOut" },
+              prefersReducedMotion
+            )}
             className="absolute inset-0 bg-theme-accent-blue/30 rounded-full blur-2xl"
           />
 
           <div className="relative w-full h-full border-2 rounded-full overflow-hidden border-theme-bg-secondary shadow-theme-2xl ring-2 ring-theme-border-primary/50">
             <img
-              src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1772760104/juan-link_kfglqp.jpg"
+              src={cloudinaryOptimize(
+                "https://res.cloudinary.com/dttpgbmdx/image/upload/v1772760104/juan-link_kfglqp.jpg",
+                { quality: "good" }
+              )}
               alt="Foto de perfil de Juan Cruz"
               className="object-cover w-full h-full"
+              fetchpriority="high"
+              loading="eager"
+              decoding="sync"
             />
           </div>
         </motion.div>
@@ -137,7 +139,7 @@ export const Hero = () => {
           <div className="flex flex-col gap-1 sm:gap-2">
             <motion.h1
               variants={itemVariants}
-              className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight"
+              className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight"
             >
               <span className="text-transparent bg-clip-text bg-gradient-primary bg-[length:200%_auto] animate-gradient-shift">
                 Juan Cruz Dauberte
@@ -154,7 +156,7 @@ export const Hero = () => {
 
           <motion.p
             variants={itemVariants}
-            className="text-sm sm:text-lg text-theme-text-secondary max-w-xl leading-relaxed mt-2 sm:mt-4 text-center md:text-left px-4 sm:px-0"
+            className="text-sm sm:text-lg text-theme-text-secondary max-w-xl leading-relaxed mt-2 sm:mt-4 text-center md:text-left"
           >
             {t("home.description")}
           </motion.p>
@@ -217,15 +219,13 @@ export const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
-          y: [0, 15, 0],
+          ...(prefersReducedMotion ? {} : { y: [0, 15, 0] }),
         }}
         transition={{
           opacity: { delay: 1, duration: 0.5 },
-          y: {
-            repeat: Infinity,
-            duration: 2,
-            ease: "easeInOut",
-          },
+          ...(prefersReducedMotion
+            ? {}
+            : { y: { repeat: Infinity, duration: 2, ease: "easeInOut" } }),
         }}
         className="cursor-pointer absolute bottom-14 lg:bottom-12 z-10 mt-2 sm:mt-0"
       >

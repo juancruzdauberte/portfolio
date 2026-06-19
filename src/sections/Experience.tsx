@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { LiaSuitcaseSolid } from "react-icons/lia";
 import { motion } from "framer-motion";
+import { useReducedMotion, motionSafe } from "../hooks/usePerformance";
 
 interface ExperienceItem {
   company: string;
@@ -79,6 +80,7 @@ const experiences: ExperienceItem[] = [
 
 export const Experience = () => {
   const { t } = useTranslation();
+  const prefersReducedMotion = useReducedMotion();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -130,9 +132,9 @@ export const Experience = () => {
   };
 
   return (
-    <section className="w-full max-w-5xl flex flex-col px-4 sm:px-6">
+    <section className="w-full max-w-5xl flex flex-col px-4 sm:px-6" aria-label="Experience">
       {/* Título animado */}
-      <motion.section
+      <motion.div
         variants={titleVariants}
         initial="hidden"
         whileInView="visible"
@@ -140,18 +142,22 @@ export const Experience = () => {
         className="flex items-center gap-2"
       >
         <motion.div
-          animate={{ rotate: [0, -10, 10, -10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, repeatDelay: 5 }}
+          {...motionSafe(
+            { rotate: [0, -10, 10, -10, 0] },
+            { duration: 2, repeat: Infinity, repeatDelay: 5 },
+            prefersReducedMotion
+          )}
+          aria-hidden="true"
         >
           <LiaSuitcaseSolid className="text-3xl md:text-4xl text-theme-accent-blue-dark" />
         </motion.div>
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-theme-accent-blue-dark">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-theme-accent-blue-dark">
           {t("experience.title")}
-        </h3>
-      </motion.section>
+        </h2>
+      </motion.div>
 
       {/* Lista de experiencias */}
-      <motion.section
+      <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -162,7 +168,7 @@ export const Experience = () => {
           const dotColor = exp.accentColor.replace("text-", "bg-");
 
           return (
-            <motion.section
+            <motion.div
               key={exp.company}
               variants={itemVariants}
               className="relative flex flex-col gap-8"
@@ -186,18 +192,17 @@ export const Experience = () => {
               >
                 <motion.div
                   className={`absolute inset-0 ${dotColor} rounded-full`}
-                  animate={{ scale: [1, 1.5, 1], opacity: [1, 0, 1] }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeOut",
-                  }}
+                  {...motionSafe(
+                    { scale: [1, 1.5, 1], opacity: [1, 0, 1] },
+                    { duration: 2, repeat: Infinity, ease: "easeOut" },
+                    prefersReducedMotion
+                  )}
                 />
               </motion.div>
 
               {/* Encabezado: empresa + período */}
               <div className="flex flex-col gap-2">
-                <motion.h4
+                <motion.h3
                   className="text-lg sm:text-xl md:text-2xl font-semibold relative inline-block text-theme-text-primary"
                   initial={{ x: -30, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
@@ -212,7 +217,7 @@ export const Experience = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                   />
-                </motion.h4>
+                </motion.h3>
 
                 <motion.span
                   initial={{ x: -30, opacity: 0 }}
@@ -266,10 +271,10 @@ export const Experience = () => {
                   )}
                 </motion.ul>
               </div>
-            </motion.section>
+            </motion.div>
           );
         })}
-      </motion.section>
+      </motion.div>
     </section>
   );
 };

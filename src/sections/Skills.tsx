@@ -2,9 +2,11 @@ import { GiSkills } from "react-icons/gi";
 import { Technologies } from "../common/Technologies";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { useReducedMotion, motionSafe } from "../hooks/usePerformance";
 
 export const Skills = () => {
   const { t } = useTranslation();
+  const prefersReducedMotion = useReducedMotion();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -22,7 +24,7 @@ export const Skills = () => {
       x: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 12,
       },
@@ -35,7 +37,7 @@ export const Skills = () => {
       scale: 1,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 200,
         damping: 15,
       },
@@ -43,29 +45,26 @@ export const Skills = () => {
   };
 
   return (
-    <section className="w-full max-w-5xl flex flex-col px-3 sm:px-4 md:px-6">
+    <section className="w-full max-w-5xl flex flex-col" aria-label="Skills">
       {/* Título animado con colores de tema */}
-      <motion.section
+      <motion.div
         variants={titleVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-        className="flex items-center gap-2"
+        className="flex items-center gap-2 px-3 sm:px-4 md:px-6"
       >
         <motion.div
-          animate={{
-            rotate: [0, 15, -15, 15, 0],
-            scale: [1, 1.1, 1, 1.1, 1],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            repeatDelay: 5,
-          }}
+          {...motionSafe(
+            { rotate: [0, 15, -15, 15, 0], scale: [1, 1.1, 1, 1.1, 1] },
+            { duration: 2, repeat: Infinity, repeatDelay: 5 },
+            prefersReducedMotion
+          )}
+          aria-hidden="true"
         >
           <GiSkills className="text-3xl md:text-4xl text-theme-accent-blue-dark" />
         </motion.div>
-        <h5 className="text-xl sm:text-2xl md:text-3xl font-bold text-theme-accent-blue-dark relative">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-theme-accent-blue-dark relative">
           {t("skills.title")}
           {/* Subrayado animado con colores de tema */}
           <motion.span
@@ -75,10 +74,10 @@ export const Skills = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
           />
-        </h5>
-      </motion.section>
+        </h2>
+      </motion.div>
 
-      <motion.section
+      <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -86,8 +85,8 @@ export const Skills = () => {
         className="flex flex-col gap-6 sm:gap-8 md:gap-10 mt-4 sm:mt-5"
       >
         {/* Soft Skills */}
-        <motion.section variants={itemVariants} className="relative">
-          <motion.h6
+        <motion.div variants={itemVariants} className="relative px-3 sm:px-4 md:px-6">
+          <motion.h3
             className="text-lg sm:text-xl md:text-2xl font-semibold text-theme-accent-blue mb-1 relative inline-block"
             initial={{ x: -20, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -103,7 +102,7 @@ export const Skills = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             />
-          </motion.h6>
+          </motion.h3>
 
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -114,11 +113,12 @@ export const Skills = () => {
           >
             {t("skills.softSkills.description")}
           </motion.p>
-        </motion.section>
+        </motion.div>
 
         {/* Tech Skills */}
-        <motion.section variants={itemVariants} className="relative">
-          <motion.p
+        <motion.div variants={itemVariants} className="relative">
+          <div className="px-3 sm:px-4 md:px-6">
+          <motion.h3
             className="text-lg sm:text-xl md:text-2xl font-semibold text-theme-accent-blue mb-1 relative inline-block"
             initial={{ x: -20, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -134,7 +134,8 @@ export const Skills = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             />
-          </motion.p>
+          </motion.h3>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -144,8 +145,8 @@ export const Skills = () => {
           >
             <Technologies />
           </motion.div>
-        </motion.section>
-      </motion.section>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

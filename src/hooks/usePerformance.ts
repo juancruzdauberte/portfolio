@@ -26,6 +26,25 @@ export const useReducedMotion = () => {
 };
 
 /**
+ * Returns framer-motion animate/transition props safe for reduced-motion users.
+ * framer-motion v12 does NOT auto-pause animations — explicit gating is required.
+ *
+ * Usage:
+ *   <motion.div {...motionSafe({ rotate: 360 }, { duration: 8, repeat: Infinity }, prefersReducedMotion)} />
+ */
+export const motionSafe = <A extends object>(
+  animate: A,
+  transition: object,
+  prefersReducedMotion: boolean
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+): { animate: any; transition: any } => {
+  if (prefersReducedMotion) {
+    return { animate: {}, transition: { duration: 0 } };
+  }
+  return { animate, transition };
+};
+
+/**
  * Hook para detectar si un elemento está en viewport
  * Optimiza las animaciones cargando solo cuando son visibles
  */

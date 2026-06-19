@@ -89,7 +89,7 @@ export const ProjectCard = ({
       </div>
 
       <div className="relative flex flex-col gap-3 sm:gap-4 px-3 sm:px-4 py-4 sm:py-5 text-center bg-theme-bg-secondary transition-colors">
-        <motion.h4
+        <motion.h3
           className="text-lg sm:text-xl font-semibold relative text-theme-text-primary"
           initial={{ y: 10, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -104,7 +104,7 @@ export const ProjectCard = ({
             animate={{ width: isHovered ? "80%" : "0%" }}
             transition={transitions.fast}
           />
-        </motion.h4>
+        </motion.h3>
 
         <motion.p
           className="text-xs sm:text-sm text-justify leading-relaxed text-theme-text-secondary"
@@ -200,9 +200,9 @@ export const ProjectCard = ({
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          <h6 className="text-xs sm:text-sm font-semibold text-theme-text-primary">
+          <h4 className="text-xs sm:text-sm font-semibold text-theme-text-primary">
             {t("projectCard.technologies")}
-          </h6>
+          </h4>
           <div className="flex flex-wrap gap-2 sm:gap-3 text-2xl sm:text-3xl justify-center">
             {technologies.map((TechIcon, index) => (
               <motion.span

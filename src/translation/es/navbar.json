@@ -5,6 +5,8 @@
     "aboutMe": "Sobre Mí",
     "projects": "Proyectos",
     "contact": "Contacto",
-    "skills": "Habilidades"
+    "skills": "Habilidades",
+    "switchToLight": "Activar modo claro",
+    "switchToDark": "Activar modo oscuro"
   }
 }

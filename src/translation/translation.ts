@@ -17,6 +17,8 @@ import techEs from "./es/tech.json";
 import techEn from "./en/tech.json";
 import skillsEs from "./es/skills.json";
 import skillsEn from "./en/skills.json";
+import a11yEs from "./es/a11y.json";
+import a11yEn from "./en/a11y.json";
 
 const resources = {
   es: {
@@ -29,6 +31,7 @@ const resources = {
       ...studiesEs,
       ...techEs,
       ...skillsEs,
+      ...a11yEs,
     },
   },
   en: {
@@ -41,6 +44,7 @@ const resources = {
       ...studiesEn,
       ...techEn,
       ...skillsEn,
+      ...a11yEn,
     },
   },
 };

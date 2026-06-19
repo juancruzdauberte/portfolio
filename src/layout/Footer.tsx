@@ -1,8 +1,10 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { TbMailShare } from "react-icons/tb";
 import { motion } from "framer-motion";
+import { useReducedMotion, motionSafe } from "../hooks/usePerformance";
 
 export const Footer = () => {
+  const prefersReducedMotion = useReducedMotion();
   const socialLinks = [
     {
       href: "https://www.linkedin.com/in/juancruzdauberte/",
@@ -34,6 +36,7 @@ export const Footer = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
       className="flex flex-col gap-3 sm:gap-4 md:gap-5 py-4 sm:py-5 items-center relative px-4"
+      aria-label="Footer"
     >
       <motion.section
         initial={{ scale: 0.9, opacity: 0 }}
@@ -43,17 +46,12 @@ export const Footer = () => {
       >
         <motion.span
           className="font-bold text-lg sm:text-xl md:text-2xl bg-clip-text text-transparent bg-gradient-primary"
-          animate={{
-            backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-          }}
-          style={{
-            backgroundSize: "200% 200%",
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "linear",
-          }}
+          {...motionSafe(
+            { backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] },
+            { duration: 5, repeat: Infinity, ease: "linear" },
+            prefersReducedMotion
+          )}
+          style={{ backgroundSize: "200% 200%" }}
         >
           © Juan Cruz Dauberte
         </motion.span>
@@ -128,29 +126,22 @@ export const Footer = () => {
 
       {/* Partículas decorativas con colores de tema */}
       <motion.div
+        aria-hidden="true"
         className="absolute bottom-4 left-6 md:left-10 w-2 h-2 bg-theme-accent-blue rounded-full"
-        animate={{
-          y: [0, -10, 0],
-          opacity: [0.3, 0.8, 0.3],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
+        {...motionSafe(
+          { y: [0, -10, 0], opacity: [0.3, 0.8, 0.3] },
+          { duration: 3, repeat: Infinity, ease: "easeInOut" },
+          prefersReducedMotion
+        )}
       />
       <motion.div
+        aria-hidden="true"
         className="absolute bottom-8 right-6 md:right-10 w-2 h-2 bg-theme-accent-purple rounded-full"
-        animate={{
-          y: [0, -10, 0],
-          opacity: [0.3, 0.8, 0.3],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1,
-        }}
+        {...motionSafe(
+          { y: [0, -10, 0], opacity: [0.3, 0.8, 0.3] },
+          { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 },
+          prefersReducedMotion
+        )}
       />
     </motion.section>
   );

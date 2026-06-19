@@ -3,11 +3,13 @@ import { PiFilePdf } from "react-icons/pi";
 import { StudiesCard } from "../common/StudiesCard";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { useReducedMotion, motionSafe } from "../hooks/usePerformance";
 const cvEs = "/download/Curriculum Vitae Juan Cruz Dauberte.pdf";
 const cvEn = "/download/Curriculum Vitae Juan Cruz Dauberte Inglés.pdf";
 
 export const AboutMe = () => {
   const { t, i18n } = useTranslation();
+  const prefersReducedMotion = useReducedMotion();
 
   const currentCv = i18n.language === "en" ? cvEn : cvEs;
   // Variantes de animación
@@ -48,8 +50,8 @@ export const AboutMe = () => {
   };
 
   return (
-    <section className="w-full max-w-6xl flex flex-col px-4 sm:px-6">
-      <motion.section
+    <section className="w-full max-w-6xl flex flex-col" aria-label="About me">
+      <motion.div
         variants={titleVariants}
         initial="hidden"
         whileInView="visible"
@@ -57,30 +59,28 @@ export const AboutMe = () => {
         className="flex items-center gap-2"
       >
         <motion.div
-          animate={{
-            rotate: [0, 10, -10, 10, 0],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            repeatDelay: 5,
-          }}
+          {...motionSafe(
+            { rotate: [0, 10, -10, 10, 0] },
+            { duration: 2, repeat: Infinity, repeatDelay: 5 },
+            prefersReducedMotion
+          )}
+          aria-hidden="true"
         >
           <FiUser className="text-3xl md:text-4xl text-theme-accent-blue-dark" />
         </motion.div>
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-theme-accent-blue-dark">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-theme-accent-blue-dark">
           {t("about.title")}
-        </h3>
-      </motion.section>
+        </h2>
+      </motion.div>
 
-      <motion.section
+      <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         className="flex flex-col gap-10 sm:gap-12 md:gap-16"
       >
-        <motion.section
+        <motion.div
           variants={itemVariants}
           className="flex flex-col gap-3 sm:gap-4 md:gap-5 mt-3"
         >
@@ -149,16 +149,16 @@ export const AboutMe = () => {
               </span>
             </motion.a>
           </motion.div>
-        </motion.section>
+        </motion.div>
 
-        <motion.section variants={itemVariants}>
+        <motion.div variants={itemVariants}>
           <motion.div
             initial={{ x: -20, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h5 className="text-lg sm:text-xl md:text-2xl font-semibold text-theme-accent-blue relative inline-block">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-theme-accent-blue relative inline-block">
               {t("about.titleStudies")}
               <motion.span
                 className="absolute bottom-0 left-0 h-0.5 bg-theme-accent-blue"
@@ -167,7 +167,7 @@ export const AboutMe = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               />
-            </h5>
+            </h3>
           </motion.div>
 
           <motion.div
@@ -232,8 +232,8 @@ export const AboutMe = () => {
               </motion.div>
             ))}
           </motion.div>
-        </motion.section>
-      </motion.section>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
