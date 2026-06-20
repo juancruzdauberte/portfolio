@@ -98,7 +98,7 @@ export const Experience = () => {
       x: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 12,
       },
@@ -111,7 +111,7 @@ export const Experience = () => {
       scale: 1,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 200,
         damping: 15,
       },
@@ -125,7 +125,7 @@ export const Experience = () => {
       opacity: 1,
       transition: {
         delay: i * 0.1,
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
       },
     }),
@@ -188,7 +188,7 @@ export const Experience = () => {
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 200, delay: 0.3 }}
+                transition={{ type: "spring" as const, stiffness: 200, delay: 0.3 }}
               >
                 <motion.div
                   className={`absolute inset-0 ${dotColor} rounded-full`}
@@ -261,7 +261,7 @@ export const Experience = () => {
                           initial={{ scale: 0 }}
                           whileInView={{ scale: 1 }}
                           viewport={{ once: true }}
-                          transition={{ delay: 0.5 + i * 0.1, type: "spring" }}
+                          transition={{ delay: 0.5 + i * 0.1, type: "spring" as const }}
                         >
                           ▹
                         </motion.span>

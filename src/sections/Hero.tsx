@@ -35,7 +35,7 @@ export const Hero = () => {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 12,
       },
@@ -48,7 +48,7 @@ export const Hero = () => {
       scale: 1,
       rotate: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 260,
         damping: 20,
       },
@@ -198,7 +198,7 @@ export const Hero = () => {
                   y: -2,
                 }}
                 whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                transition={{ type: "spring" as const, stiffness: 400, damping: 17 }}
               >
                 {/* Fondo gradiente animado */}
                 <motion.div

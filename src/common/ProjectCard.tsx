@@ -211,7 +211,7 @@ export const ProjectCard = ({
                 whileInView={{ scale: 1, rotate: 0 }}
                 viewport={{ once: true }}
                 transition={{
-                  type: "spring",
+                  type: "spring" as const,
                   stiffness: 200,
                   damping: 15,
                   delay: 0.5 + index * 0.05,

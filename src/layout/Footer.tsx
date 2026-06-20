@@ -76,7 +76,7 @@ export const Footer = () => {
             viewport={{ once: true }}
             transition={{
               delay: 0.5 + index * 0.1,
-              type: "spring",
+              type: "spring" as const,
               stiffness: 200,
               damping: 15,
             }}

@@ -42,7 +42,7 @@ export const TechIcon = ({
             onError={() => { setImageError(true); setImageLoaded(true); }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            transition={{ type: "spring" as const, stiffness: 400, damping: 17 }}
           />
         )}
         {imageError && (
@@ -60,7 +60,7 @@ export const TechIcon = ({
             initial={{ opacity: 0, y: 10, scale: 0.2 }}
             animate={{ opacity: 1, y: -25, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.8 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            transition={{ type: "spring" as const, stiffness: 300, damping: 20 }}
             className="absolute top-0 z-20 pointer-events-none"
           >
             <div className="relative">

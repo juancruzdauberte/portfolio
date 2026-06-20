@@ -57,7 +57,7 @@ export const LanguageSelector = () => {
               <motion.span
                 layoutId="lang-active-bg"
                 className="absolute inset-0 rounded-full bg-theme-accent-blue shadow-sm"
-                transition={{ type: "spring", stiffness: 500, damping: 35 }}
+                transition={{ type: "spring" as const, stiffness: 500, damping: 35 }}
               />
             )}
 

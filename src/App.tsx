@@ -63,7 +63,7 @@ function App() {
           className={`fixed top-0 left-0 right-0 w-full z-[90] transition-all duration-300 bg-transparent backdrop-blur-sm`}
           initial={{ y: -100 }}
           animate={{ y: 0 }}
-          transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
+          transition={{ duration: 0.5, type: "spring" as const, stiffness: 100 }}
         >
           {/* Barra de progreso mejorada */}
           <motion.div

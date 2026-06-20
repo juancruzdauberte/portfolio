@@ -218,7 +218,7 @@ export const Navbar = () => {
           initial={{ x: "-100%", opacity: 0 }}
           animate={{ x: "0%", opacity: 1 }}
           exit={{ x: "-100%", opacity: 0 }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          transition={{ type: "spring" as const, stiffness: 300, damping: 30 }}
           className="w-full h-full flex flex-col p-6 sm:p-8 gap-8"
         >
           {/* Partícula decorativa */}
@@ -267,7 +267,7 @@ export const Navbar = () => {
                   visible: { x: 0, opacity: 1 },
                 }}
                 whileHover={{ x: 8, scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 200 }}
+                transition={{ type: "spring" as const, stiffness: 200 }}
               >
                 <button
                   type="button"
@@ -312,7 +312,7 @@ export const Navbar = () => {
                 visible: { x: 0, opacity: 1 },
               }}
               whileHover={{ x: 8, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 200 }}
+              transition={{ type: "spring" as const, stiffness: 200 }}
             >
               <a
                 href="mailto:juandauberte@gmail.com"
