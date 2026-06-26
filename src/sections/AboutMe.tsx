@@ -62,7 +62,7 @@ export const AboutMe = () => {
           {...motionSafe(
             { rotate: [0, 10, -10, 10, 0] },
             { duration: 2, repeat: Infinity, repeatDelay: 5 },
-            prefersReducedMotion
+            prefersReducedMotion,
           )}
           aria-hidden="true"
         >
@@ -182,8 +182,16 @@ export const AboutMe = () => {
                 title: t("studies.analystIt.title"),
                 academy: t("studies.analystIt.academy"),
                 timelaps: t("studies.analystIt.timeLaps"),
-                credentialUrl:
-                  "https://res.cloudinary.com/dttpgbmdx/image/upload/v1771765837/Certificado_titulo_en_tramite_cexzpp.png",
+                credentials: [
+                  {
+                    label: `${i18n.language === "en" ? "Front Diploma" : "Frente Diploma"}`,
+                    url: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1782517076/Diploma_An._Informatica_Dauberte_Juan_Cruz_frente_ivijtq.jpg",
+                  },
+                  {
+                    label: `${i18n.language === "en" ? "Back Diploma" : "Dorso Diploma"}`,
+                    url: "https://res.cloudinary.com/dttpgbmdx/image/upload/v1782517075/Diploma_An._Informatica_Dauberte_Juan_Cruz_dorso_jehr2w.jpg",
+                  },
+                ],
               },
               {
                 title: t("studies.data2.title"),
