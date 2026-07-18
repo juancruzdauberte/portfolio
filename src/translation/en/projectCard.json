@@ -25,6 +25,11 @@
       "deployText": "View analysis",
       "title": "Analysis of trees in green spaces of CABA"
     },
+    "cabaVehicleVolume": {
+      "description": "I conducted a data science project on the vehicle volume dataset in the Autonomous City of Buenos Aires. The project allows visualization of bar charts, heat maps, choropleth maps, and machine learning models.",
+      "deployText": "View analysis",
+      "title": "Vehicle Volume Analysis in CABA 2024"
+    },
     "technologies": "Technologies used:",
     "progress": "In progress"
   }

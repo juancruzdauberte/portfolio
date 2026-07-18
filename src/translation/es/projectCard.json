@@ -25,6 +25,11 @@
       "deployText": "Ver análisis",
       "title": "Análisis de árboles en espacios verdes de CABA"
     },
+    "cabaVehicleVolume": {
+      "description": "Realicé un proyecto de ciencia de datos sobre el dataset de volumen vehicular en la Ciudad Autónoma de Buenos Aires. En el mismo se pueden visualizar gráficos de barras, mapa de calor, mapas coropléticos y modelos de machine learning.",
+      "deployText": "Ver análisis",
+      "title": "Análisis volumen vehicular en CABA 2024"
+    },
     "technologies": "Tecnologías utilizadas:",
     "progress": "En curso"
   }

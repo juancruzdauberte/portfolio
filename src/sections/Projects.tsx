@@ -45,7 +45,10 @@ export const Projects = () => {
   };
 
   return (
-    <section className="w-full max-w-5xl flex flex-col gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6" aria-label="Projects">
+    <section
+      className="w-full max-w-5xl flex flex-col gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6"
+      aria-label="Projects"
+    >
       {/* Título animado con colores de tema */}
       <motion.div
         variants={titleVariants}
@@ -58,7 +61,7 @@ export const Projects = () => {
           {...motionSafe(
             { rotate: [0, 10, -10, 10, 0] },
             { duration: 2, repeat: Infinity, repeatDelay: 5 },
-            prefersReducedMotion
+            prefersReducedMotion,
           )}
           aria-hidden="true"
         >
@@ -87,93 +90,192 @@ export const Projects = () => {
         <ProjectCard
           description={t("projectCard.cec.description")}
           title="Como En Casa"
-          img={cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1754500072/Screenshot_3_xi7may.png")}
+          img={cloudinaryOptimize(
+            "https://res.cloudinary.com/dttpgbmdx/image/upload/v1754500072/Screenshot_3_xi7may.png",
+          )}
           codeUrlFront="https://github.com/juancruzdauberte/ComoEnCasa-front"
           codeUrlBack="https://github.com/juancruzdauberte/comoencasa-back"
           previewUrl="https://como-en-casa-front.vercel.app/login"
           technologies={[
-            <span aria-label="Node.js"><SiNodedotjs className="text-green-500" aria-hidden="true" /></span>,
-            <span aria-label="MySQL"><SiMysql aria-hidden="true" /></span>,
-            <span aria-label="TypeScript"><SiTypescript className="text-typescript" aria-hidden="true" /></span>,
-            <span aria-label="Express.js"><SiExpress className="text-gray-600 dark:text-gray-400" aria-hidden="true" /></span>,
-            <span aria-label="JSON Web Tokens"><SiJsonwebtokens aria-hidden="true" /></span>,
-            <span aria-label="OAuth"><TbBrandOauth aria-hidden="true" /></span>,
-            <span aria-label="React"><FaReact className="text-react" aria-hidden="true" /></span>,
-            <span aria-label="Tailwind CSS"><RiTailwindCssFill className="text-tailwind" aria-hidden="true" /></span>,
-            <span aria-label="React Query"><SiReactquery className="text-red-400" aria-hidden="true" /></span>,
+            <span aria-label="Node.js">
+              <SiNodedotjs className="text-green-500" aria-hidden="true" />
+            </span>,
+            <span aria-label="MySQL">
+              <SiMysql aria-hidden="true" />
+            </span>,
+            <span aria-label="TypeScript">
+              <SiTypescript className="text-typescript" aria-hidden="true" />
+            </span>,
+            <span aria-label="Express.js">
+              <SiExpress
+                className="text-gray-600 dark:text-gray-400"
+                aria-hidden="true"
+              />
+            </span>,
+            <span aria-label="JSON Web Tokens">
+              <SiJsonwebtokens aria-hidden="true" />
+            </span>,
+            <span aria-label="OAuth">
+              <TbBrandOauth aria-hidden="true" />
+            </span>,
+            <span aria-label="React">
+              <FaReact className="text-react" aria-hidden="true" />
+            </span>,
+            <span aria-label="Tailwind CSS">
+              <RiTailwindCssFill className="text-tailwind" aria-hidden="true" />
+            </span>,
+            <span aria-label="React Query">
+              <SiReactquery className="text-red-400" aria-hidden="true" />
+            </span>,
           ]}
         />
 
         <ProjectCard
           description={t("projectCard.dh.description")}
           title="Dreamhouse Baradero"
-          img={cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1758483307/Screenshot_1_hg1irr.png")}
+          img={cloudinaryOptimize(
+            "https://res.cloudinary.com/dttpgbmdx/image/upload/v1758483307/Screenshot_1_hg1irr.png",
+          )}
           previewUrl="https://www.dreamhousebaradero.com"
           technologies={[
-            <span aria-label="Node.js"><SiNodedotjs className="text-green-500" aria-hidden="true" /></span>,
-            <span aria-label="TypeScript"><SiTypescript className="text-typescript" aria-hidden="true" /></span>,
-            <span aria-label="Next.js"><RiNextjsFill aria-hidden="true" /></span>,
-            <span aria-label="React"><FaReact className="text-react" aria-hidden="true" /></span>,
-            <span aria-label="Tailwind CSS"><RiTailwindCssFill className="text-tailwind" aria-hidden="true" /></span>,
+            <span aria-label="Node.js">
+              <SiNodedotjs className="text-green-500" aria-hidden="true" />
+            </span>,
+            <span aria-label="TypeScript">
+              <SiTypescript className="text-typescript" aria-hidden="true" />
+            </span>,
+            <span aria-label="Next.js">
+              <RiNextjsFill aria-hidden="true" />
+            </span>,
+            <span aria-label="React">
+              <FaReact className="text-react" aria-hidden="true" />
+            </span>,
+            <span aria-label="Tailwind CSS">
+              <RiTailwindCssFill className="text-tailwind" aria-hidden="true" />
+            </span>,
           ]}
         />
 
         <ProjectCard
           description={t("projectCard.dhBo.description")}
           title="Dreamhouse Baradero Back Office"
-          img={cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1764358463/dh-back-office_exhfx6.png")}
+          img={cloudinaryOptimize(
+            "https://res.cloudinary.com/dttpgbmdx/image/upload/v1764358463/dh-back-office_exhfx6.png",
+          )}
           codeUrlFront="https://github.com/juancruzdauberte/dreamhouse-back-office"
           technologies={[
-            <span aria-label="Node.js"><SiNodedotjs className="text-green-500" aria-hidden="true" /></span>,
-            <span aria-label="TypeScript"><SiTypescript className="text-typescript" aria-hidden="true" /></span>,
-            <span aria-label="Next.js"><RiNextjsFill aria-hidden="true" /></span>,
-            <span aria-label="MySQL"><SiMysql aria-hidden="true" /></span>,
-            <span aria-label="JSON Web Tokens"><SiJsonwebtokens aria-hidden="true" /></span>,
-            <span aria-label="OAuth"><TbBrandOauth aria-hidden="true" /></span>,
-            <span aria-label="React"><FaReact className="text-react" aria-hidden="true" /></span>,
-            <span aria-label="Tailwind CSS"><RiTailwindCssFill className="text-tailwind" aria-hidden="true" /></span>,
+            <span aria-label="Node.js">
+              <SiNodedotjs className="text-green-500" aria-hidden="true" />
+            </span>,
+            <span aria-label="TypeScript">
+              <SiTypescript className="text-typescript" aria-hidden="true" />
+            </span>,
+            <span aria-label="Next.js">
+              <RiNextjsFill aria-hidden="true" />
+            </span>,
+            <span aria-label="MySQL">
+              <SiMysql aria-hidden="true" />
+            </span>,
+            <span aria-label="JSON Web Tokens">
+              <SiJsonwebtokens aria-hidden="true" />
+            </span>,
+            <span aria-label="OAuth">
+              <TbBrandOauth aria-hidden="true" />
+            </span>,
+            <span aria-label="React">
+              <FaReact className="text-react" aria-hidden="true" />
+            </span>,
+            <span aria-label="Tailwind CSS">
+              <RiTailwindCssFill className="text-tailwind" aria-hidden="true" />
+            </span>,
           ]}
         />
 
         <ProjectCard
           description={t("projectCard.tbs.description")}
           title="The Black Sheep"
-          img={cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1754687196/Screenshot_1_juci2x.png")}
+          img={cloudinaryOptimize(
+            "https://res.cloudinary.com/dttpgbmdx/image/upload/v1754687196/Screenshot_1_juci2x.png",
+          )}
           codeUrlFront="https://github.com/franles/tbsfrontend"
           codeUrlBack="https://github.com/franles/TheBlackSheep"
           technologies={[
-            <span aria-label="Node.js"><SiNodedotjs className="text-green-500" aria-hidden="true" /></span>,
-            <span aria-label="MySQL"><SiMysql aria-hidden="true" /></span>,
-            <span aria-label="TypeScript"><SiTypescript className="text-typescript" aria-hidden="true" /></span>,
-            <span aria-label="Express.js"><SiExpress className="text-gray-600 dark:text-gray-400" aria-hidden="true" /></span>,
-            <span aria-label="JSON Web Tokens"><SiJsonwebtokens aria-hidden="true" /></span>,
-            <span aria-label="OAuth"><TbBrandOauth aria-hidden="true" /></span>,
-            <span aria-label="React"><FaReact className="text-react" aria-hidden="true" /></span>,
-            <span aria-label="Tailwind CSS"><RiTailwindCssFill className="text-tailwind" aria-hidden="true" /></span>,
-            <span aria-label="React Query"><SiReactquery className="text-red-400" aria-hidden="true" /></span>,
+            <span aria-label="Node.js">
+              <SiNodedotjs className="text-green-500" aria-hidden="true" />
+            </span>,
+            <span aria-label="MySQL">
+              <SiMysql aria-hidden="true" />
+            </span>,
+            <span aria-label="TypeScript">
+              <SiTypescript className="text-typescript" aria-hidden="true" />
+            </span>,
+            <span aria-label="Express.js">
+              <SiExpress
+                className="text-gray-600 dark:text-gray-400"
+                aria-hidden="true"
+              />
+            </span>,
+            <span aria-label="JSON Web Tokens">
+              <SiJsonwebtokens aria-hidden="true" />
+            </span>,
+            <span aria-label="OAuth">
+              <TbBrandOauth aria-hidden="true" />
+            </span>,
+            <span aria-label="React">
+              <FaReact className="text-react" aria-hidden="true" />
+            </span>,
+            <span aria-label="Tailwind CSS">
+              <RiTailwindCssFill className="text-tailwind" aria-hidden="true" />
+            </span>,
+            <span aria-label="React Query">
+              <SiReactquery className="text-red-400" aria-hidden="true" />
+            </span>,
           ]}
         />
 
         <ProjectCard
-          description={t("projectCard.dhAnalytics.description")}
-          title="Dreamhouse Baradero Analytics"
-          img={cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763663114/057ff8a1-4c5b-4071-adaf-2513e6e3426e.png")}
-          previewUrl="https://github.com/juancruzdauberte/dreamhouse-analytics/blob/main/dashboard/dashboard.md"
+          description={t("projectCard.cabaVehicleVolume.description")}
+          previewUrl="https://github.com/juancruzdauberte/volumen-vehiular-caba-2024"
+          title={t("projectCard.cabaVehicleVolume.title")}
+          img={cloudinaryOptimize(
+            "https://res.cloudinary.com/dttpgbmdx/image/upload/v1784400029/Screenshot_1_grkh8r.png",
+          )}
           technologies={[
-            <SiMysql />,
             <TechIcon
-              src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391596/powerBi_jhknwp.png"
-              alt="PowerBi"
+              src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/files/python-logo-only.svg"
+              alt="Python"
+              h="h-8"
+            />,
+            <TechIcon
+              src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1784399595/scikit-learn_irdvwn.png"
+              alt="Scikit-learn"
+              h="h-8"
+            />,
+            <TechIcon
+              src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391325/pandas_jk8hyh.png"
+              alt="Pandas"
+              h="h-8"
+            />,
+            <TechIcon
+              src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480391/Matplotlib_2_a36sxe.png"
+              alt="Matplotlib"
+              h="h-8"
+            />,
+            <TechIcon
+              src="https://res.cloudinary.com/dttpgbmdx/image/upload/v1764125473/geopandas_mgphju.png"
+              alt="Geopandas"
               h="h-8"
             />,
           ]}
-          deployText={t("projectCard.dhAnalytics.deployText")}
+          deployText={t("projectCard.cabaVehicleVolume.deployText")}
         />
 
         <ProjectCard
           description={t("projectCard.wooded.description")}
           title={t("projectCard.wooded.title")}
-          img={cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1764126201/arbolado_hkkrqe.png")}
+          img={cloudinaryOptimize(
+            "https://res.cloudinary.com/dttpgbmdx/image/upload/v1764126201/arbolado_hkkrqe.png",
+          )}
           previewUrl="https://github.com/juancruzdauberte/arbolado_caba_espacios_verdes/blob/main/README.md"
           technologies={[
             <TechIcon
