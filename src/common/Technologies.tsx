@@ -10,26 +10,27 @@ export const Technologies = () => {
       alt: "React.js & Native",
     },
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1758482854/nextjs-icon-svgrepo-com_pkvcfh.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1758482854/nextjs-icon-svgrepo-com_pkvcfh.png",
+      ),
       alt: "Next.js",
     },
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1745432721/react-query-seeklogo_axk8ly.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1745432721/react-query-seeklogo_axk8ly.png",
+      ),
       alt: "TanStack",
     },
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1754677841/zustand_pnlukv.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1754677841/zustand_pnlukv.png",
+      ),
       alt: "Zustand",
       h: "h-11",
     },
     {
       src: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
       alt: "Tailwind",
-    },
-    {
-      src: "https://axios-http.com/assets/logo.svg",
-      alt: "Axios",
-      h: "h-12 w-12",
     },
     {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
@@ -47,19 +48,6 @@ export const Technologies = () => {
 
   const backEndTechnologies = [
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1745926364/nodejsicon_dioqsc.png"),
-      alt: "Node.js",
-    },
-
-    {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1762707744/Nest.js_npsh4b.png"),
-      alt: "NestJS",
-    },
-    {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1745953822/icon-express_foa4dc.png"),
-      alt: "Express.js",
-    },
-    {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
       alt: "TypeScript",
     },
@@ -68,19 +56,49 @@ export const Technologies = () => {
       alt: "JavaScript",
     },
     {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-      alt: "MongoDB",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+      alt: "Java",
     },
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1776277365/mongoose_icon_oaoklw.png"),
-      alt: "Mongoose",
+      src: "https://go.dev/blog/go-brand/Go-Logo/SVG/Go-Logo_Aqua.svg",
+      alt: "Golang",
+    },
+    {
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1745926364/nodejsicon_dioqsc.png",
+      ),
+      alt: "Node.js",
+    },
+    {
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1762707744/Nest.js_npsh4b.png",
+      ),
+      alt: "NestJS",
+    },
+    {
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1745953822/icon-express_foa4dc.png",
+      ),
+      alt: "Express.js",
+    },
+    {
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1776277117/spring_framework_t6nzee.png",
+      ),
+      alt: "Spring",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+      alt: "MongoDB",
     },
     {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
       alt: "PostgreSQL",
     },
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1747828893/sql-server_fsqzxk.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1747828893/sql-server_fsqzxk.png",
+      ),
       alt: "SQL Server",
     },
     {
@@ -88,25 +106,15 @@ export const Technologies = () => {
       alt: "MySQL",
     },
     {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-      alt: "Java",
-    },
-    {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1776277117/spring_framework_t6nzee.png"),
-      alt: "Spring",
-    },
-
-    {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1745927113/supabase-icon_w2upjk.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1745927113/supabase-icon_w2upjk.png",
+      ),
       alt: "Supabase",
     },
     {
-      src: "https://www.svgrepo.com/show/375433/firestore.svg",
-      alt: "Firestore",
-    },
-
-    {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480653/Firebase_p4vykc.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480653/Firebase_p4vykc.png",
+      ),
       alt: "Firebase",
     },
   ];
@@ -118,36 +126,52 @@ export const Technologies = () => {
     },
 
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480303/Jupyter_mnsmd4.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480303/Jupyter_mnsmd4.png",
+      ),
       alt: "Jupyter ",
     },
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391325/pandas_jk8hyh.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391325/pandas_jk8hyh.png",
+      ),
       alt: "Pandas",
       h: "h-10",
     },
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391596/powerBi_jhknwp.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763391596/powerBi_jhknwp.png",
+      ),
       alt: "Power BI",
     },
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1765845410/tableau-icon_gysxda.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1765845410/tableau-icon_gysxda.png",
+      ),
       alt: "Tableau",
     },
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480391/Matplotlib_2_a36sxe.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480391/Matplotlib_2_a36sxe.png",
+      ),
       alt: "Matplotlib",
     },
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480304/NumPy_vb72ih.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480304/NumPy_vb72ih.png",
+      ),
       alt: "NumPy",
     },
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1764125473/geopandas_mgphju.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1764125473/geopandas_mgphju.png",
+      ),
       alt: "Geopandas",
     },
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1764125381/Ploty_fqoynk.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1764125381/Ploty_fqoynk.png",
+      ),
       alt: "Plotly",
     },
   ];
@@ -158,27 +182,46 @@ export const Technologies = () => {
       alt: "Git",
     },
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1745926580/githubicon_om10uz.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1745926580/githubicon_om10uz.png",
+      ),
       alt: "GitHub",
     },
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480246/GitHub_Actions_fvdjik.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480246/GitHub_Actions_fvdjik.png",
+      ),
       alt: "GitHub Actions",
     },
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1776571328/linux_qoc6rv.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1776571328/linux_qoc6rv.png",
+      ),
       alt: "Linux",
     },
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480513/AWS_b9fhva.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480513/AWS_b9fhva.png",
+      ),
       alt: "AWS",
     },
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480581/Docker_hnvejl.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480581/Docker_hnvejl.png",
+      ),
       alt: "Docker",
     },
     {
-      src: cloudinaryOptimize("https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480425/Swagger_jaghlj.png"),
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1785355596/kubernetes_giqc3m.png",
+      ),
+      alt: "Kubernetes",
+      h: "h-10",
+    },
+    {
+      src: cloudinaryOptimize(
+        "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480425/Swagger_jaghlj.png",
+      ),
       alt: "Swagger",
     },
   ];
@@ -187,7 +230,9 @@ export const Technologies = () => {
     <section className="flex flex-col gap-10" aria-label="Technologies">
       {/* Front-End Carousel */}
       <div className="flex flex-col gap-3 -mx-4 sm:-mx-6 md:mx-0">
-        <h3 className="font-semibold text-lg px-7 sm:px-10 md:px-6">Front-End</h3>
+        <h3 className="font-semibold text-lg px-7 sm:px-10 md:px-6">
+          Front-End
+        </h3>
         <InfiniteCarousel
           technologies={frontEndTechnologies}
           duration={25}
