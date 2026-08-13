@@ -194,6 +194,12 @@ export const AboutMe = () => {
                 ],
               },
               {
+                title: "Networking Basics",
+                academy: "Cisco",
+                credentialUrl:
+                  "https://www.credly.com/badges/1af0268f-43eb-4b51-bba4-f9ceef6b9740",
+              },
+              {
                 title: t("studies.data2.title"),
                 academy: t("studies.data2.academy"),
                 timelaps: t("studies.data2.timeLaps"),

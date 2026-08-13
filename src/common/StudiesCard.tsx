@@ -1,4 +1,5 @@
 import { GoArrowUpRight } from "react-icons/go";
+import { MdSchool } from "react-icons/md";
 import {
   motion,
   useMotionTemplate,
@@ -16,7 +17,7 @@ type Credential = {
 
 type Props = {
   title: string;
-  timelaps: string;
+  timelaps?: string;
   academy: string;
   description?: string;
   credentialUrl?: string; // Legacy support
@@ -84,7 +85,9 @@ export const StudiesCard = ({
     (idx: number) => (e: React.KeyboardEvent<HTMLAnchorElement>) => {
       if (e.key === "ArrowDown") {
         e.preventDefault();
-        setFocusedIndex((prev) => Math.min(prev + 1, allCredentials.length - 1));
+        setFocusedIndex((prev) =>
+          Math.min(prev + 1, allCredentials.length - 1),
+        );
       } else if (e.key === "ArrowUp") {
         e.preventDefault();
         if (idx === 0) {
@@ -112,26 +115,31 @@ export const StudiesCard = ({
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.5 }}
       onMouseMove={handleMouseMove}
-      className="group relative w-full h-full overflow-hidden sm:overflow-visible rounded-xl border border-white/10 bg-theme-bg-secondary/30 backdrop-blur-md transition-shadow hover:shadow-2xl hover:shadow-theme-accent-purple/10"
+      className="group relative w-full h-full overflow-hidden sm:overflow-visible rounded-xl border border-theme-border-primary/40 bg-theme-bg-secondary/60 backdrop-blur-md transition-shadow hover:shadow-2xl hover:shadow-theme-accent-blue/10"
     >
+      {/* Top gradient accent line */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-theme-accent-blue/40 to-transparent transition-all duration-500 group-hover:via-theme-accent-blue/70" />
+
+      {/* Mouse radial gradient (desktop) */}
       <motion.div
         className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100 rounded-xl overflow-hidden hidden sm:block"
         style={{
           background: useMotionTemplate`
             radial-gradient(
               650px circle at ${mouseX}px ${mouseY}px,
-              rgba(120, 119, 198, 0.15),
+              rgba(120, 119, 198, 0.12),
               transparent 80%
             )
           `,
         }}
       />
 
+      {/* Shimmer for mobile */}
       <motion.div
         className="pointer-events-none absolute inset-0 z-0 block sm:hidden rounded-xl overflow-hidden"
         style={{
           background:
-            "linear-gradient(105deg, transparent 20%, rgba(255, 255, 255, 0.05) 50%, transparent 80%)",
+            "linear-gradient(105deg, transparent 20%, rgba(255, 255, 255, 0.04) 50%, transparent 80%)",
           backgroundSize: "200% 100%",
         }}
         animate={{
@@ -145,69 +153,74 @@ export const StudiesCard = ({
         }}
       />
 
-      <div className="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-theme-accent-purple/30 blur-3xl transition-all duration-500 group-hover:bg-theme-accent-purple/40 pointer-events-none" />
-      <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-theme-accent-blue/30 blur-3xl transition-all duration-500 group-hover:bg-theme-accent-blue/40 pointer-events-none" />
+      {/* Ambient orbs — theme-safe */}
+      <div className="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-theme-accent-blue/15 blur-3xl transition-all duration-500 group-hover:bg-theme-accent-blue/25 pointer-events-none" />
+      <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-theme-accent-purple/15 blur-3xl transition-all duration-500 group-hover:bg-theme-accent-purple/25 pointer-events-none" />
 
       <div className="relative flex h-full flex-col p-6">
+        {/* Header block */}
         <div className="mb-4">
-          <motion.div
-            initial={{ opacity: 0, x: -10 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.1 }}
-            className="mb-2 flex items-center justify-between"
-          >
-            <span className="inline-block rounded-full bg-theme-accent-blue/10 px-3 py-1 text-xs font-semibold text-theme-accent-blue ring-1 ring-inset ring-theme-accent-blue/20">
-              {timelaps}
-            </span>
+          {/* Timelaps badge — only when present */}
+          {timelaps && (
             <motion.div
-              whileHover={{ rotate: 90 }}
-              className="rounded-full p-1 text-theme-text-tertiary transition-colors group-hover:text-theme-text-primary"
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.1 }}
+              className="mb-3"
             >
-              <div className="h-1.5 w-1.5 rounded-full bg-current" />
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-theme-accent-blue/10 px-3 py-1 text-xs font-semibold text-theme-accent-blue ring-1 ring-inset ring-theme-accent-blue/25">
+                <span className="h-1 w-1 rounded-full bg-theme-accent-blue/70" />
+                {timelaps}
+              </span>
             </motion.div>
-          </motion.div>
+          )}
 
+          {/* Title */}
           <motion.h3
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-theme-text-primary to-theme-text-primary/70 group-hover:to-theme-accent-purple transition-all duration-300"
+            transition={{ delay: timelaps ? 0.2 : 0.1 }}
+            className="text-xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-theme-text-primary to-theme-text-primary/70 group-hover:to-theme-accent-blue transition-all duration-300"
           >
             {title}
           </motion.h3>
 
+          {/* Academy with icon */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="mt-1 text-sm font-medium text-theme-accent-purple"
+            transition={{ delay: timelaps ? 0.3 : 0.2 }}
+            className="mt-2 flex items-center gap-1.5"
           >
-            {academy}
+            <MdSchool className="h-3.5 w-3.5 shrink-0 text-theme-accent-blue/70" />
+            <span className="text-sm font-medium text-theme-text-tertiary">
+              {academy}
+            </span>
           </motion.div>
         </div>
 
-        {/* Content Section */}
+        {/* Content section */}
         <div className="flex flex-1 flex-col justify-between gap-4">
           {description && (
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: timelaps ? 0.4 : 0.3 }}
               className="text-sm leading-relaxed text-theme-text-secondary/90"
             >
               {description}
             </motion.p>
           )}
 
-          {/* Footer / Action */}
+          {/* Footer / Credentials */}
           {allCredentials.length > 0 && (
-            <div className="mt-2 pt-4 border-t border-white/5 relative z-20">
+            <div className="mt-2 pt-4 border-t border-theme-border-primary/25 relative z-20">
               {allCredentials.length === 1 ? (
                 <motion.a
                   href={allCredentials[0].url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/btn inline-flex items-center gap-2 text-sm font-medium text-theme-text-primary transition-colors hover:text-theme-accent-blue"
+                  className="group/btn inline-flex items-center gap-2 text-sm font-medium text-theme-text-secondary transition-colors hover:text-theme-accent-blue"
                   whileHover={{ x: 5 }}
                 >
                   <span>
@@ -227,7 +240,7 @@ export const StudiesCard = ({
                     onKeyDown={handleTriggerKeyDown}
                     aria-haspopup="listbox"
                     aria-expanded={isMenuOpen}
-                    className="group/btn inline-flex items-center gap-2 text-sm font-medium text-theme-text-primary transition-colors hover:text-theme-accent-blue focus-visible:ring-2 focus-visible:ring-theme-border-focus rounded"
+                    className="group/btn inline-flex items-center gap-2 text-sm font-medium text-theme-text-secondary transition-colors hover:text-theme-accent-blue focus-visible:ring-2 focus-visible:ring-theme-border-focus rounded"
                   >
                     <span>{t("studies.certificate")}s</span>
                     <FiChevronDown
@@ -245,24 +258,26 @@ export const StudiesCard = ({
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute bottom-full left-0 mb-2 w-48 rounded-lg border border-white/10 bg-theme-bg-secondary/95 backdrop-blur-xl shadow-xl p-1 flex flex-col gap-1 overflow-hidden z-50 list-none"
+                        className="absolute bottom-full left-0 mb-2 w-48 rounded-lg border border-theme-border-primary/40 bg-theme-bg-secondary/95 backdrop-blur-xl shadow-theme-xl p-1 flex flex-col gap-1 overflow-hidden z-50 list-none"
                       >
                         {allCredentials.map((cred, idx) => (
                           <li key={idx} role="option" aria-selected={false}>
                             <a
-                              ref={(el) => { itemRefs.current[idx] = el; }}
+                              ref={(el) => {
+                                itemRefs.current[idx] = el;
+                              }}
                               href={cred.url}
                               target="_blank"
                               rel="noopener noreferrer"
                               tabIndex={isMenuOpen ? 0 : -1}
                               onKeyDown={handleItemKeyDown(idx)}
-                              className="flex items-center justify-between rounded-md px-3 py-3 text-sm text-theme-text-secondary hover:bg-white/5 hover:text-theme-text-primary transition-colors active:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-border-focus"
+                              className="flex items-center justify-between rounded-md px-3 py-3 text-sm text-theme-text-secondary hover:bg-theme-bg-tertiary/50 hover:text-theme-text-primary transition-colors active:bg-theme-bg-tertiary/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-border-focus"
                             >
                               <span className="truncate">
                                 {cred.label ||
                                   `${t("studies.certificate")} ${idx + 1}`}
                               </span>
-                              <GoArrowUpRight className="h-3 w-3 opacity-50" />
+                              <GoArrowUpRight className="h-3 w-3 opacity-50 shrink-0" />
                             </a>
                           </li>
                         ))}
