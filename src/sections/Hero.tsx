@@ -8,7 +8,7 @@ import { TbMailShare } from "react-icons/tb";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { scrollToSection } from "../utils/scrollUtils";
 
-const cvEs = "/download/Curriculum Vitae Juan Cruz Dauberte.pdf";
+const cvEs = "/download/Curriculum Vitae Dauberte Juan Cruz.pdf";
 const cvEn = "/download/Curriculum Vitae Juan Cruz Dauberte Inglés.pdf";
 
 export const Hero = () => {
@@ -67,7 +67,10 @@ export const Hero = () => {
   };
 
   return (
-    <section className="w-full min-h-dvh flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10 relative px-4 sm:px-6" aria-label="Hero">
+    <section
+      className="w-full min-h-dvh flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10 relative px-4 sm:px-6"
+      aria-label="Hero"
+    >
       <motion.section
         variants={containerVariants}
         initial="hidden"
@@ -90,7 +93,7 @@ export const Hero = () => {
             {...motionSafe(
               { rotate: 360 },
               { duration: 8, repeat: Infinity, ease: "linear" },
-              prefersReducedMotion
+              prefersReducedMotion,
             )}
             className="absolute inset-0 border-2 border-transparent border-t-theme-accent-blue border-r-theme-accent-purple rounded-full"
           />
@@ -101,7 +104,7 @@ export const Hero = () => {
             {...motionSafe(
               { rotate: -360 },
               { duration: 10, repeat: Infinity, ease: "linear" },
-              prefersReducedMotion
+              prefersReducedMotion,
             )}
             className="absolute inset-0 border-2 border-transparent border-b-theme-accent-cyan border-l-theme-accent-pink rounded-full"
           />
@@ -112,7 +115,7 @@ export const Hero = () => {
             {...motionSafe(
               { scale: [1, 1.1, 1], opacity: [0.4, 0.6, 0.4] },
               { duration: 3, repeat: Infinity, ease: "easeInOut" },
-              prefersReducedMotion
+              prefersReducedMotion,
             )}
             className="absolute inset-0 bg-theme-accent-blue/30 rounded-full blur-2xl"
           />
@@ -121,7 +124,7 @@ export const Hero = () => {
             <img
               src={cloudinaryOptimize(
                 "https://res.cloudinary.com/dttpgbmdx/image/upload/v1772760104/juan-link_kfglqp.jpg",
-                { quality: "good" }
+                { quality: "good" },
               )}
               alt="Foto de perfil de Juan Cruz"
               className="object-cover w-full h-full"
@@ -198,7 +201,11 @@ export const Hero = () => {
                   y: -2,
                 }}
                 whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring" as const, stiffness: 400, damping: 17 }}
+                transition={{
+                  type: "spring" as const,
+                  stiffness: 400,
+                  damping: 17,
+                }}
               >
                 {/* Fondo gradiente animado */}
                 <motion.div
