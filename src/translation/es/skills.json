@@ -7,6 +7,10 @@
     },
     "techSkills": {
       "title": "Habilidades tecnológicas"
+    },
+    "data&AI": {
+      "title": "Datos y IA",
+      "description": "Automatización de procesos con Python - Análisis de datos (SQL, Power BI, Excel avanzado) - Integración de APIs de LLMs (RAG) y Herramientas de IA (GitHub Copilot, Claude, ChatGPT) para desarrollo asistido - Prompt engineering."
     }
   }
 }

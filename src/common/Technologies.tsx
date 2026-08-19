@@ -1,9 +1,6 @@
-import { useTranslation } from "react-i18next";
 import { InfiniteCarousel } from "./InfiniteCarousel";
 import { cloudinaryOptimize } from "../utils/cloudinary";
 export const Technologies = () => {
-  const { t } = useTranslation();
-
   const frontEndTechnologies = [
     {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
@@ -230,9 +227,6 @@ export const Technologies = () => {
     <section className="flex flex-col gap-10" aria-label="Technologies">
       {/* Front-End Carousel */}
       <div className="flex flex-col gap-3 -mx-4 sm:-mx-6 md:mx-0">
-        <h3 className="font-semibold text-lg px-7 sm:px-10 md:px-6">
-          Front-End
-        </h3>
         <InfiniteCarousel
           technologies={frontEndTechnologies}
           duration={25}
@@ -243,9 +237,6 @@ export const Technologies = () => {
 
       {/* Back-End Carousel */}
       <div className="flex flex-col gap-3 -mx-4 sm:-mx-6 md:mx-0">
-        <h3 className="font-semibold text-lg px-7 sm:px-10 md:px-6">
-          Back-End - BaaS
-        </h3>
         <InfiniteCarousel
           technologies={backEndTechnologies}
           duration={30}
@@ -255,9 +246,6 @@ export const Technologies = () => {
       </div>
 
       <div className="flex flex-col gap-3 -mx-4 sm:-mx-6 md:mx-0">
-        <h3 className="font-semibold text-lg px-7 sm:px-10 md:px-6">
-          {t("dataAnalytics")}
-        </h3>
         <InfiniteCarousel
           technologies={dataAnalyticsTechnologies}
           duration={30}
@@ -268,9 +256,6 @@ export const Technologies = () => {
 
       {/* Others Carousel */}
       <div className="flex flex-col gap-3 -mx-4 sm:-mx-6 md:mx-0">
-        <h3 className="font-semibold text-lg px-7 sm:px-10 md:px-6">
-          {t("others")}
-        </h3>
         <InfiniteCarousel
           technologies={othersTechnologies}
           duration={15}

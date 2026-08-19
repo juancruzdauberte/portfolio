@@ -7,6 +7,10 @@
     },
     "techSkills": {
       "title": "Tech skills"
+    },
+    "data&AI": {
+      "title": "Data & AI",
+      "description": "Process automation with Python - Data analysis (SQL, Power BI, Advanced Excel) - Integration of LLM APIs (RAG) and AI tools (GitHub Copilot, Claude, ChatGPT) for AI-assisted development - Prompt engineering"
     }
   }
 }

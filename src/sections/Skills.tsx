@@ -58,7 +58,7 @@ export const Skills = () => {
           {...motionSafe(
             { rotate: [0, 15, -15, 15, 0], scale: [1, 1.1, 1, 1.1, 1] },
             { duration: 2, repeat: Infinity, repeatDelay: 5 },
-            prefersReducedMotion
+            prefersReducedMotion,
           )}
           aria-hidden="true"
         >
@@ -85,7 +85,10 @@ export const Skills = () => {
         className="flex flex-col gap-6 sm:gap-8 md:gap-10 mt-4 sm:mt-5"
       >
         {/* Soft Skills */}
-        <motion.div variants={itemVariants} className="relative px-3 sm:px-4 md:px-6">
+        <motion.div
+          variants={itemVariants}
+          className="relative px-3 sm:px-4 md:px-6"
+        >
           <motion.h3
             className="text-lg sm:text-xl md:text-2xl font-semibold text-theme-accent-blue mb-1 relative inline-block"
             initial={{ x: -20, opacity: 0 }}
@@ -115,9 +118,10 @@ export const Skills = () => {
           </motion.p>
         </motion.div>
 
-        {/* Tech Skills */}
-        <motion.div variants={itemVariants} className="relative">
-          <div className="px-3 sm:px-4 md:px-6">
+        <motion.div
+          variants={itemVariants}
+          className="relative px-3 sm:px-4 md:px-6"
+        >
           <motion.h3
             className="text-lg sm:text-xl md:text-2xl font-semibold text-theme-accent-blue mb-1 relative inline-block"
             initial={{ x: -20, opacity: 0 }}
@@ -125,16 +129,48 @@ export const Skills = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            {t("skills.techSkills.title")}
+            {t("skills.data&AI.title")}
             {/* Subrayado animado con colores de tema */}
             <motion.span
-              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-theme-accent-purple to-theme-accent-pink"
+              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-theme-accent-blue to-theme-accent-cyan"
               initial={{ width: 0 }}
               whileInView={{ width: "100%" }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             />
           </motion.h3>
+
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="text-theme-text-secondary"
+          >
+            {t("skills.data&AI.description")}
+          </motion.p>
+        </motion.div>
+
+        {/* Tech Skills */}
+        <motion.div variants={itemVariants} className="relative">
+          <div className="px-3 sm:px-4 md:px-6">
+            <motion.h3
+              className="text-lg sm:text-xl md:text-2xl font-semibold text-theme-accent-blue mb-1 relative inline-block"
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              {t("skills.techSkills.title")}
+              {/* Subrayado animado con colores de tema */}
+              <motion.span
+                className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-theme-accent-purple to-theme-accent-pink"
+                initial={{ width: 0 }}
+                whileInView={{ width: "100%" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              />
+            </motion.h3>
           </div>
 
           <motion.div
