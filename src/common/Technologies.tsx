@@ -203,6 +203,10 @@ export const Technologies = () => {
       alt: "AWS",
     },
     {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
+      alt: "GCP",
+    },
+    {
       src: cloudinaryOptimize(
         "https://res.cloudinary.com/dttpgbmdx/image/upload/v1763480581/Docker_hnvejl.png",
       ),
