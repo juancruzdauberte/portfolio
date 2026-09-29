@@ -194,11 +194,18 @@ export const AboutMe = () => {
                 ],
               },
               {
+                title: "AWS AI Practitioner",
+                academy: "Amazon Web Services",
+                credentialUrl:
+                  "https://www.credly.com/badges/c75c5f41-c928-4f75-a926-83f58d22fca2",
+              },
+              {
                 title: "Networking Basics",
                 academy: "Cisco",
                 credentialUrl:
                   "https://www.credly.com/badges/1af0268f-43eb-4b51-bba4-f9ceef6b9740",
               },
+
               {
                 title: t("studies.data2.title"),
                 academy: t("studies.data2.academy"),
