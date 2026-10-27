@@ -194,10 +194,16 @@ export const AboutMe = () => {
                 ],
               },
               {
-                title: "AWS AI Practitioner",
+                title: "AWS Certified AI Practitioner",
                 academy: "Amazon Web Services",
                 credentialUrl:
                   "https://www.credly.com/badges/c75c5f41-c928-4f75-a926-83f58d22fca2",
+              },
+              {
+                title: "AWS Certified Cloud Practitioner",
+                academy: "Amazon Web Services",
+                credentialUrl:
+                  "https://www.credly.com/earner/earned/badge/caf35bad-d5bb-4ee9-9884-d4aa21bdf43c",
               },
               {
                 title: "Networking Basics",
