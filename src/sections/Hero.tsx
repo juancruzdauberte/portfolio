@@ -123,7 +123,7 @@ export const Hero = () => {
           <div className="relative w-full h-full border-2 rounded-full overflow-hidden border-theme-bg-secondary shadow-theme-2xl ring-2 ring-theme-border-primary/50">
             <img
               src={cloudinaryOptimize(
-                "https://res.cloudinary.com/dttpgbmdx/image/upload/v1772760104/juan-link_kfglqp.jpg",
+                "https://res.cloudinary.com/dttpgbmdx/image/upload/v1793741361/juan_hjlovj.png",
                 { quality: "good" },
               )}
               alt="Foto de perfil de Juan Cruz"
